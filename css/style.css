@@ -98,19 +98,22 @@ h4 { font-size: 1.25rem; }
 }
 
 .logo {
-  font-family: 'Montserrat', sans-serif;
-  font-size: 1.5rem;
-  font-weight: 700;
-  color: var(--primary-color);
+  display: flex;
+  align-items: center;
   text-decoration: none;
   transition: var(--transition);
-  letter-spacing: -0.5px;
   flex-shrink: 0;
 }
 
-.logo:hover {
-  color: var(--secondary-color);
-  transform: scale(1.02);
+.logo img {
+  height: 50px;
+  width: auto;
+  transition: var(--transition);
+  background: transparent;
+}
+
+.logo:hover img {
+  transform: scale(1.05);
 }
 
 .nav-menu {
@@ -488,8 +491,8 @@ h4 { font-size: 1.25rem; }
     min-height: 70px;
   }
   
-  .logo {
-    font-size: 1.5rem;
+  .logo img {
+    height: 45px;
   }
   
   .nav-menu {
