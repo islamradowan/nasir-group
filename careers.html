@@ -1,0 +1,1068 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Join Nasir Group of Industries - Career opportunities across 15+ companies, 5,000+ employees, competitive benefits, and growth opportunities in Bangladesh's leading industrial conglomerate.">
+    <meta name="keywords" content="Nasir Group careers, Bangladesh industrial jobs, manufacturing jobs, engineering careers, management positions">
+    <title>Careers - Nasir Group of Industries</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .careers-hero {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: var(--white);
+            padding: 4rem 0;
+            text-align: center;
+        }
+        
+        .career-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+        
+        .career-stat {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 2rem;
+            border-radius: var(--border-radius);
+            text-align: center;
+            backdrop-filter: blur(10px);
+        }
+        
+        .career-stat-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+        
+        .job-filters {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            margin-bottom: 2rem;
+        }
+        
+        .filter-row {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            align-items: end;
+        }
+        
+        .filter-group {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .filter-group label {
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+            color: var(--text-color);
+        }
+        
+        .filter-group select,
+        .filter-group input {
+            padding: 0.75rem;
+            border: 2px solid var(--border-color);
+            border-radius: var(--border-radius);
+            font-size: 1rem;
+        }
+        
+        .filter-group select:focus,
+        .filter-group input:focus {
+            border-color: var(--primary-color);
+            outline: none;
+        }
+        
+        .filter-btn {
+            padding: 0.75rem 1.5rem;
+            background: var(--primary-color);
+            color: var(--white);
+            border: none;
+            border-radius: var(--border-radius);
+            cursor: pointer;
+            font-weight: 500;
+            transition: var(--transition);
+        }
+        
+        .filter-btn:hover {
+            background: #002244;
+        }
+        
+        .job-listings {
+            display: grid;
+            gap: 2rem;
+        }
+        
+        .job-card {
+            background: var(--white);
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            padding: 2rem;
+            transition: var(--transition);
+            border-left: 4px solid var(--secondary-color);
+        }
+        
+        .job-card:hover {
+            box-shadow: var(--shadow-hover);
+            transform: translateY(-3px);
+        }
+        
+        .job-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: start;
+            margin-bottom: 1rem;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+        
+        .job-title {
+            color: var(--primary-color);
+            font-weight: 600;
+            font-size: 1.25rem;
+            margin: 0;
+        }
+        
+        .job-type {
+            background: var(--accent-color);
+            color: var(--white);
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 500;
+        }
+        
+        .job-meta {
+            display: flex;
+            gap: 2rem;
+            margin-bottom: 1rem;
+            flex-wrap: wrap;
+        }
+        
+        .job-meta-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--text-color);
+            font-size: 0.9rem;
+        }
+        
+        .job-description {
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
+        }
+        
+        .job-requirements {
+            margin-bottom: 1.5rem;
+        }
+        
+        .job-requirements h4 {
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+        
+        .job-requirements ul {
+            margin-left: 1rem;
+        }
+        
+        .job-requirements li {
+            margin-bottom: 0.25rem;
+        }
+        
+        .job-actions {
+            display: flex;
+            gap: 1rem;
+            align-items: center;
+        }
+        
+        .apply-btn {
+            background: var(--primary-color);
+            color: var(--white);
+            padding: 0.75rem 1.5rem;
+            border: none;
+            border-radius: var(--border-radius);
+            text-decoration: none;
+            font-weight: 500;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+        
+        .apply-btn:hover {
+            background: #002244;
+            transform: translateY(-2px);
+        }
+        
+        .job-posted {
+            color: var(--text-color);
+            font-size: 0.8rem;
+            opacity: 0.7;
+        }
+        
+        .benefits-section {
+            background: var(--light-gray);
+            padding: 4rem 0;
+        }
+        
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .benefit-card {
+            background: var(--white);
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            padding: 2rem;
+            text-align: center;
+            transition: var(--transition);
+        }
+        
+        .benefit-card:hover {
+            box-shadow: var(--shadow-hover);
+            transform: translateY(-5px);
+        }
+        
+        .benefit-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            display: block;
+        }
+        
+        .benefit-title {
+            color: var(--primary-color);
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+        
+        .culture-section {
+            padding: 4rem 0;
+        }
+        
+        .culture-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .culture-card {
+            background: var(--white);
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            overflow: hidden;
+            transition: var(--transition);
+        }
+        
+        .culture-card:hover {
+            box-shadow: var(--shadow-hover);
+            transform: translateY(-3px);
+        }
+        
+        .culture-image {
+            width: 100%;
+            height: 200px;
+            background: var(--light-gray);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+        }
+        
+        .culture-content {
+            padding: 2rem;
+        }
+        
+        .culture-title {
+            color: var(--primary-color);
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+        
+        .application-modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.5);
+            overflow-y: auto;
+        }
+        
+        .modal-content {
+            background-color: var(--white);
+            margin: 2% auto;
+            padding: 2rem;
+            border-radius: var(--border-radius);
+            width: 90%;
+            max-width: 600px;
+            position: relative;
+            max-height: 90vh;
+            overflow-y: auto;
+        }
+        
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+            position: absolute;
+            right: 1rem;
+            top: 1rem;
+        }
+        
+        .close:hover {
+            color: var(--primary-color);
+        }
+        
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+        }
+        
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 0.75rem;
+            border: 2px solid var(--border-color);
+            border-radius: var(--border-radius);
+            font-size: 1rem;
+        }
+        
+        .form-group input:focus,
+        .form-group textarea:focus,
+        .form-group select:focus {
+            border-color: var(--primary-color);
+            outline: none;
+        }
+        
+        .file-upload {
+            border: 2px dashed var(--border-color);
+            padding: 2rem;
+            text-align: center;
+            border-radius: var(--border-radius);
+            cursor: pointer;
+            transition: var(--transition);
+        }
+        
+        .file-upload:hover {
+            border-color: var(--primary-color);
+            background: var(--light-gray);
+        }
+        
+        .file-upload input {
+            display: none;
+        }
+        
+        @media (max-width: 768px) {
+            .job-header {
+                flex-direction: column;
+                align-items: start;
+            }
+            
+            .job-meta {
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+            
+            .filter-row {
+                grid-template-columns: 1fr;
+            }
+            
+            .career-stats {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Skip Links -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    
+    <!-- Header -->
+    <header class="header" role="banner">
+        <nav class="navbar container" role="navigation" aria-label="Main navigation">
+            <a href="index.html" class="logo" data-translate="company.name">Nasir Group of Industries</a>
+            
+            <ul class="nav-menu" role="menubar">
+                <li role="none"><a href="index.html" class="nav-link" role="menuitem" data-translate="nav.home">Home</a></li>
+                <li role="none"><a href="about.html" class="nav-link" role="menuitem" data-translate="nav.about">About Us</a></li>
+                <li role="none"><a href="business-divisions.html" class="nav-link" role="menuitem" data-translate="nav.divisions">Business Divisions</a></li>
+                <li role="none"><a href="products.html" class="nav-link" role="menuitem" data-translate="nav.products">Products</a></li>
+                <li role="none" class="nav-dropdown">
+                    <a href="#" class="nav-link active" role="menuitem">Corporate <span class="dropdown-arrow">▼</span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="export.html" class="nav-link" data-translate="nav.export">Export & International</a></li>
+                        <li><a href="csr.html" class="nav-link" data-translate="nav.csr">CSR & Sustainability</a></li>
+                        <li><a href="careers.html" class="nav-link active" data-translate="nav.careers">Careers</a></li>
+                    </ul>
+                </li>
+                <li role="none"><a href="contact.html" class="nav-link" role="menuitem" data-translate="nav.contact">Contact Us</a></li>
+            </ul>
+            
+            <div class="nav-actions">
+                <button class="lang-toggle" aria-label="Switch language">বাংলা</button>
+                <a href="contact.html" class="btn btn-primary" data-translate="buttons.request_quote">Request Quote</a>
+            </div>
+            
+            <button class="mobile-menu-toggle" aria-label="Toggle mobile menu" aria-expanded="false">☰</button>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main id="main-content">
+        <!-- Careers Hero Section -->
+        <section class="careers-hero">
+            <div class="container">
+                <h1>Join Our Team</h1>
+                <p class="hero-subtitle">Build Your Career with Bangladesh's Leading Industrial Conglomerate</p>
+                
+                <div class="career-stats">
+                    <div class="career-stat">
+                        <span class="career-stat-number counter" data-target="5000">5,000+</span>
+                        <span>Employees</span>
+                    </div>
+                    <div class="career-stat">
+                        <span class="career-stat-number counter" data-target="15">15+</span>
+                        <span>Companies</span>
+                    </div>
+                    <div class="career-stat">
+                        <span class="career-stat-number counter" data-target="12">12+</span>
+                        <span>Locations</span>
+                    </div>
+                    <div class="career-stat">
+                        <span class="career-stat-number counter" data-target="48">48</span>
+                        <span>Years Experience</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Job Filters -->
+        <section class="section">
+            <div class="container">
+                <div class="job-filters">
+                    <h2 style="margin-bottom: 2rem; color: var(--primary-color);">Find Your Perfect Role</h2>
+                    <div class="filter-row">
+                        <div class="filter-group">
+                            <label for="departmentFilter">Department</label>
+                            <select id="departmentFilter">
+                                <option value="">All Departments</option>
+                                <option value="production">Production</option>
+                                <option value="engineering">Engineering</option>
+                                <option value="sales">Sales & Marketing</option>
+                                <option value="finance">Finance & Accounts</option>
+                                <option value="hr">Human Resources</option>
+                                <option value="quality">Quality Control</option>
+                                <option value="export">Export & International</option>
+                                <option value="management">Management</option>
+                            </select>
+                        </div>
+                        
+                        <div class="filter-group">
+                            <label for="locationFilter">Location</label>
+                            <select id="locationFilter">
+                                <option value="">All Locations</option>
+                                <option value="dhaka">Dhaka</option>
+                                <option value="gazipur">Gazipur</option>
+                                <option value="tangail">Tangail</option>
+                                <option value="narayanganj">Narayanganj</option>
+                                <option value="kushtia">Kushtia</option>
+                            </select>
+                        </div>
+                        
+                        <div class="filter-group">
+                            <label for="experienceFilter">Experience Level</label>
+                            <select id="experienceFilter">
+                                <option value="">All Levels</option>
+                                <option value="entry">Entry Level (0-2 years)</option>
+                                <option value="mid">Mid Level (3-5 years)</option>
+                                <option value="senior">Senior Level (6+ years)</option>
+                                <option value="executive">Executive Level</option>
+                            </select>
+                        </div>
+                        
+                        <div class="filter-group">
+                            <button class="filter-btn" onclick="filterJobs()">Search Jobs</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Job Listings -->
+        <section class="section" style="padding-top: 0;">
+            <div class="container">
+                <div class="job-listings" id="jobListings">
+                    
+                    <!-- Production Manager -->
+                    <div class="job-card" data-department="production" data-location="tangail" data-experience="senior">
+                        <div class="job-header">
+                            <h3 class="job-title">Production Manager</h3>
+                            <span class="job-type">Full Time</span>
+                        </div>
+                        
+                        <div class="job-meta">
+                            <div class="job-meta-item">
+                                <span>🏢</span>
+                                <span>Nasir Float Glass Industries Ltd</span>
+                            </div>
+                            <div class="job-meta-item">
+                                <span>📍</span>
+                                <span>Tangail</span>
+                            </div>
+                            <div class="job-meta-item">
+                                <span>💼</span>
+                                <span>6+ years experience</span>
+                            </div>
+                            <div class="job-meta-item">
+                                <span>💰</span>
+                                <span>Competitive Salary</span>
+                            </div>
+                        </div>
+                        
+                        <div class="job-description">
+                            <p>Lead production operations at our state-of-the-art float glass manufacturing facility. Responsible for ensuring quality, efficiency, and safety standards while managing a team of production staff.</p>
+                        </div>
+                        
+                        <div class="job-requirements">
+                            <h4>Key Requirements:</h4>
+                            <ul>
+                                <li>Bachelor's degree in Engineering or related field</li>
+                                <li>6+ years experience in manufacturing/production management</li>
+                                <li>Knowledge of glass manufacturing processes preferred</li>
+                                <li>Strong leadership and team management skills</li>
+                                <li>Experience with quality control systems</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="job-actions">
+                            <button class="apply-btn" onclick="openApplicationModal('Production Manager')">Apply Now</button>
+                            <span class="job-posted">Posted 3 days ago</span>
+                        </div>
+                    </div>
+
+                    <!-- Quality Control Engineer -->
+                    <div class="job-card" data-department="quality" data-location="gazipur" data-experience="mid">
+                        <div class="job-header">
+                            <h3 class="job-title">Quality Control Engineer</h3>
+                            <span class="job-type">Full Time</span>
+                        </div>
+                        
+                        <div class="job-meta">
+                            <div class="job-meta-item">
+                                <span>🏢</span>
+                                <span>Nasir Glass Industries Ltd (NGIL)</span>
+                            </div>
+                            <div class="job-meta-item">
+                                <span>📍</span>
+                                <span>Gazipur</span>
+                            </div>
+                            <div class="job-meta-item">
+                                <span>💼</span>
+                                <span>3-5 years experience</span>
+                            </div>
+                            <div class="job-meta-item">
+                                <span>💰</span>
+                                <span>Attractive Package</span>
+                            </div>
+                        </div>
+                        
+                        <div class="job-description">
+                            <p>Ensure product quality meets international standards through systematic testing and quality control processes. Work with production teams to maintain consistent quality output.</p>
+                        </div>
+                        
+                        <div class="job-requirements">
+                            <h4>Key Requirements:</h4>
+                            <ul>
+                                <li>Bachelor's degree in Engineering or Science</li>
+                                <li>3-5 years experience in quality control</li>
+                                <li>Knowledge of international quality standards</li>
+                                <li>Experience with testing equipment and procedures</li>
+                                <li>Strong analytical and problem-solving skills</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="job-actions">
+                            <button class="apply-btn" onclick="openApplicationModal('Quality Control Engineer')">Apply Now</button>
+                            <span class="job-posted">Posted 1 week ago</span>
+                        </div>
+                    </div>
+
+                    <!-- Sales Executive -->
+                    <div class="job-card" data-department="sales" data-location="dhaka" data-experience="mid">
+                        <div class="job-header">
+                            <h3 class="job-title">Sales Executive</h3>
+                            <span class="job-type">Full Time</span>
+                        </div>
+                        
+                        <div class="job-meta">
+                            <div class="job-meta-item">
+                                <span>🏢</span>
+                                <span>Bangladesh Melamine Industries Ltd</span>
+                            </div>
+                            <div class="job-meta-item">
+                                <span>📍</span>
+                                <span>Dhaka</span>
+                            </div>
+                            <div class="job-meta-item">
+                                <span>💼</span>
+                                <span>2-4 years experience</span>
+                            </div>
+                            <div class="job-meta-item">
+                                <span>💰</span>
+                                <span>Base + Commission</span>
+                            </div>
+                        </div>
+                        
+                        <div class="job-description">
+                            <p>Drive sales growth for our melamine tableware products in domestic and international markets. Build relationships with distributors, retailers, and key accounts.</p>
+                        </div>
+                        
+                        <div class="job-requirements">
+                            <h4>Key Requirements:</h4>
+                            <ul>
+                                <li>Bachelor's degree in Business or Marketing</li>
+                                <li>2-4 years sales experience, preferably in consumer goods</li>
+                                <li>Strong communication and negotiation skills</li>
+                                <li>Ability to travel as required</li>
+                                <li>Knowledge of export procedures preferred</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="job-actions">
+                            <button class="apply-btn" onclick="openApplicationModal('Sales Executive')">Apply Now</button>
+                            <span class="job-posted">Posted 5 days ago</span>
+                        </div>
+                    </div>
+
+                    <!-- Export Manager -->
+                    <div class="job-card" data-department="export" data-location="dhaka" data-experience="senior">
+                        <div class="job-header">
+                            <h3 class="job-title">Export Manager</h3>
+                            <span class="job-type">Full Time</span>
+                        </div>
+                        
+                        <div class="job-meta">
+                            <div class="job-meta-item">
+                                <span>🏢</span>
+                                <span>Head Office</span>
+                            </div>
+                            <div class="job-meta-item">
+                                <span>📍</span>
+                                <span>Dhaka</span>
+                            </div>
+                            <div class="job-meta-item">
+                                <span>💼</span>
+                                <span>5+ years experience</span>
+                            </div>
+                            <div class="job-meta-item">
+                                <span>💰</span>
+                                <span>Excellent Package</span>
+                            </div>
+                        </div>
+                        
+                        <div class="job-description">
+                            <p>Lead export operations across 25+ countries. Develop new markets, manage international relationships, and ensure compliance with export regulations.</p>
+                        </div>
+                        
+                        <div class="job-requirements">
+                            <h4>Key Requirements:</h4>
+                            <ul>
+                                <li>Bachelor's degree in International Business or related field</li>
+                                <li>5+ years experience in export management</li>
+                                <li>Strong knowledge of export procedures and documentation</li>
+                                <li>Experience in multiple international markets</li>
+                                <li>Excellent English communication skills</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="job-actions">
+                            <button class="apply-btn" onclick="openApplicationModal('Export Manager')">Apply Now</button>
+                            <span class="job-posted">Posted 2 days ago</span>
+                        </div>
+                    </div>
+
+                    <!-- Mechanical Engineer -->
+                    <div class="job-card" data-department="engineering" data-location="tangail" data-experience="entry">
+                        <div class="job-header">
+                            <h3 class="job-title">Mechanical Engineer</h3>
+                            <span class="job-type">Full Time</span>
+                        </div>
+                        
+                        <div class="job-meta">
+                            <div class="job-meta-item">
+                                <span>🏢</span>
+                                <span>Nasir Syntax Motors Ltd</span>
+                            </div>
+                            <div class="job-meta-item">
+                                <span>📍</span>
+                                <span>Tangail</span>
+                            </div>
+                            <div class="job-meta-item">
+                                <span>💼</span>
+                                <span>0-2 years experience</span>
+                            </div>
+                            <div class="job-meta-item">
+                                <span>💰</span>
+                                <span>Competitive Salary</span>
+                            </div>
+                        </div>
+                        
+                        <div class="job-description">
+                            <p>Join our exciting new electric vehicle manufacturing division. Work on cutting-edge technology for electric two and three-wheelers in Bangladesh's growing EV market.</p>
+                        </div>
+                        
+                        <div class="job-requirements">
+                            <h4>Key Requirements:</h4>
+                            <ul>
+                                <li>Bachelor's degree in Mechanical Engineering</li>
+                                <li>Fresh graduates or 0-2 years experience</li>
+                                <li>Interest in electric vehicle technology</li>
+                                <li>Strong technical and analytical skills</li>
+                                <li>Willingness to learn and adapt to new technologies</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="job-actions">
+                            <button class="apply-btn" onclick="openApplicationModal('Mechanical Engineer')">Apply Now</button>
+                            <span class="job-posted">Posted 1 day ago</span>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Employee Benefits -->
+        <section class="benefits-section">
+            <div class="container">
+                <h2 class="section-title">Why Work With Us?</h2>
+                <div class="benefits-grid">
+                    <div class="benefit-card animate-on-scroll">
+                        <span class="benefit-icon">💰</span>
+                        <h3 class="benefit-title">Competitive Compensation</h3>
+                        <p>Attractive salary packages with performance-based bonuses and regular increments</p>
+                    </div>
+                    
+                    <div class="benefit-card animate-on-scroll">
+                        <span class="benefit-icon">🏥</span>
+                        <h3 class="benefit-title">Health Benefits</h3>
+                        <p>Comprehensive medical coverage for employees and their families</p>
+                    </div>
+                    
+                    <div class="benefit-card animate-on-scroll">
+                        <span class="benefit-icon">📚</span>
+                        <h3 class="benefit-title">Learning & Development</h3>
+                        <p>Continuous training programs and skill development opportunities</p>
+                    </div>
+                    
+                    <div class="benefit-card animate-on-scroll">
+                        <span class="benefit-icon">🚀</span>
+                        <h3 class="benefit-title">Career Growth</h3>
+                        <p>Clear career progression paths across 15+ companies in the group</p>
+                    </div>
+                    
+                    <div class="benefit-card animate-on-scroll">
+                        <span class="benefit-icon">🏖️</span>
+                        <h3 class="benefit-title">Work-Life Balance</h3>
+                        <p>Flexible working arrangements and generous leave policies</p>
+                    </div>
+                    
+                    <div class="benefit-card animate-on-scroll">
+                        <span class="benefit-icon">🎯</span>
+                        <h3 class="benefit-title">Innovation Culture</h3>
+                        <p>Work with cutting-edge technology and contribute to industry-first innovations</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Company Culture -->
+        <section class="culture-section">
+            <div class="container">
+                <h2 class="section-title">Our Company Culture</h2>
+                <div class="culture-grid">
+                    <div class="culture-card animate-on-scroll">
+                        <div class="culture-image">👥</div>
+                        <div class="culture-content">
+                            <h3 class="culture-title">Diverse & Inclusive</h3>
+                            <p>We celebrate diversity and create an inclusive environment where everyone can thrive and contribute their unique perspectives.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="culture-card animate-on-scroll">
+                        <div class="culture-image">🏆</div>
+                        <div class="culture-content">
+                            <h3 class="culture-title">Excellence Driven</h3>
+                            <p>We strive for excellence in everything we do, from product quality to customer service and employee development.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="culture-card animate-on-scroll">
+                        <div class="culture-image">🤝</div>
+                        <div class="culture-content">
+                            <h3 class="culture-title">Collaborative Team</h3>
+                            <p>Our success is built on teamwork, collaboration, and mutual support across all levels of the organization.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="culture-card animate-on-scroll">
+                        <div class="culture-image">🌱</div>
+                        <div class="culture-content">
+                            <h3 class="culture-title">Sustainable Future</h3>
+                            <p>We're committed to environmental sustainability and social responsibility in all our business operations.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Application Modal -->
+    <div id="applicationModal" class="application-modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Job Application</h2>
+            <p id="modalJobTitle" style="color: var(--primary-color); margin-bottom: 2rem;"></p>
+            
+            <form id="applicationForm" enctype="multipart/form-data">
+                <input type="hidden" id="jobPosition" name="position">
+                
+                <div class="form-group">
+                    <label for="fullName">Full Name *</label>
+                    <input type="text" id="fullName" name="fullName" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="email">Email Address *</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="phone">Phone Number *</label>
+                    <input type="tel" id="phone" name="phone" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="experience">Years of Experience *</label>
+                    <select id="experience" name="experience" required>
+                        <option value="">Select Experience Level</option>
+                        <option value="0-1">0-1 years</option>
+                        <option value="2-3">2-3 years</option>
+                        <option value="4-5">4-5 years</option>
+                        <option value="6-10">6-10 years</option>
+                        <option value="10+">10+ years</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="education">Highest Education *</label>
+                    <select id="education" name="education" required>
+                        <option value="">Select Education Level</option>
+                        <option value="bachelor">Bachelor's Degree</option>
+                        <option value="master">Master's Degree</option>
+                        <option value="diploma">Diploma</option>
+                        <option value="phd">PhD</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="currentSalary">Current Salary (Optional)</label>
+                    <input type="text" id="currentSalary" name="currentSalary" placeholder="e.g., 50,000 BDT">
+                </div>
+                
+                <div class="form-group">
+                    <label for="expectedSalary">Expected Salary</label>
+                    <input type="text" id="expectedSalary" name="expectedSalary" placeholder="e.g., 60,000 BDT">
+                </div>
+                
+                <div class="form-group">
+                    <label for="resume">Upload Resume (PDF only) *</label>
+                    <div class="file-upload" onclick="document.getElementById('resumeFile').click()">
+                        <input type="file" id="resumeFile" name="resume" accept=".pdf" required>
+                        <p>📄 Click to upload your resume (PDF format)</p>
+                        <p style="font-size: 0.8rem; opacity: 0.7;">Maximum file size: 5MB</p>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="coverLetter">Cover Letter</label>
+                    <textarea id="coverLetter" name="coverLetter" rows="5" placeholder="Tell us why you're interested in this position and what makes you a great fit..."></textarea>
+                </div>
+                
+                <button type="submit" class="btn btn-primary" style="width: 100%; padding: 1rem;">
+                    Submit Application
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer" role="contentinfo">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3 data-translate="footer.company">Company</h3>
+                    <ul>
+                        <li><a href="about.html" data-translate="nav.about">About Us</a></li>
+                        <li><a href="business-divisions.html" data-translate="nav.divisions">Business Divisions</a></li>
+                        <li><a href="csr.html" data-translate="nav.csr">CSR & Sustainability</a></li>
+                        <li><a href="careers.html" data-translate="nav.careers">Careers</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3 data-translate="footer.products">Products</h3>
+                    <ul>
+                        <li><a href="products.html#glass" data-translate="divisions.glass">Glass Products</a></li>
+                        <li><a href="products.html#melamine" data-translate="divisions.melamine">Melamine Tableware</a></li>
+                        <li><a href="products.html#footwear" data-translate="divisions.footwear">Footwear</a></li>
+                        <li><a href="products.html#energy" data-translate="divisions.energy">Energy Solutions</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3 data-translate="footer.support">Support</h3>
+                    <ul>
+                        <li><a href="contact.html" data-translate="nav.contact">Contact Us</a></li>
+                        <li><a href="export.html" data-translate="nav.export">Export Inquiry</a></li>
+                        <li><a href="dealer.html">Become a Dealer</a></li>
+                        <li><a href="news.html">News & Media</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3 data-translate="footer.contact">Contact Info</h3>
+                    <p data-translate="footer.address">House #16, Road #09, Baridhara, Dhaka-1212</p>
+                    <p>Phone: <a href="tel:+8802222281849" data-translate="footer.phone">+880-2-222281849</a></p>
+                    <p>Email: <a href="mailto:admin@nasir-group.biz" data-translate="footer.email">admin@nasir-group.biz</a></p>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p data-translate="footer.copyright">© 2025 Nasir Group of Industries. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button class="back-to-top" aria-label="Back to top">↑</button>
+
+    <!-- Scripts -->
+    <script src="js/main.js"></script>
+    <script>
+        // Careers page functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const modal = document.getElementById('applicationModal');
+            const closeModal = document.querySelector('.close');
+            const applicationForm = document.getElementById('applicationForm');
+            const resumeFile = document.getElementById('resumeFile');
+
+            // Close modal functionality
+            closeModal.addEventListener('click', () => {
+                modal.style.display = 'none';
+            });
+
+            window.addEventListener('click', (e) => {
+                if (e.target === modal) {
+                    modal.style.display = 'none';
+                }
+            });
+
+            // File upload handling
+            resumeFile.addEventListener('change', function(e) {
+                const file = e.target.files[0];
+                const fileUpload = document.querySelector('.file-upload p');
+                
+                if (file) {
+                    if (file.type !== 'application/pdf') {
+                        alert('Please upload a PDF file only.');
+                        e.target.value = '';
+                        return;
+                    }
+                    
+                    if (file.size > 5 * 1024 * 1024) { // 5MB limit
+                        alert('File size must be less than 5MB.');
+                        e.target.value = '';
+                        return;
+                    }
+                    
+                    fileUpload.textContent = `✅ ${file.name} selected`;
+                }
+            });
+
+            // Application form submission
+            applicationForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                const formData = new FormData(applicationForm);
+                const data = Object.fromEntries(formData);
+                
+                console.log('Job application:', data);
+                
+                // Show success message
+                if (window.NasirGroup && window.NasirGroup.showToast) {
+                    window.NasirGroup.showToast('Application submitted successfully! We will contact you soon.', 'success');
+                }
+                
+                modal.style.display = 'none';
+                applicationForm.reset();
+                document.querySelector('.file-upload p').textContent = '📄 Click to upload your resume (PDF format)';
+            });
+        });
+
+        // Open application modal
+        function openApplicationModal(jobTitle) {
+            const modal = document.getElementById('applicationModal');
+            const modalJobTitle = document.getElementById('modalJobTitle');
+            const jobPosition = document.getElementById('jobPosition');
+            
+            modalJobTitle.textContent = `Applying for: ${jobTitle}`;
+            jobPosition.value = jobTitle;
+            modal.style.display = 'block';
+        }
+
+        // Filter jobs functionality
+        function filterJobs() {
+            const department = document.getElementById('departmentFilter').value;
+            const location = document.getElementById('locationFilter').value;
+            const experience = document.getElementById('experienceFilter').value;
+            const jobCards = document.querySelectorAll('.job-card');
+
+            jobCards.forEach(card => {
+                let show = true;
+                
+                if (department && card.getAttribute('data-department') !== department) {
+                    show = false;
+                }
+                
+                if (location && card.getAttribute('data-location') !== location) {
+                    show = false;
+                }
+                
+                if (experience && card.getAttribute('data-experience') !== experience) {
+                    show = false;
+                }
+                
+                card.style.display = show ? 'block' : 'none';
+            });
+        }
+    </script>
+</body>
+</html>

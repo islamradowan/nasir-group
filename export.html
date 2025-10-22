@@ -1,0 +1,790 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Nasir Group exports to 25+ countries worldwide. Leading exporter of float glass, melamine tableware, tobacco, and jute products from Bangladesh.">
+    <meta name="keywords" content="Nasir Group exports, Bangladesh glass export, melamine export, tobacco export, international business, export statistics">
+    <title>Export & International Business - Nasir Group of Industries</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .export-hero {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: var(--white);
+            padding: 4rem 0;
+            text-align: center;
+        }
+        
+        .export-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+        
+        .export-stat {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 2rem;
+            border-radius: var(--border-radius);
+            text-align: center;
+            backdrop-filter: blur(10px);
+        }
+        
+        .export-stat-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+        
+        .world-map {
+            background: var(--white);
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            padding: 3rem;
+            text-align: center;
+            margin: 3rem 0;
+        }
+        
+        .map-placeholder {
+            width: 100%;
+            height: 400px;
+            background: var(--light-gray);
+            border-radius: var(--border-radius);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            margin-bottom: 2rem;
+        }
+        
+        .export-destinations {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .destination-card {
+            background: var(--white);
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            padding: 2rem;
+            text-align: center;
+            transition: var(--transition);
+            border-top: 4px solid var(--secondary-color);
+        }
+        
+        .destination-card:hover {
+            box-shadow: var(--shadow-hover);
+            transform: translateY(-5px);
+        }
+        
+        .destination-flag {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            display: block;
+        }
+        
+        .destination-name {
+            color: var(--primary-color);
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+        
+        .destination-products {
+            color: var(--text-color);
+            font-size: 0.9rem;
+        }
+        
+        .export-products {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .product-export-card {
+            background: var(--white);
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            padding: 2rem;
+            transition: var(--transition);
+        }
+        
+        .product-export-card:hover {
+            box-shadow: var(--shadow-hover);
+            transform: translateY(-3px);
+        }
+        
+        .product-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .product-icon {
+            font-size: 2.5rem;
+            width: 70px;
+            height: 70px;
+            background: var(--light-gray);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .product-title {
+            color: var(--primary-color);
+            font-weight: 600;
+            margin: 0;
+        }
+        
+        .export-percentage {
+            background: var(--accent-color);
+            color: var(--white);
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 500;
+        }
+        
+        .export-markets {
+            margin-top: 1rem;
+        }
+        
+        .market-tag {
+            display: inline-block;
+            background: var(--secondary-color);
+            color: var(--white);
+            padding: 0.25rem 0.75rem;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            margin: 0.25rem;
+        }
+        
+        .certifications-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .certification-card {
+            background: var(--white);
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            padding: 2rem;
+            text-align: center;
+            transition: var(--transition);
+        }
+        
+        .certification-card:hover {
+            box-shadow: var(--shadow-hover);
+            transform: translateY(-3px);
+        }
+        
+        .cert-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            display: block;
+        }
+        
+        .cert-title {
+            color: var(--primary-color);
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+        
+        .export-inquiry-form {
+            background: var(--white);
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            padding: 3rem;
+            margin-top: 3rem;
+        }
+        
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+        }
+        
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+            color: var(--text-color);
+        }
+        
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 1rem;
+            border: 2px solid var(--border-color);
+            border-radius: var(--border-radius);
+            font-size: 1rem;
+            transition: var(--transition);
+        }
+        
+        .form-group input:focus,
+        .form-group textarea:focus,
+        .form-group select:focus {
+            border-color: var(--primary-color);
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(0, 51, 102, 0.1);
+        }
+        
+        .download-section {
+            background: var(--light-gray);
+            padding: 3rem 0;
+            text-align: center;
+        }
+        
+        .download-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .download-card {
+            background: var(--white);
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            padding: 2rem;
+            text-align: center;
+            transition: var(--transition);
+        }
+        
+        .download-card:hover {
+            box-shadow: var(--shadow-hover);
+            transform: translateY(-3px);
+        }
+        
+        .download-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            display: block;
+        }
+        
+        .download-btn {
+            display: inline-block;
+            background: var(--primary-color);
+            color: var(--white);
+            padding: 0.75rem 1.5rem;
+            border-radius: var(--border-radius);
+            text-decoration: none;
+            font-weight: 500;
+            transition: var(--transition);
+            margin-top: 1rem;
+        }
+        
+        .download-btn:hover {
+            background: #002244;
+            transform: translateY(-2px);
+        }
+        
+        @media (max-width: 768px) {
+            .export-stats {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+            
+            .map-placeholder {
+                height: 250px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Skip Links -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    
+    <!-- Header -->
+    <header class="header" role="banner">
+        <nav class="navbar container" role="navigation" aria-label="Main navigation">
+            <a href="index.html" class="logo" data-translate="company.name">Nasir Group of Industries</a>
+            
+            <ul class="nav-menu" role="menubar">
+                <li role="none"><a href="index.html" class="nav-link" role="menuitem" data-translate="nav.home">Home</a></li>
+                <li role="none"><a href="about.html" class="nav-link" role="menuitem" data-translate="nav.about">About Us</a></li>
+                <li role="none"><a href="business-divisions.html" class="nav-link" role="menuitem" data-translate="nav.divisions">Business Divisions</a></li>
+                <li role="none"><a href="products.html" class="nav-link" role="menuitem" data-translate="nav.products">Products</a></li>
+                <li role="none" class="nav-dropdown">
+                    <a href="#" class="nav-link active" role="menuitem">Corporate <span class="dropdown-arrow">▼</span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="export.html" class="nav-link active" data-translate="nav.export">Export & International</a></li>
+                        <li><a href="csr.html" class="nav-link" data-translate="nav.csr">CSR & Sustainability</a></li>
+                        <li><a href="careers.html" class="nav-link" data-translate="nav.careers">Careers</a></li>
+                    </ul>
+                </li>
+                <li role="none"><a href="contact.html" class="nav-link" role="menuitem" data-translate="nav.contact">Contact Us</a></li>
+            </ul>
+            
+            <div class="nav-actions">
+                <button class="lang-toggle" aria-label="Switch language">বাংলা</button>
+                <a href="contact.html" class="btn btn-primary" data-translate="buttons.request_quote">Request Quote</a>
+            </div>
+            
+            <button class="mobile-menu-toggle" aria-label="Toggle mobile menu" aria-expanded="false">☰</button>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main id="main-content">
+        <!-- Export Hero Section -->
+        <section class="export-hero">
+            <div class="container">
+                <h1>Export & International Business</h1>
+                <p class="hero-subtitle">Connecting Bangladesh to the World Through Quality Products</p>
+                
+                <div class="export-stats">
+                    <div class="export-stat">
+                        <span class="export-stat-number counter" data-target="25">25+</span>
+                        <span>Export Countries</span>
+                    </div>
+                    <div class="export-stat">
+                        <span class="export-stat-number counter" data-target="5038">5,038</span>
+                        <span>Export Shipments (2023-24)</span>
+                    </div>
+                    <div class="export-stat">
+                        <span class="export-stat-number counter" data-target="25">25%</span>
+                        <span>Glass Production Exported</span>
+                    </div>
+                    <div class="export-stat">
+                        <span class="export-stat-number counter" data-target="48">48</span>
+                        <span>Years Export Experience</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- World Map Section -->
+        <section class="section">
+            <div class="container">
+                <div class="world-map">
+                    <h2 style="color: var(--primary-color); margin-bottom: 2rem;">Our Global Presence</h2>
+                    <div class="map-placeholder">
+                        <h3>🌍 Interactive World Map</h3>
+                        <p>Highlighting our export destinations across 5 continents</p>
+                        <p style="font-size: 0.9rem; opacity: 0.7;">
+                            Interactive map showing export routes and destination countries would be implemented here
+                        </p>
+                    </div>
+                    
+                    <div class="export-destinations">
+                        <div class="destination-card animate-on-scroll">
+                            <span class="destination-flag">🇮🇳</span>
+                            <h3 class="destination-name">India</h3>
+                            <p class="destination-products">Primary market for float glass (90% of glass exports to northeastern states)</p>
+                        </div>
+                        
+                        <div class="destination-card animate-on-scroll">
+                            <span class="destination-flag">🇳🇵</span>
+                            <h3 class="destination-name">Nepal</h3>
+                            <p class="destination-products">Glass products, melamine tableware</p>
+                        </div>
+                        
+                        <div class="destination-card animate-on-scroll">
+                            <span class="destination-flag">🇧🇹</span>
+                            <h3 class="destination-name">Bhutan</h3>
+                            <p class="destination-products">Float glass, construction materials</p>
+                        </div>
+                        
+                        <div class="destination-card animate-on-scroll">
+                            <span class="destination-flag">🇱🇰</span>
+                            <h3 class="destination-name">Sri Lanka</h3>
+                            <p class="destination-products">Glass products, melamine items</p>
+                        </div>
+                        
+                        <div class="destination-card animate-on-scroll">
+                            <span class="destination-flag">🇺🇸</span>
+                            <h3 class="destination-name">USA</h3>
+                            <p class="destination-products">Tobacco products, melamine tableware</p>
+                        </div>
+                        
+                        <div class="destination-card animate-on-scroll">
+                            <span class="destination-flag">🇪🇺</span>
+                            <h3 class="destination-name">Europe</h3>
+                            <p class="destination-products">Tobacco, melamine products</p>
+                        </div>
+                        
+                        <div class="destination-card animate-on-scroll">
+                            <span class="destination-flag">🇦🇺</span>
+                            <h3 class="destination-name">Australia</h3>
+                            <p class="destination-products">Melamine tableware</p>
+                        </div>
+                        
+                        <div class="destination-card animate-on-scroll">
+                            <span class="destination-flag">🇨🇳</span>
+                            <h3 class="destination-name">China</h3>
+                            <p class="destination-products">Jute products, raw materials</p>
+                        </div>
+                        
+                        <div class="destination-card animate-on-scroll">
+                            <span class="destination-flag">🇦🇪</span>
+                            <h3 class="destination-name">UAE</h3>
+                            <p class="destination-products">Jute products, various goods</p>
+                        </div>
+                        
+                        <div class="destination-card animate-on-scroll">
+                            <span class="destination-flag">🇿🇦</span>
+                            <h3 class="destination-name">South Africa</h3>
+                            <p class="destination-products">Glass products, industrial goods</p>
+                        </div>
+                        
+                        <div class="destination-card animate-on-scroll">
+                            <span class="destination-flag">🇰🇪</span>
+                            <h3 class="destination-name">Kenya</h3>
+                            <p class="destination-products">Glass products, consumer goods</p>
+                        </div>
+                        
+                        <div class="destination-card animate-on-scroll">
+                            <span class="destination-flag">🇹🇭</span>
+                            <h3 class="destination-name">Thailand</h3>
+                            <p class="destination-products">Various manufactured products</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Export Products -->
+        <section class="section" style="background: var(--light-gray);">
+            <div class="container">
+                <h2 class="section-title">Export Product Portfolio</h2>
+                <div class="export-products">
+                    <div class="product-export-card animate-on-scroll">
+                        <div class="product-header">
+                            <div class="product-icon">🪟</div>
+                            <div>
+                                <h3 class="product-title">Float Glass Products</h3>
+                                <span class="export-percentage">25% of Production</span>
+                            </div>
+                        </div>
+                        <p>Leading exporter of float glass with international quality standards. Primary markets in South Asia.</p>
+                        <div class="export-markets">
+                            <span class="market-tag">India</span>
+                            <span class="market-tag">Nepal</span>
+                            <span class="market-tag">Bhutan</span>
+                            <span class="market-tag">Sri Lanka</span>
+                        </div>
+                    </div>
+                    
+                    <div class="product-export-card animate-on-scroll">
+                        <div class="product-header">
+                            <div class="product-icon">🍽️</div>
+                            <div>
+                                <h3 class="product-title">Melamine Tableware</h3>
+                                <span class="export-percentage">Export to 18+ Countries</span>
+                            </div>
+                        </div>
+                        <p>High-quality melamine products exported globally with food-grade certifications.</p>
+                        <div class="export-markets">
+                            <span class="market-tag">USA</span>
+                            <span class="market-tag">Europe</span>
+                            <span class="market-tag">Australia</span>
+                            <span class="market-tag">Middle East</span>
+                        </div>
+                    </div>
+                    
+                    <div class="product-export-card animate-on-scroll">
+                        <div class="product-header">
+                            <div class="product-icon">🚬</div>
+                            <div>
+                                <h3 class="product-title">Tobacco Products</h3>
+                                <span class="export-percentage">Premium Quality</span>
+                            </div>
+                        </div>
+                        <p>Export quality tobacco products including leaf tobacco and processed tobacco.</p>
+                        <div class="export-markets">
+                            <span class="market-tag">USA</span>
+                            <span class="market-tag">Europe</span>
+                            <span class="market-tag">Asia</span>
+                        </div>
+                    </div>
+                    
+                    <div class="product-export-card animate-on-scroll">
+                        <div class="product-header">
+                            <div class="product-icon">🌾</div>
+                            <div>
+                                <h3 class="product-title">Jute Products</h3>
+                                <span class="export-percentage">100% Export Oriented</span>
+                            </div>
+                        </div>
+                        <p>Eco-friendly jute yarn, bags, and diversified jute products for global markets.</p>
+                        <div class="export-markets">
+                            <span class="market-tag">China</span>
+                            <span class="market-tag">UAE</span>
+                            <span class="market-tag">India</span>
+                            <span class="market-tag">Worldwide</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Quality Certifications -->
+        <section class="section">
+            <div class="container">
+                <h2 class="section-title">Export Quality Certifications</h2>
+                <div class="certifications-grid">
+                    <div class="certification-card animate-on-scroll">
+                        <span class="cert-icon">🏆</span>
+                        <h3 class="cert-title">Chinese National Standards</h3>
+                        <p>GB11614-1999, GB/T 18701-2002 for float glass products</p>
+                    </div>
+                    
+                    <div class="certification-card animate-on-scroll">
+                        <span class="cert-icon">🎌</span>
+                        <h3 class="cert-title">Japanese Standards</h3>
+                        <p>J/S R3202 compliance for glass manufacturing</p>
+                    </div>
+                    
+                    <div class="certification-card animate-on-scroll">
+                        <span class="cert-icon">🔬</span>
+                        <h3 class="cert-title">ASTM Compliant</h3>
+                        <p>Aluminium products meet ASTM international standards</p>
+                    </div>
+                    
+                    <div class="certification-card animate-on-scroll">
+                        <span class="cert-icon">🌍</span>
+                        <h3 class="cert-title">International Quality</h3>
+                        <p>Export quality certifications for all product categories</p>
+                    </div>
+                    
+                    <div class="certification-card animate-on-scroll">
+                        <span class="cert-icon">🍽️</span>
+                        <h3 class="cert-title">Food Grade Certified</h3>
+                        <p>Melamine products certified for food contact applications</p>
+                    </div>
+                    
+                    <div class="certification-card animate-on-scroll">
+                        <span class="cert-icon">🌱</span>
+                        <h3 class="cert-title">Eco-Friendly Standards</h3>
+                        <p>Sustainable and environmentally compliant manufacturing</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Export Inquiry Form -->
+        <section class="section" style="background: var(--light-gray);">
+            <div class="container">
+                <div class="export-inquiry-form">
+                    <h2 style="text-align: center; color: var(--primary-color); margin-bottom: 2rem;">Export Inquiry Form</h2>
+                    <p style="text-align: center; margin-bottom: 3rem;">Interested in importing our products? Fill out the form below and our export team will contact you.</p>
+                    
+                    <form id="exportInquiryForm">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="companyName">Company Name *</label>
+                                <input type="text" id="companyName" name="companyName" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="contactPerson">Contact Person *</label>
+                                <input type="text" id="contactPerson" name="contactPerson" required>
+                            </div>
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="email">Email Address *</label>
+                                <input type="email" id="email" name="email" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="phone">Phone Number *</label>
+                                <input type="tel" id="phone" name="phone" required>
+                            </div>
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="country">Country *</label>
+                                <input type="text" id="country" name="country" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="businessType">Business Type</label>
+                                <select id="businessType" name="businessType">
+                                    <option value="">Select Business Type</option>
+                                    <option value="importer">Importer</option>
+                                    <option value="distributor">Distributor</option>
+                                    <option value="wholesaler">Wholesaler</option>
+                                    <option value="retailer">Retailer</option>
+                                    <option value="manufacturer">Manufacturer</option>
+                                    <option value="other">Other</option>
+                                </select>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="productsInterested">Products Interested *</label>
+                            <select id="productsInterested" name="productsInterested" required>
+                                <option value="">Select Product Category</option>
+                                <option value="glass">Float Glass Products</option>
+                                <option value="melamine">Melamine Tableware</option>
+                                <option value="tobacco">Tobacco Products</option>
+                                <option value="jute">Jute Products</option>
+                                <option value="packaging">Packaging Solutions</option>
+                                <option value="lighting">Lighting Solutions</option>
+                                <option value="industrial">Industrial Products</option>
+                                <option value="aluminium">Aluminium Products</option>
+                                <option value="multiple">Multiple Products</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="quantity">Expected Quantity</label>
+                                <input type="text" id="quantity" name="quantity" placeholder="e.g., 1000 sq ft, 500 pieces per month">
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="targetPrice">Target Price Range</label>
+                                <input type="text" id="targetPrice" name="targetPrice" placeholder="USD per unit or total budget">
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="requirements">Detailed Requirements</label>
+                            <textarea id="requirements" name="requirements" rows="4" placeholder="Please specify your requirements, specifications, delivery terms, etc."></textarea>
+                        </div>
+                        
+                        <button type="submit" class="btn btn-primary" style="width: 100%; padding: 1rem;">
+                            Send Export Inquiry
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <!-- Download Section -->
+        <section class="download-section">
+            <div class="container">
+                <h2 class="section-title">Export Documentation</h2>
+                <p>Download our export catalogs, certificates, and documentation for international business.</p>
+                
+                <div class="download-grid">
+                    <div class="download-card">
+                        <span class="download-icon">📋</span>
+                        <h3>Export Product Catalog</h3>
+                        <p>Comprehensive catalog of all export products with specifications</p>
+                        <a href="#" class="download-btn">Download PDF</a>
+                    </div>
+                    
+                    <div class="download-card">
+                        <span class="download-icon">🏆</span>
+                        <h3>Quality Certificates</h3>
+                        <p>International quality certifications and compliance documents</p>
+                        <a href="#" class="download-btn">Download PDF</a>
+                    </div>
+                    
+                    <div class="download-card">
+                        <span class="download-icon">📊</span>
+                        <h3>Export Statistics</h3>
+                        <p>Annual export performance and market analysis reports</p>
+                        <a href="#" class="download-btn">Download PDF</a>
+                    </div>
+                    
+                    <div class="download-card">
+                        <span class="download-icon">🤝</span>
+                        <h3>Partnership Guidelines</h3>
+                        <p>Information for potential distributors and business partners</p>
+                        <a href="#" class="download-btn">Download PDF</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer" role="contentinfo">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3 data-translate="footer.company">Company</h3>
+                    <ul>
+                        <li><a href="about.html" data-translate="nav.about">About Us</a></li>
+                        <li><a href="business-divisions.html" data-translate="nav.divisions">Business Divisions</a></li>
+                        <li><a href="csr.html" data-translate="nav.csr">CSR & Sustainability</a></li>
+                        <li><a href="careers.html" data-translate="nav.careers">Careers</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3 data-translate="footer.products">Products</h3>
+                    <ul>
+                        <li><a href="products.html#glass" data-translate="divisions.glass">Glass Products</a></li>
+                        <li><a href="products.html#melamine" data-translate="divisions.melamine">Melamine Tableware</a></li>
+                        <li><a href="products.html#footwear" data-translate="divisions.footwear">Footwear</a></li>
+                        <li><a href="products.html#energy" data-translate="divisions.energy">Energy Solutions</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3 data-translate="footer.support">Support</h3>
+                    <ul>
+                        <li><a href="contact.html" data-translate="nav.contact">Contact Us</a></li>
+                        <li><a href="export.html" data-translate="nav.export">Export Inquiry</a></li>
+                        <li><a href="dealer.html">Become a Dealer</a></li>
+                        <li><a href="news.html">News & Media</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3 data-translate="footer.contact">Contact Info</h3>
+                    <p data-translate="footer.address">House #16, Road #09, Baridhara, Dhaka-1212</p>
+                    <p>Phone: <a href="tel:+8802222281849" data-translate="footer.phone">+880-2-222281849</a></p>
+                    <p>Email: <a href="mailto:export@nasir-group.biz">export@nasir-group.biz</a></p>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p data-translate="footer.copyright">© 2025 Nasir Group of Industries. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button class="back-to-top" aria-label="Back to top">↑</button>
+
+    <!-- Scripts -->
+    <script src="js/main.js"></script>
+    <script>
+        // Export inquiry form handling
+        document.addEventListener('DOMContentLoaded', function() {
+            const exportForm = document.getElementById('exportInquiryForm');
+            
+            if (exportForm) {
+                exportForm.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    
+                    const formData = new FormData(exportForm);
+                    const data = Object.fromEntries(formData);
+                    
+                    console.log('Export inquiry:', data);
+                    
+                    // Show success message
+                    if (window.NasirGroup && window.NasirGroup.showToast) {
+                        window.NasirGroup.showToast('Export inquiry sent successfully! Our team will contact you soon.', 'success');
+                    }
+                    
+                    exportForm.reset();
+                });
+            }
+        });
+    </script>
+</body>
+</html>

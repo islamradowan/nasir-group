@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Contact Nasir Group of Industries - Get in touch for business inquiries, export opportunities, dealership, and career information.">
+    <meta name="keywords" content="Nasir Group contact, Bangladesh industrial contact, export inquiry, dealership application, business contact">
+    <title>Contact Us - Nasir Group of Industries</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .contact-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: start;
+        }
+        
+        .contact-form {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+        }
+        
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+            color: var(--text-color);
+        }
+        
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 1rem;
+            border: 2px solid var(--border-color);
+            border-radius: var(--border-radius);
+            font-size: 1rem;
+            transition: var(--transition);
+        }
+        
+        .form-group input:focus,
+        .form-group textarea:focus,
+        .form-group select:focus {
+            border-color: var(--primary-color);
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(0, 51, 102, 0.1);
+        }
+        
+        .form-group input.error,
+        .form-group textarea.error,
+        .form-group select.error {
+            border-color: #dc3545;
+        }
+        
+        .field-error {
+            color: #dc3545;
+            font-size: 0.875rem;
+            margin-top: 0.25rem;
+        }
+        
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+        
+        .contact-card {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+        
+        .contact-card:hover {
+            box-shadow: var(--shadow-hover);
+            transform: translateY(-3px);
+        }
+        
+        .contact-card h3 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .contact-card .icon {
+            font-size: 1.5rem;
+        }
+        
+        .contact-detail {
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .contact-detail a {
+            color: var(--text-color);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+        
+        .contact-detail a:hover {
+            color: var(--primary-color);
+        }
+        
+        .map-container {
+            background: var(--light-gray);
+            height: 300px;
+            border-radius: var(--border-radius);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 2rem;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .map-placeholder {
+            text-align: center;
+            color: var(--text-color);
+        }
+        
+        .locations-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .location-card {
+            background: var(--white);
+            padding: 1.5rem;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+        
+        .location-card:hover {
+            box-shadow: var(--shadow-hover);
+            transform: translateY(-3px);
+        }
+        
+        .location-title {
+            color: var(--primary-color);
+            font-weight: 600;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .business-hours {
+            background: var(--secondary-color);
+            color: var(--white);
+            padding: 1.5rem;
+            border-radius: var(--border-radius);
+            text-align: center;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            margin-top: 1rem;
+        }
+        
+        .social-link {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 50px;
+            height: 50px;
+            background: var(--primary-color);
+            color: var(--white);
+            border-radius: 50%;
+            text-decoration: none;
+            font-size: 1.5rem;
+            transition: var(--transition);
+        }
+        
+        .social-link:hover {
+            background: var(--secondary-color);
+            transform: translateY(-3px);
+        }
+        
+        .whatsapp-button {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            background: #25D366;
+            color: var(--white);
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            text-decoration: none;
+            box-shadow: var(--shadow-hover);
+            transition: var(--transition);
+            z-index: 100;
+        }
+        
+        .whatsapp-button:hover {
+            transform: scale(1.1);
+        }
+        
+        @media (max-width: 768px) {
+            .contact-container {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            
+            .whatsapp-button {
+                bottom: 1rem;
+                right: 1rem;
+                width: 50px;
+                height: 50px;
+                font-size: 1.25rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Skip Links -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    
+    <!-- Header -->
+    <header class="header" role="banner">
+        <nav class="navbar container" role="navigation" aria-label="Main navigation">
+            <a href="index.html" class="logo" data-translate="company.name">Nasir Group of Industries</a>
+            
+            <ul class="nav-menu" role="menubar">
+                <li role="none"><a href="index.html" class="nav-link" role="menuitem" data-translate="nav.home">Home</a></li>
+                <li role="none"><a href="about.html" class="nav-link" role="menuitem" data-translate="nav.about">About Us</a></li>
+                <li role="none"><a href="business-divisions.html" class="nav-link" role="menuitem" data-translate="nav.divisions">Business Divisions</a></li>
+                <li role="none"><a href="products.html" class="nav-link" role="menuitem" data-translate="nav.products">Products</a></li>
+                <li role="none" class="nav-dropdown">
+                    <a href="#" class="nav-link" role="menuitem">Corporate <span class="dropdown-arrow">▼</span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="export.html" class="nav-link" data-translate="nav.export">Export & International</a></li>
+                        <li><a href="csr.html" class="nav-link" data-translate="nav.csr">CSR & Sustainability</a></li>
+                        <li><a href="careers.html" class="nav-link" data-translate="nav.careers">Careers</a></li>
+                    </ul>
+                </li>
+                <li role="none"><a href="contact.html" class="nav-link active" role="menuitem" data-translate="nav.contact">Contact Us</a></li>
+            </ul>
+            
+            <div class="nav-actions">
+                <button class="lang-toggle" aria-label="Switch language">বাংলা</button>
+                <a href="contact.html" class="btn btn-primary" data-translate="buttons.request_quote">Request Quote</a>
+            </div>
+            
+            <button class="mobile-menu-toggle" aria-label="Toggle mobile menu" aria-expanded="false">☰</button>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main id="main-content">
+        <!-- Page Header -->
+        <section class="hero" style="padding: 2rem 0;">
+            <div class="container">
+                <h1>Contact Us</h1>
+                <p class="hero-subtitle">Get in Touch for Business Inquiries & Partnerships</p>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section class="section">
+            <div class="container">
+                <div class="contact-container">
+                    <!-- Contact Form -->
+                    <div class="contact-form">
+                        <h2 style="margin-bottom: 2rem; color: var(--primary-color);">Send us a Message</h2>
+                        <form id="contactForm">
+                            <div class="form-group">
+                                <label for="name">Full Name *</label>
+                                <input type="text" id="name" name="name" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="email">Email Address *</label>
+                                <input type="email" id="email" name="email" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="phone">Phone Number *</label>
+                                <input type="tel" id="phone" name="phone" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="company">Company Name</label>
+                                <input type="text" id="company" name="company">
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="inquiryType">Inquiry Type *</label>
+                                <select id="inquiryType" name="inquiryType" required>
+                                    <option value="">Select Inquiry Type</option>
+                                    <option value="general">General Inquiry</option>
+                                    <option value="export">Export Business</option>
+                                    <option value="dealership">Dealership Application</option>
+                                    <option value="career">Career Opportunity</option>
+                                    <option value="partnership">Business Partnership</option>
+                                    <option value="supplier">Supplier Registration</option>
+                                </select>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="productInterest">Product Interest</label>
+                                <select id="productInterest" name="productInterest">
+                                    <option value="">Select Product Category</option>
+                                    <option value="glass">Glass Products</option>
+                                    <option value="melamine">Melamine Tableware</option>
+                                    <option value="footwear">Footwear (Jump Keds)</option>
+                                    <option value="tobacco">Tobacco Products</option>
+                                    <option value="packaging">Packaging Solutions</option>
+                                    <option value="lighting">Lighting Solutions</option>
+                                    <option value="jute">Jute Products</option>
+                                    <option value="industrial">Industrial Products</option>
+                                    <option value="aluminium">Aluminium Products</option>
+                                    <option value="automotive">Electric Vehicles</option>
+                                </select>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="message">Message *</label>
+                                <textarea id="message" name="message" rows="5" required placeholder="Please provide details about your inquiry, requirements, or questions..."></textarea>
+                            </div>
+                            
+                            <button type="submit" class="btn btn-primary" style="width: 100%;">
+                                <span class="btn-text">Send Message</span>
+                            </button>
+                        </form>
+                    </div>
+
+                    <!-- Contact Information -->
+                    <div class="contact-info">
+                        <div class="contact-card">
+                            <h3><span class="icon">🏢</span> Head Office</h3>
+                            <div class="contact-detail">
+                                <span>📍</span>
+                                <span>House #16, Road #09, Baridhara, Dhaka-1212, Bangladesh</span>
+                            </div>
+                            <div class="contact-detail">
+                                <span>📞</span>
+                                <a href="tel:+8802222281849">+880-2-222281849</a>
+                            </div>
+                            <div class="contact-detail">
+                                <span>📞</span>
+                                <a href="tel:+8802222281859">+880-2-222281859</a>
+                            </div>
+                            <div class="contact-detail">
+                                <span>📞</span>
+                                <a href="tel:+8802222281884">+880-2-222281884</a>
+                            </div>
+                            <div class="contact-detail">
+                                <span>✉️</span>
+                                <a href="mailto:admin@nasir-group.biz">admin@nasir-group.biz</a>
+                            </div>
+                            <div class="contact-detail">
+                                <span>✉️</span>
+                                <a href="mailto:export@nasir-group.biz">export@nasir-group.biz</a>
+                            </div>
+                        </div>
+
+                        <div class="contact-card">
+                            <h3><span class="icon">🔧</span> Nasir Syntax Aluminium</h3>
+                            <div class="contact-detail">
+                                <span>🏢</span>
+                                <span>32 Shezad Palace (3rd Floor), Gulshan-2, Dhaka 1212</span>
+                            </div>
+                            <div class="contact-detail">
+                                <span>🏭</span>
+                                <span>Factory: Natiapara, Delduar, Dubail, Tangail</span>
+                            </div>
+                            <div class="contact-detail">
+                                <span>📞</span>
+                                <a href="tel:+8801966656888">+880 1966-656888</a>
+                            </div>
+                            <div class="contact-detail">
+                                <span>✉️</span>
+                                <a href="mailto:nsail@nasirgroupbd.com">nsail@nasirgroupbd.com</a>
+                            </div>
+                        </div>
+
+                        <div class="contact-card">
+                            <h3><span class="icon">🪟</span> Nasir Float Glass</h3>
+                            <div class="contact-detail">
+                                <span>📞</span>
+                                <a href="tel:+8809606997745">+880 9606997745</a>
+                            </div>
+                            <div class="contact-detail">
+                                <span>✉️</span>
+                                <a href="mailto:info@nasirgroupbd.com">info@nasirgroupbd.com</a>
+                            </div>
+                        </div>
+
+                        <div class="business-hours">
+                            <h3>Business Hours</h3>
+                            <p><strong>Sunday - Thursday:</strong> 9:00 AM - 6:00 PM</p>
+                            <p><strong>Saturday:</strong> 9:00 AM - 2:00 PM</p>
+                            <p><strong>Friday:</strong> Closed</p>
+                            <p style="margin-top: 1rem; font-size: 0.9rem; opacity: 0.9;">
+                                For urgent matters, please call our emergency contact numbers
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Map and Locations -->
+        <section class="section" style="background: var(--light-gray);">
+            <div class="container">
+                <h2 class="section-title">Our Locations</h2>
+                
+                <!-- Map Placeholder -->
+                <div class="map-container">
+                    <div class="map-placeholder">
+                        <h3>🗺️ Interactive Map</h3>
+                        <p>Multiple manufacturing facilities across Bangladesh</p>
+                        <p style="font-size: 0.9rem; opacity: 0.7;">
+                            Google Maps integration would be implemented here showing all factory locations
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Locations Grid -->
+                <div class="locations-grid">
+                    <div class="location-card">
+                        <h3 class="location-title">
+                            <span>🏢</span> Head Office - Dhaka
+                        </h3>
+                        <p><strong>Address:</strong> House #16, Road #09, Baridhara, Dhaka-1212</p>
+                        <p><strong>Functions:</strong> Administration, Sales, Export</p>
+                    </div>
+
+                    <div class="location-card">
+                        <h3 class="location-title">
+                            <span>🏭</span> Gazipur Factory Complex
+                        </h3>
+                        <p><strong>Location:</strong> Nagor Hawla, Joina Bazar, Sreepur, Gazipur</p>
+                        <p><strong>Companies:</strong> Nasir Glass Industries Ltd (NGIL)</p>
+                        <p><strong>Products:</strong> Float Glass Manufacturing</p>
+                    </div>
+
+                    <div class="location-card">
+                        <h3 class="location-title">
+                            <span>🏭</span> Tangail Factory Complex
+                        </h3>
+                        <p><strong>Location:</strong> Gorai, Mirzapur & Natiapara, Delduar, Tangail</p>
+                        <p><strong>Companies:</strong> 7+ Manufacturing Units</p>
+                        <p><strong>Products:</strong> Glass, Energy, Packaging, Starch, Aluminium, Motors</p>
+                    </div>
+
+                    <div class="location-card">
+                        <h3 class="location-title">
+                            <span>🏭</span> Narayanganj Factory Complex
+                        </h3>
+                        <p><strong>Location:</strong> Borabo, Tarabo, Rupgonj, Narayanganj</p>
+                        <p><strong>Companies:</strong> Bangladesh Melamine & Footwear Industries</p>
+                        <p><strong>Products:</strong> Melamine Tableware, Jump Keds Footwear</p>
+                    </div>
+
+                    <div class="location-card">
+                        <h3 class="location-title">
+                            <span>🏭</span> Kushtia Factory Complex
+                        </h3>
+                        <p><strong>Location:</strong> Allardarga, Daulatpur, Kushtia</p>
+                        <p><strong>Companies:</strong> Tobacco, Biri, Jute, Printing Industries</p>
+                        <p><strong>Products:</strong> Tobacco Products, Jute, Packaging</p>
+                    </div>
+
+                    <div class="location-card">
+                        <h3 class="location-title">
+                            <span>🌐</span> Export Markets
+                        </h3>
+                        <p><strong>Primary:</strong> India, Nepal, Bhutan, Sri Lanka</p>
+                        <p><strong>Secondary:</strong> USA, Europe, Middle East, Australia</p>
+                        <p><strong>Emerging:</strong> South Africa, Kenya, Thailand, China</p>
+                    </div>
+                </div>
+
+                <!-- Social Media Links -->
+                <div style="text-align: center; margin-top: 3rem;">
+                    <h3 style="margin-bottom: 1rem;">Follow Us</h3>
+                    <div class="social-links">
+                        <a href="#" class="social-link" aria-label="Facebook">📘</a>
+                        <a href="#" class="social-link" aria-label="LinkedIn">💼</a>
+                        <a href="#" class="social-link" aria-label="Instagram">📷</a>
+                        <a href="#" class="social-link" aria-label="YouTube">📺</a>
+                        <a href="#" class="social-link" aria-label="Twitter">🐦</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- WhatsApp Quick Contact -->
+    <a href="https://wa.me/8801966656888" class="whatsapp-button" aria-label="WhatsApp Contact" target="_blank">
+        💬
+    </a>
+
+    <!-- Footer -->
+    <footer class="footer" role="contentinfo">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3 data-translate="footer.company">Company</h3>
+                    <ul>
+                        <li><a href="about.html" data-translate="nav.about">About Us</a></li>
+                        <li><a href="business-divisions.html" data-translate="nav.divisions">Business Divisions</a></li>
+                        <li><a href="csr.html" data-translate="nav.csr">CSR & Sustainability</a></li>
+                        <li><a href="careers.html" data-translate="nav.careers">Careers</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3 data-translate="footer.products">Products</h3>
+                    <ul>
+                        <li><a href="products.html#glass" data-translate="divisions.glass">Glass Products</a></li>
+                        <li><a href="products.html#melamine" data-translate="divisions.melamine">Melamine Tableware</a></li>
+                        <li><a href="products.html#footwear" data-translate="divisions.footwear">Footwear</a></li>
+                        <li><a href="products.html#energy" data-translate="divisions.energy">Energy Solutions</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3 data-translate="footer.support">Support</h3>
+                    <ul>
+                        <li><a href="contact.html" data-translate="nav.contact">Contact Us</a></li>
+                        <li><a href="export.html" data-translate="nav.export">Export Inquiry</a></li>
+                        <li><a href="dealer.html">Become a Dealer</a></li>
+                        <li><a href="news.html">News & Media</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3 data-translate="footer.contact">Contact Info</h3>
+                    <p data-translate="footer.address">House #16, Road #09, Baridhara, Dhaka-1212</p>
+                    <p>Phone: <a href="tel:+8802222281849" data-translate="footer.phone">+880-2-222281849</a></p>
+                    <p>Email: <a href="mailto:admin@nasir-group.biz" data-translate="footer.email">admin@nasir-group.biz</a></p>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p data-translate="footer.copyright">© 2025 Nasir Group of Industries. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button class="back-to-top" aria-label="Back to top">↑</button>
+
+    <!-- Scripts -->
+    <script src="js/main.js"></script>
+</body>
+</html>

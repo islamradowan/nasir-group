@@ -1,0 +1,687 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Nasir Group's CSR initiatives - Tk 5 crore annual investment in education, healthcare, environmental sustainability, and community development across Bangladesh.">
+    <meta name="keywords" content="Nasir Group CSR, Bangladesh corporate social responsibility, education initiatives, healthcare programs, environmental sustainability">
+    <title>CSR & Sustainability - Nasir Group of Industries</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .csr-hero {
+            background: linear-gradient(135deg, var(--secondary-color), var(--primary-color));
+            color: var(--white);
+            padding: 4rem 0;
+            text-align: center;
+        }
+        
+        .csr-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+        
+        .csr-stat {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 2rem;
+            border-radius: var(--border-radius);
+            text-align: center;
+            backdrop-filter: blur(10px);
+        }
+        
+        .csr-stat-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+        
+        .focus-areas {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+        
+        .focus-area {
+            background: var(--white);
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            padding: 2rem;
+            text-align: center;
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .focus-area::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: var(--secondary-color);
+        }
+        
+        .focus-area:hover {
+            box-shadow: var(--shadow-hover);
+            transform: translateY(-5px);
+        }
+        
+        .focus-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            display: block;
+        }
+        
+        .focus-title {
+            color: var(--primary-color);
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+        
+        .focus-percentage {
+            background: var(--accent-color);
+            color: var(--white);
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-weight: 600;
+            display: inline-block;
+            margin-bottom: 1rem;
+        }
+        
+        .initiative-card {
+            background: var(--white);
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            padding: 2rem;
+            transition: var(--transition);
+            border-left: 4px solid var(--secondary-color);
+        }
+        
+        .initiative-card:hover {
+            box-shadow: var(--shadow-hover);
+            transform: translateY(-3px);
+        }
+        
+        .initiative-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+        
+        .initiative-icon {
+            font-size: 2rem;
+            width: 60px;
+            height: 60px;
+            background: var(--light-gray);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .initiative-title {
+            color: var(--primary-color);
+            font-weight: 600;
+            margin: 0;
+        }
+        
+        .initiative-location {
+            color: var(--secondary-color);
+            font-size: 0.9rem;
+        }
+        
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .gallery-item {
+            background: var(--white);
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            overflow: hidden;
+            transition: var(--transition);
+            cursor: pointer;
+        }
+        
+        .gallery-item:hover {
+            box-shadow: var(--shadow-hover);
+            transform: translateY(-3px);
+        }
+        
+        .gallery-image {
+            width: 100%;
+            height: 200px;
+            background: var(--light-gray);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+        }
+        
+        .gallery-content {
+            padding: 1.5rem;
+        }
+        
+        .gallery-title {
+            color: var(--primary-color);
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+        
+        .environmental-initiatives {
+            background: var(--light-gray);
+            padding: 4rem 0;
+        }
+        
+        .env-card {
+            background: var(--white);
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            padding: 2rem;
+            text-align: center;
+            transition: var(--transition);
+        }
+        
+        .env-card:hover {
+            box-shadow: var(--shadow-hover);
+            transform: translateY(-5px);
+        }
+        
+        .env-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            display: block;
+        }
+        
+        .testimonial-section {
+            background: var(--primary-color);
+            color: var(--white);
+            padding: 4rem 0;
+            text-align: center;
+        }
+        
+        .testimonial {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        
+        .testimonial-quote {
+            font-size: 1.25rem;
+            font-style: italic;
+            margin-bottom: 2rem;
+            line-height: 1.6;
+        }
+        
+        .testimonial-author {
+            font-weight: 600;
+            color: var(--accent-color);
+        }
+        
+        .download-section {
+            text-align: center;
+            padding: 3rem 0;
+        }
+        
+        .download-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 2rem;
+        }
+        
+        .download-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 1rem 2rem;
+            background: var(--secondary-color);
+            color: var(--white);
+            text-decoration: none;
+            border-radius: var(--border-radius);
+            font-weight: 500;
+            transition: var(--transition);
+        }
+        
+        .download-btn:hover {
+            background: #1B5E20;
+            transform: translateY(-2px);
+        }
+        
+        @media (max-width: 768px) {
+            .csr-stats {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .focus-areas {
+                grid-template-columns: 1fr;
+            }
+            
+            .download-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Skip Links -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    
+    <!-- Header -->
+    <header class="header" role="banner">
+        <nav class="navbar container" role="navigation" aria-label="Main navigation">
+            <a href="index.html" class="logo" data-translate="company.name">Nasir Group of Industries</a>
+            
+            <ul class="nav-menu" role="menubar">
+                <li role="none"><a href="index.html" class="nav-link" role="menuitem" data-translate="nav.home">Home</a></li>
+                <li role="none"><a href="about.html" class="nav-link" role="menuitem" data-translate="nav.about">About Us</a></li>
+                <li role="none"><a href="business-divisions.html" class="nav-link" role="menuitem" data-translate="nav.divisions">Business Divisions</a></li>
+                <li role="none"><a href="products.html" class="nav-link" role="menuitem" data-translate="nav.products">Products</a></li>
+                <li role="none" class="nav-dropdown">
+                    <a href="#" class="nav-link active" role="menuitem">Corporate <span class="dropdown-arrow">▼</span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="export.html" class="nav-link" data-translate="nav.export">Export & International</a></li>
+                        <li><a href="csr.html" class="nav-link active" data-translate="nav.csr">CSR & Sustainability</a></li>
+                        <li><a href="careers.html" class="nav-link" data-translate="nav.careers">Careers</a></li>
+                    </ul>
+                </li>
+                <li role="none"><a href="contact.html" class="nav-link" role="menuitem" data-translate="nav.contact">Contact Us</a></li>
+            </ul>
+            
+            <div class="nav-actions">
+                <button class="lang-toggle" aria-label="Switch language">বাংলা</button>
+                <a href="contact.html" class="btn btn-primary" data-translate="buttons.request_quote">Request Quote</a>
+            </div>
+            
+            <button class="mobile-menu-toggle" aria-label="Toggle mobile menu" aria-expanded="false">☰</button>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main id="main-content">
+        <!-- CSR Hero Section -->
+        <section class="csr-hero">
+            <div class="container">
+                <h1>CSR & Sustainability</h1>
+                <p class="hero-subtitle">Building a Better Bangladesh Through Social Responsibility</p>
+                
+                <div class="csr-stats">
+                    <div class="csr-stat">
+                        <span class="csr-stat-number counter" data-target="5">5</span>
+                        <span>Crore Annual CSR Investment</span>
+                    </div>
+                    <div class="csr-stat">
+                        <span class="csr-stat-number counter" data-target="10">10+</span>
+                        <span>Educational Institutions</span>
+                    </div>
+                    <div class="csr-stat">
+                        <span class="csr-stat-number counter" data-target="2">2</span>
+                        <span>Healthcare Facilities</span>
+                    </div>
+                    <div class="csr-stat">
+                        <span class="csr-stat-number counter" data-target="1000">1000+</span>
+                        <span>Families Benefited</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CSR Focus Areas -->
+        <section class="section">
+            <div class="container">
+                <h2 class="section-title">Our CSR Focus Areas</h2>
+                <div class="focus-areas">
+                    <div class="focus-area animate-on-scroll">
+                        <span class="focus-icon">🎓</span>
+                        <h3 class="focus-title">Education</h3>
+                        <div class="focus-percentage">40% of CSR Budget</div>
+                        <p>Scholarships for underprivileged students, establishing schools and institutes, and promoting quality education across Bangladesh.</p>
+                    </div>
+                    
+                    <div class="focus-area animate-on-scroll">
+                        <span class="focus-icon">🏥</span>
+                        <h3 class="focus-title">Healthcare</h3>
+                        <div class="focus-percentage">25% of CSR Budget</div>
+                        <p>Providing healthcare access to underprivileged communities through hospitals, clinics, and medical training programs.</p>
+                    </div>
+                    
+                    <div class="focus-area animate-on-scroll">
+                        <span class="focus-icon">🆘</span>
+                        <h3 class="focus-title">Emergency Relief</h3>
+                        <div class="focus-percentage">25% of CSR Budget</div>
+                        <p>Disaster relief operations, infrastructure improvement, and emergency support during natural calamities and crises.</p>
+                    </div>
+                    
+                    <div class="focus-area animate-on-scroll">
+                        <span class="focus-icon">⚽</span>
+                        <h3 class="focus-title">Sports & Culture</h3>
+                        <div class="focus-percentage">10% of CSR Budget</div>
+                        <p>Supporting sports development programs, cultural activities, and youth engagement initiatives across communities.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Education Initiatives -->
+        <section class="section" style="background: var(--light-gray);">
+            <div class="container">
+                <h2 class="section-title">Education Initiatives</h2>
+                <div class="grid grid-2">
+                    <div class="initiative-card animate-on-scroll">
+                        <div class="initiative-header">
+                            <div class="initiative-icon">🏫</div>
+                            <div>
+                                <h3 class="initiative-title">Nasiruddin Biswas Girls High School</h3>
+                                <div class="initiative-location">📍 Kushtia</div>
+                            </div>
+                        </div>
+                        <p>Dedicated to girls' education and empowerment, providing quality secondary education with modern facilities and qualified teachers.</p>
+                    </div>
+                    
+                    <div class="initiative-card animate-on-scroll">
+                        <div class="initiative-header">
+                            <div class="initiative-icon">🔧</div>
+                            <div>
+                                <h3 class="initiative-title">Nasiruddin Biswas Vocational Institute</h3>
+                                <div class="initiative-location">📍 Kushtia</div>
+                            </div>
+                        </div>
+                        <p>Technical and vocational training programs to develop skilled workforce and provide employment opportunities for local youth.</p>
+                    </div>
+                    
+                    <div class="initiative-card animate-on-scroll">
+                        <div class="initiative-header">
+                            <div class="initiative-icon">⚙️</div>
+                            <div>
+                                <h3 class="initiative-title">Nasiruddin Biswas Polytechnical Institute</h3>
+                                <div class="initiative-location">📍 Kushtia</div>
+                            </div>
+                        </div>
+                        <p>Advanced technical education in engineering and technology fields, preparing students for industrial careers.</p>
+                    </div>
+                    
+                    <div class="initiative-card animate-on-scroll">
+                        <div class="initiative-header">
+                            <div class="initiative-icon">🎓</div>
+                            <div>
+                                <h3 class="initiative-title">Multiple Schools & Colleges</h3>
+                                <div class="initiative-location">📍 Kushtia District</div>
+                            </div>
+                        </div>
+                        <p>Supporting various educational institutions across Kushtia district with infrastructure development and educational resources.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Healthcare Programs -->
+        <section class="section">
+            <div class="container">
+                <h2 class="section-title">Healthcare Programs</h2>
+                <div class="grid grid-2">
+                    <div class="initiative-card animate-on-scroll">
+                        <div class="initiative-header">
+                            <div class="initiative-icon">🏥</div>
+                            <div>
+                                <h3 class="initiative-title">Nasiruddin Biswas Mother and Child Hospital</h3>
+                                <div class="initiative-location">📍 Kushtia</div>
+                            </div>
+                        </div>
+                        <p>Modern hospital facility serving the poor and underprivileged, specializing in maternal and child healthcare with qualified medical professionals.</p>
+                    </div>
+                    
+                    <div class="initiative-card animate-on-scroll">
+                        <div class="initiative-header">
+                            <div class="initiative-icon">👩‍⚕️</div>
+                            <div>
+                                <h3 class="initiative-title">Nasiruddin Biswas Nursing Institute</h3>
+                                <div class="initiative-location">📍 Kushtia</div>
+                            </div>
+                        </div>
+                        <p>Training nurses and healthcare professionals to address the shortage of qualified medical staff in rural Bangladesh.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Environmental Initiatives -->
+        <section class="environmental-initiatives">
+            <div class="container">
+                <h2 class="section-title">Environmental Sustainability</h2>
+                <div class="grid grid-3">
+                    <div class="env-card animate-on-scroll">
+                        <span class="env-icon">🚗</span>
+                        <h3>Electric Vehicle Manufacturing</h3>
+                        <p>Leading the transition to sustainable transportation with zero-emission electric two and three-wheelers through Nasir Syntax Motors.</p>
+                    </div>
+                    
+                    <div class="env-card animate-on-scroll">
+                        <span class="env-icon">♻️</span>
+                        <h3>Waste Heat Recovery</h3>
+                        <p>Implementing waste-heat recovery systems and renewable energy integrations across our manufacturing facilities.</p>
+                    </div>
+                    
+                    <div class="env-card animate-on-scroll">
+                        <span class="env-icon">🌱</span>
+                        <h3>Green Manufacturing</h3>
+                        <p>Committed to preventing environmental pollution and adopting sustainable manufacturing practices across all operations.</p>
+                    </div>
+                    
+                    <div class="env-card animate-on-scroll">
+                        <span class="env-icon">🌾</span>
+                        <h3>Eco-Friendly Products</h3>
+                        <p>Producing biodegradable jute products and promoting environmentally sustainable alternatives to synthetic materials.</p>
+                    </div>
+                    
+                    <div class="env-card animate-on-scroll">
+                        <span class="env-icon">💡</span>
+                        <h3>Energy Efficiency</h3>
+                        <p>Manufacturing energy-saving CFL and LED lighting solutions to reduce national energy consumption.</p>
+                    </div>
+                    
+                    <div class="env-card animate-on-scroll">
+                        <span class="env-icon">🏭</span>
+                        <h3>Clean Production</h3>
+                        <p>Implementing clean production technologies and environmental management systems across all manufacturing units.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Women Empowerment -->
+        <section class="section">
+            <div class="container">
+                <h2 class="section-title">Women Empowerment</h2>
+                <div class="grid grid-2">
+                    <div class="card animate-on-scroll">
+                        <h3 style="color: var(--primary-color);">👩‍🎓 Girls' Education Focus</h3>
+                        <p>Dedicated girls' high school and scholarship programs specifically targeting female education and empowerment in rural areas.</p>
+                    </div>
+                    
+                    <div class="card animate-on-scroll">
+                        <h3 style="color: var(--primary-color);">👩‍💼 Skill Development</h3>
+                        <p>Vocational training programs for women in technical skills, healthcare, and entrepreneurship development.</p>
+                    </div>
+                    
+                    <div class="card animate-on-scroll">
+                        <h3 style="color: var(--primary-color);">👩‍⚕️ Healthcare Training</h3>
+                        <p>Nursing institute providing professional healthcare training opportunities for women in medical fields.</p>
+                    </div>
+                    
+                    <div class="card animate-on-scroll">
+                        <h3 style="color: var(--primary-color);">👩‍🏭 Employment Opportunities</h3>
+                        <p>Creating employment opportunities for women across our manufacturing facilities with equal pay and growth opportunities.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Photo Gallery -->
+        <section class="section" style="background: var(--light-gray);">
+            <div class="container">
+                <h2 class="section-title">CSR Activities Gallery</h2>
+                <div class="gallery-grid">
+                    <div class="gallery-item animate-on-scroll">
+                        <div class="gallery-image">🏫</div>
+                        <div class="gallery-content">
+                            <h3 class="gallery-title">School Infrastructure Development</h3>
+                            <p>Modern classrooms and facilities at Nasiruddin Biswas Girls High School</p>
+                        </div>
+                    </div>
+                    
+                    <div class="gallery-item animate-on-scroll">
+                        <div class="gallery-image">🏥</div>
+                        <div class="gallery-content">
+                            <h3 class="gallery-title">Healthcare Services</h3>
+                            <p>Medical camps and healthcare services for underprivileged communities</p>
+                        </div>
+                    </div>
+                    
+                    <div class="gallery-item animate-on-scroll">
+                        <div class="gallery-image">🎓</div>
+                        <div class="gallery-content">
+                            <h3 class="gallery-title">Scholarship Distribution</h3>
+                            <p>Annual scholarship ceremony for deserving students from poor families</p>
+                        </div>
+                    </div>
+                    
+                    <div class="gallery-item animate-on-scroll">
+                        <div class="gallery-image">🆘</div>
+                        <div class="gallery-content">
+                            <h3 class="gallery-title">Disaster Relief</h3>
+                            <p>Emergency relief operations during floods and natural disasters</p>
+                        </div>
+                    </div>
+                    
+                    <div class="gallery-item animate-on-scroll">
+                        <div class="gallery-image">🌱</div>
+                        <div class="gallery-content">
+                            <h3 class="gallery-title">Environmental Programs</h3>
+                            <p>Tree plantation and environmental awareness campaigns</p>
+                        </div>
+                    </div>
+                    
+                    <div class="gallery-item animate-on-scroll">
+                        <div class="gallery-image">⚽</div>
+                        <div class="gallery-content">
+                            <h3 class="gallery-title">Sports Development</h3>
+                            <p>Youth sports programs and cultural activities in local communities</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Testimonials -->
+        <section class="testimonial-section">
+            <div class="container">
+                <h2>What Beneficiaries Say</h2>
+                <div class="testimonial">
+                    <div class="testimonial-quote">
+                        "The scholarship from Nasir Group changed my life. I was able to complete my education and now I'm working as a teacher, helping other children in my community. Their commitment to education is truly inspiring."
+                    </div>
+                    <div class="testimonial-author">- Rashida Khatun, Scholarship Recipient</div>
+                </div>
+                
+                <div class="testimonial">
+                    <div class="testimonial-quote">
+                        "When my child was born with complications, the Nasiruddin Biswas Mother and Child Hospital provided excellent care without any cost. Their healthcare services are a blessing for poor families like ours."
+                    </div>
+                    <div class="testimonial-author">- Abdul Karim, Community Member</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Download Section -->
+        <section class="download-section">
+            <div class="container">
+                <h2 class="section-title">CSR Reports & Resources</h2>
+                <p>Download our comprehensive CSR reports and learn more about our social responsibility initiatives.</p>
+                
+                <div class="download-buttons">
+                    <a href="#" class="download-btn">
+                        <span>📄</span>
+                        Annual CSR Report 2024
+                    </a>
+                    <a href="#" class="download-btn">
+                        <span>📊</span>
+                        Sustainability Report 2024
+                    </a>
+                    <a href="#" class="download-btn">
+                        <span>📋</span>
+                        CSR Policy Document
+                    </a>
+                    <a href="#" class="download-btn">
+                        <span>📸</span>
+                        Photo Gallery Archive
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer" role="contentinfo">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3 data-translate="footer.company">Company</h3>
+                    <ul>
+                        <li><a href="about.html" data-translate="nav.about">About Us</a></li>
+                        <li><a href="business-divisions.html" data-translate="nav.divisions">Business Divisions</a></li>
+                        <li><a href="csr.html" data-translate="nav.csr">CSR & Sustainability</a></li>
+                        <li><a href="careers.html" data-translate="nav.careers">Careers</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3 data-translate="footer.products">Products</h3>
+                    <ul>
+                        <li><a href="products.html#glass" data-translate="divisions.glass">Glass Products</a></li>
+                        <li><a href="products.html#melamine" data-translate="divisions.melamine">Melamine Tableware</a></li>
+                        <li><a href="products.html#footwear" data-translate="divisions.footwear">Footwear</a></li>
+                        <li><a href="products.html#energy" data-translate="divisions.energy">Energy Solutions</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3 data-translate="footer.support">Support</h3>
+                    <ul>
+                        <li><a href="contact.html" data-translate="nav.contact">Contact Us</a></li>
+                        <li><a href="export.html" data-translate="nav.export">Export Inquiry</a></li>
+                        <li><a href="dealer.html">Become a Dealer</a></li>
+                        <li><a href="news.html">News & Media</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3 data-translate="footer.contact">Contact Info</h3>
+                    <p data-translate="footer.address">House #16, Road #09, Baridhara, Dhaka-1212</p>
+                    <p>Phone: <a href="tel:+8802222281849" data-translate="footer.phone">+880-2-222281849</a></p>
+                    <p>Email: <a href="mailto:admin@nasir-group.biz" data-translate="footer.email">admin@nasir-group.biz</a></p>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p data-translate="footer.copyright">© 2025 Nasir Group of Industries. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button class="back-to-top" aria-label="Back to top">↑</button>
+
+    <!-- Scripts -->
+    <script src="js/main.js"></script>
+</body>
+</html>

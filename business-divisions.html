@@ -1,0 +1,568 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Explore Nasir Group's 15+ business divisions including glass manufacturing, melamine tableware, footwear, tobacco, and more across Bangladesh.">
+    <meta name="keywords" content="Nasir Group divisions, Bangladesh manufacturing companies, float glass, melamine, Jump Keds, tobacco industries">
+    <title>Business Divisions - Nasir Group of Industries</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .division-card {
+            background: var(--white);
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            padding: 2rem;
+            transition: var(--transition);
+            border-left: 4px solid var(--primary-color);
+        }
+        
+        .division-card:hover {
+            box-shadow: var(--shadow-hover);
+            transform: translateY(-5px);
+        }
+        
+        .division-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+        
+        .division-icon {
+            font-size: 2rem;
+            width: 60px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--light-gray);
+            border-radius: 50%;
+        }
+        
+        .division-title {
+            margin: 0;
+            color: var(--primary-color);
+        }
+        
+        .division-location {
+            color: var(--secondary-color);
+            font-weight: 500;
+            margin-bottom: 0.5rem;
+        }
+        
+        .division-capacity {
+            background: var(--accent-color);
+            color: var(--white);
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.875rem;
+            font-weight: 500;
+            display: inline-block;
+            margin-bottom: 1rem;
+        }
+        
+        .division-description {
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
+        }
+        
+        .filter-section {
+            background: var(--white);
+            padding: 2rem 0;
+            margin-bottom: 2rem;
+            box-shadow: var(--shadow);
+        }
+        
+        .filter-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        .filter-btn {
+            padding: 0.5rem 1rem;
+            border: 2px solid var(--border-color);
+            background: var(--white);
+            color: var(--text-color);
+            border-radius: 25px;
+            cursor: pointer;
+            transition: var(--transition);
+            font-weight: 500;
+        }
+        
+        .filter-btn:hover,
+        .filter-btn.active {
+            border-color: var(--primary-color);
+            background: var(--primary-color);
+            color: var(--white);
+        }
+        
+        .search-box {
+            max-width: 400px;
+            margin: 0 auto 2rem;
+            position: relative;
+        }
+        
+        .search-input {
+            width: 100%;
+            padding: 1rem;
+            border: 2px solid var(--border-color);
+            border-radius: var(--border-radius);
+            font-size: 1rem;
+        }
+        
+        .search-input:focus {
+            border-color: var(--primary-color);
+            outline: none;
+        }
+        
+        @media (max-width: 768px) {
+            .filter-buttons {
+                justify-content: flex-start;
+                overflow-x: auto;
+                padding-bottom: 1rem;
+            }
+            
+            .filter-btn {
+                white-space: nowrap;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Skip Links -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    
+    <!-- Header -->
+    <header class="header" role="banner">
+        <nav class="navbar container" role="navigation" aria-label="Main navigation">
+            <a href="index.html" class="logo" data-translate="company.name">Nasir Group of Industries</a>
+            
+            <ul class="nav-menu" role="menubar">
+                <li role="none"><a href="index.html" class="nav-link" role="menuitem" data-translate="nav.home">Home</a></li>
+                <li role="none"><a href="about.html" class="nav-link" role="menuitem" data-translate="nav.about">About Us</a></li>
+                <li role="none"><a href="business-divisions.html" class="nav-link active" role="menuitem" data-translate="nav.divisions">Business Divisions</a></li>
+                <li role="none"><a href="products.html" class="nav-link" role="menuitem" data-translate="nav.products">Products</a></li>
+                <li role="none" class="nav-dropdown">
+                    <a href="#" class="nav-link" role="menuitem">Corporate <span class="dropdown-arrow">▼</span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="export.html" class="nav-link" data-translate="nav.export">Export & International</a></li>
+                        <li><a href="csr.html" class="nav-link" data-translate="nav.csr">CSR & Sustainability</a></li>
+                        <li><a href="careers.html" class="nav-link" data-translate="nav.careers">Careers</a></li>
+                    </ul>
+                </li>
+                <li role="none"><a href="contact.html" class="nav-link" role="menuitem" data-translate="nav.contact">Contact Us</a></li>
+            </ul>
+            
+            <div class="nav-actions">
+                <button class="lang-toggle" aria-label="Switch language">বাংলা</button>
+                <a href="contact.html" class="btn btn-primary" data-translate="buttons.request_quote">Request Quote</a>
+            </div>
+            
+            <button class="mobile-menu-toggle" aria-label="Toggle mobile menu" aria-expanded="false">☰</button>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main id="main-content">
+        <!-- Page Header -->
+        <section class="hero" style="padding: 2rem 0;">
+            <div class="container">
+                <h1>Our Business Divisions</h1>
+                <p class="hero-subtitle">15+ Manufacturing Companies Across Bangladesh</p>
+            </div>
+        </section>
+
+        <!-- Filter Section -->
+        <section class="filter-section">
+            <div class="container">
+                <div class="search-box">
+                    <input type="text" class="search-input" placeholder="Search divisions..." id="divisionSearch">
+                </div>
+                
+                <div class="filter-buttons">
+                    <button class="filter-btn active" data-filter="all">All Divisions</button>
+                    <button class="filter-btn" data-filter="glass">Glass & Ceramics</button>
+                    <button class="filter-btn" data-filter="consumer">Consumer Products</button>
+                    <button class="filter-btn" data-filter="tobacco">Tobacco</button>
+                    <button class="filter-btn" data-filter="packaging">Packaging</button>
+                    <button class="filter-btn" data-filter="industrial">Industrial</button>
+                    <button class="filter-btn" data-filter="automotive">Automotive</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Divisions Grid -->
+        <section class="section">
+            <div class="container">
+                <div class="grid grid-2" id="divisionsGrid">
+                    
+                    <!-- Nasir Glass Industries Limited -->
+                    <div class="division-card" data-category="glass" id="ngil">
+                        <div class="division-header">
+                            <div class="division-icon">🏭</div>
+                            <div>
+                                <h3 class="division-title">Nasir Glass Industries Limited (NGIL)</h3>
+                                <div class="division-location">📍 Gazipur</div>
+                            </div>
+                        </div>
+                        <div class="division-capacity">100,000 MT/year float glass</div>
+                        <p class="division-description">
+                            Established in 2005, NGIL is Bangladesh's leading float glass manufacturer with 40-60% market share. 
+                            Located on 23 acres in Gazipur with over 500,000 sq ft built-up area.
+                        </p>
+                        <a href="#" class="btn btn-outline" data-translate="buttons.learn_more">Learn More</a>
+                    </div>
+
+                    <!-- Nasir Float Glass Industries -->
+                    <div class="division-card" data-category="glass" id="nfgil">
+                        <div class="division-header">
+                            <div class="division-icon">🏗️</div>
+                            <div>
+                                <h3 class="division-title">Nasir Float Glass Industries Ltd (NFGIL)</h3>
+                                <div class="division-location">📍 Tangail</div>
+                            </div>
+                        </div>
+                        <div class="division-capacity">600 tonnes/day capacity</div>
+                        <p class="division-description">
+                            Expansion facility established in 2018 on 200 acres. Combined with NGIL, produces 22,000 tonnes monthly. 
+                            Winner of Superbrands Bangladesh Award 2025-26.
+                        </p>
+                        <a href="#" class="btn btn-outline" data-translate="buttons.learn_more">Learn More</a>
+                    </div>
+
+                    <!-- Bangladesh Melamine Industries -->
+                    <div class="division-card" data-category="consumer" id="bmil">
+                        <div class="division-header">
+                            <div class="division-icon">🍽️</div>
+                            <div>
+                                <h3 class="division-title">Bangladesh Melamine Industries Ltd (BMIL)</h3>
+                                <div class="division-location">📍 Narayanganj</div>
+                            </div>
+                        </div>
+                        <div class="division-capacity">#2 market position</div>
+                        <p class="division-description">
+                            Pioneer melamine manufacturer since 1985 with 1,500 employees. Produces oval dishes, bowls, plates, 
+                            tumblers, and gift sets. Exports to 18+ countries.
+                        </p>
+                        <a href="#" class="btn btn-outline" data-translate="buttons.learn_more">Learn More</a>
+                    </div>
+
+                    <!-- Bangladesh Footwear Industries -->
+                    <div class="division-card" data-category="consumer" id="bfil">
+                        <div class="division-header">
+                            <div class="division-icon">👟</div>
+                            <div>
+                                <h3 class="division-title">Bangladesh Footwear Industries Limited (BFIL)</h3>
+                                <div class="division-location">📍 Narayanganj</div>
+                            </div>
+                        </div>
+                        <div class="division-capacity">Jump Keds brand</div>
+                        <p class="division-description">
+                            Established in 1997 with 2,000 employees. Bangladesh's #1 footwear brand producing gents, ladies, 
+                            and kids shoes using best quality EVA & PVC materials.
+                        </p>
+                        <a href="#" class="btn btn-outline" data-translate="buttons.learn_more">Learn More</a>
+                    </div>
+
+                    <!-- Nasir Tobacco Industries -->
+                    <div class="division-card" data-category="tobacco" id="ntil">
+                        <div class="division-header">
+                            <div class="division-icon">🚬</div>
+                            <div>
+                                <h3 class="division-title">Nasir Tobacco Industries Ltd (NTIL)</h3>
+                                <div class="division-location">📍 Kushtia</div>
+                            </div>
+                        </div>
+                        <div class="division-capacity">4th largest manufacturer</div>
+                        <p class="division-description">
+                            Commercial production since 1997 with 300 factory and 1,700 market employees. 
+                            Brands include Nasir Gold, Asia, and Top Ten cigarettes.
+                        </p>
+                        <a href="#" class="btn btn-outline" data-translate="buttons.learn_more">Learn More</a>
+                    </div>
+
+                    <!-- Nasir Energy Saving Lamp Industries -->
+                    <div class="division-card" data-category="industrial" id="neslil">
+                        <div class="division-header">
+                            <div class="division-icon">💡</div>
+                            <div>
+                                <h3 class="division-title">Nasir Energy Saving Lamp Industries Ltd</h3>
+                                <div class="division-location">📍 Tangail</div>
+                            </div>
+                        </div>
+                        <div class="division-capacity">40,000 lamps/day</div>
+                        <p class="division-description">
+                            First company in Bangladesh to manufacture CFL lighting from basic components. 
+                            Produces Spiral, Lotus, and U-type CFL lamps from 5W to 65W.
+                        </p>
+                        <a href="#" class="btn btn-outline" data-translate="buttons.learn_more">Learn More</a>
+                    </div>
+
+                    <!-- Nasir Glassware & Tube Industries -->
+                    <div class="division-card" data-category="glass" id="ngtil">
+                        <div class="division-header">
+                            <div class="division-icon">🥃</div>
+                            <div>
+                                <h3 class="division-title">Nasir Glassware & Tube Industries Limited</h3>
+                                <div class="division-location">📍 Tangail</div>
+                            </div>
+                        </div>
+                        <div class="division-capacity">100 tonnes/day glassware</div>
+                        <p class="division-description">
+                            Produces glass tableware and tubing for fluorescent lamps. Daily capacity includes 
+                            100 tonnes glassware and 20 tonnes tubing with diameter range 6-40mm.
+                        </p>
+                        <a href="#" class="btn btn-outline" data-translate="buttons.learn_more">Learn More</a>
+                    </div>
+
+                    <!-- Nasir Printing & Packaging -->
+                    <div class="division-card" data-category="packaging" id="nppil">
+                        <div class="division-header">
+                            <div class="division-icon">📦</div>
+                            <div>
+                                <h3 class="division-title">Nasir Printing & Packaging Industries Ltd</h3>
+                                <div class="division-location">📍 Tangail</div>
+                            </div>
+                        </div>
+                        <div class="division-capacity">30 million boxes/year</div>
+                        <p class="division-description">
+                            Established 2006-2007, produces corrugated paper boards (2-ply to 5-ply) with up to 3-color printing 
+                            for various industries including export quality cartons.
+                        </p>
+                        <a href="#" class="btn btn-outline" data-translate="buttons.learn_more">Learn More</a>
+                    </div>
+
+                    <!-- Nasir Jute Industries -->
+                    <div class="division-card" data-category="industrial" id="njil">
+                        <div class="division-header">
+                            <div class="division-icon">🌾</div>
+                            <div>
+                                <h3 class="division-title">Nasir Jute Industries Limited (NJIL)</h3>
+                                <div class="division-location">📍 Kushtia</div>
+                            </div>
+                        </div>
+                        <div class="division-capacity">100 MT/day capacity</div>
+                        <p class="division-description">
+                            100% export-oriented jute yarn/twine and jute goods manufacturing with 7,872 spindles and 56 looms. 
+                            Exports worldwide, particularly to China, UAE, and India.
+                        </p>
+                        <a href="#" class="btn btn-outline" data-translate="buttons.learn_more">Learn More</a>
+                    </div>
+
+                    <!-- Nasir Starch Oil & Animal Feed -->
+                    <div class="division-card" data-category="industrial" id="nsaoafil">
+                        <div class="division-header">
+                            <div class="division-icon">🌽</div>
+                            <div>
+                                <h3 class="division-title">Nasir Starch, Oil & Animal Feed Industries Ltd</h3>
+                                <div class="division-location">📍 Tangail</div>
+                            </div>
+                        </div>
+                        <div class="division-capacity">Corn-based products</div>
+                        <p class="division-description">
+                            Established 2015, produces industrial corn starch, corn germ meal, fiber, and animal feed 
+                            for food, textiles, paper, and industrial applications.
+                        </p>
+                        <a href="#" class="btn btn-outline" data-translate="buttons.learn_more">Learn More</a>
+                    </div>
+
+                    <!-- Nasir Opal Glass & Crockeries -->
+                    <div class="division-card" data-category="glass" id="nogcil">
+                        <div class="division-header">
+                            <div class="division-icon">🍽️</div>
+                            <div>
+                                <h3 class="division-title">Nasir Opal Glass & Crockeries Industries Ltd</h3>
+                                <div class="division-location">📍 Tangail</div>
+                            </div>
+                        </div>
+                        <div class="division-capacity">95 tonnes furnace</div>
+                        <p class="division-description">
+                            Established 2017, produces opal glass tableware with smooth, white, opaque finish and thermal-shock resistance. 
+                            Products include plates, bowls, cups, and serving trays.
+                        </p>
+                        <a href="#" class="btn btn-outline" data-translate="buttons.learn_more">Learn More</a>
+                    </div>
+
+                    <!-- Nasir Syntax Aluminium -->
+                    <div class="division-card" data-category="industrial" id="nsail">
+                        <div class="division-header">
+                            <div class="division-icon">🔧</div>
+                            <div>
+                                <h3 class="division-title">Nasir Syntax Aluminium Industries Limited</h3>
+                                <div class="division-location">📍 Tangail</div>
+                            </div>
+                        </div>
+                        <div class="division-capacity">Advanced extrusion</div>
+                        <p class="division-description">
+                            Launched 2025, modern facility producing world-class aluminium profiles and extrusion solutions. 
+                            ASTM compliant with 100+ nationwide dealers and 250+ skilled professionals.
+                        </p>
+                        <a href="#" class="btn btn-outline" data-translate="buttons.learn_more">Learn More</a>
+                    </div>
+
+                    <!-- Nasir Syntax Motors -->
+                    <div class="division-card" data-category="automotive" id="nsml">
+                        <div class="division-header">
+                            <div class="division-icon">🚗</div>
+                            <div>
+                                <h3 class="division-title">Nasir Syntax Motors Ltd (NSML)</h3>
+                                <div class="division-location">📍 Tangail</div>
+                            </div>
+                        </div>
+                        <div class="division-capacity">30,000 EV units/year</div>
+                        <p class="division-description">
+                            80,000 sq ft facility launching 2025-2026. Annual capacity of 15,000 electric two-wheelers and 
+                            15,000 electric three-wheelers with zero carbon emissions.
+                        </p>
+                        <a href="#" class="btn btn-outline" data-translate="buttons.learn_more">Learn More</a>
+                    </div>
+
+                    <!-- Nasir Biri Industries -->
+                    <div class="division-card" data-category="tobacco" id="nbil">
+                        <div class="division-header">
+                            <div class="division-icon">🚬</div>
+                            <div>
+                                <h3 class="division-title">Nasir Biri Industries Ltd (NBIL)</h3>
+                                <div class="division-location">📍 Kushtia</div>
+                            </div>
+                        </div>
+                        <div class="division-capacity">10,000+ workers</div>
+                        <p class="division-description">
+                            The founding company established 1977. Hand-made cigarette (Nasir Biri) production with 
+                            huge domestic market presence and 60% achieved capacity.
+                        </p>
+                        <a href="#" class="btn btn-outline" data-translate="buttons.learn_more">Learn More</a>
+                    </div>
+
+                    <!-- Biswas Printing & Packaging -->
+                    <div class="division-card" data-category="packaging" id="bppil">
+                        <div class="division-header">
+                            <div class="division-icon">🖨️</div>
+                            <div>
+                                <h3 class="division-title">Biswas Printing & Packaging Industries Ltd</h3>
+                                <div class="division-location">📍 Kushtia</div>
+                            </div>
+                        </div>
+                        <div class="division-capacity">Multi-color printing</div>
+                        <p class="division-description">
+                            Established 1977 with 300 employees. Specializes in multi-color printing and carton making 
+                            for medicines, foods, cosmetics, and various export industries.
+                        </p>
+                        <a href="#" class="btn btn-outline" data-translate="buttons.learn_more">Learn More</a>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer" role="contentinfo">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3 data-translate="footer.company">Company</h3>
+                    <ul>
+                        <li><a href="about.html" data-translate="nav.about">About Us</a></li>
+                        <li><a href="business-divisions.html" data-translate="nav.divisions">Business Divisions</a></li>
+                        <li><a href="csr.html" data-translate="nav.csr">CSR & Sustainability</a></li>
+                        <li><a href="careers.html" data-translate="nav.careers">Careers</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3 data-translate="footer.products">Products</h3>
+                    <ul>
+                        <li><a href="products.html#glass" data-translate="divisions.glass">Glass Products</a></li>
+                        <li><a href="products.html#melamine" data-translate="divisions.melamine">Melamine Tableware</a></li>
+                        <li><a href="products.html#footwear" data-translate="divisions.footwear">Footwear</a></li>
+                        <li><a href="products.html#energy" data-translate="divisions.energy">Energy Solutions</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3 data-translate="footer.support">Support</h3>
+                    <ul>
+                        <li><a href="contact.html" data-translate="nav.contact">Contact Us</a></li>
+                        <li><a href="export.html" data-translate="nav.export">Export Inquiry</a></li>
+                        <li><a href="dealer.html">Become a Dealer</a></li>
+                        <li><a href="news.html">News & Media</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3 data-translate="footer.contact">Contact Info</h3>
+                    <p data-translate="footer.address">House #16, Road #09, Baridhara, Dhaka-1212</p>
+                    <p>Phone: <a href="tel:+8802222281849" data-translate="footer.phone">+880-2-222281849</a></p>
+                    <p>Email: <a href="mailto:admin@nasir-group.biz" data-translate="footer.email">admin@nasir-group.biz</a></p>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p data-translate="footer.copyright">© 2025 Nasir Group of Industries. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button class="back-to-top" aria-label="Back to top">↑</button>
+
+    <!-- Scripts -->
+    <script src="js/main.js"></script>
+    <script>
+        // Division filtering and search functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const filterButtons = document.querySelectorAll('.filter-btn');
+            const searchInput = document.getElementById('divisionSearch');
+            const divisionsGrid = document.getElementById('divisionsGrid');
+            const divisionCards = document.querySelectorAll('.division-card');
+
+            // Filter functionality
+            filterButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    // Update active button
+                    filterButtons.forEach(btn => btn.classList.remove('active'));
+                    button.classList.add('active');
+                    
+                    const filter = button.getAttribute('data-filter');
+                    filterDivisions(filter);
+                });
+            });
+
+            // Search functionality
+            searchInput.addEventListener('input', (e) => {
+                const searchTerm = e.target.value.toLowerCase();
+                searchDivisions(searchTerm);
+            });
+
+            function filterDivisions(category) {
+                divisionCards.forEach(card => {
+                    if (category === 'all' || card.getAttribute('data-category') === category) {
+                        card.style.display = 'block';
+                        card.classList.add('fade-in-up');
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+            }
+
+            function searchDivisions(searchTerm) {
+                divisionCards.forEach(card => {
+                    const title = card.querySelector('.division-title').textContent.toLowerCase();
+                    const description = card.querySelector('.division-description').textContent.toLowerCase();
+                    const location = card.querySelector('.division-location').textContent.toLowerCase();
+                    
+                    if (title.includes(searchTerm) || description.includes(searchTerm) || location.includes(searchTerm)) {
+                        card.style.display = 'block';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,85 @@
+{
+  "nav": {
+    "home": "Home",
+    "about": "About Us",
+    "divisions": "Business Divisions",
+    "products": "Products",
+    "export": "Export & International",
+    "csr": "CSR & Sustainability",
+    "careers": "Careers",
+    "contact": "Contact Us"
+  },
+  "hero": {
+    "title": "48 Years of Manufacturing Excellence Since 1977",
+    "subtitle": "Tk 4,000 Crore Annual Turnover",
+    "stats": {
+      "facilities": "12+ Manufacturing Facilities Across Bangladesh",
+      "employees": "5,000+ Employees",
+      "countries": "Exporting to 25+ Countries"
+    },
+    "cta": {
+      "products": "Explore Products",
+      "contact": "Contact Us"
+    }
+  },
+  "sections": {
+    "divisions": "Our Business Divisions",
+    "products": "Featured Products",
+    "stats": "Company Statistics",
+    "awards": "Recent Awards",
+    "csr": "CSR Highlights"
+  },
+  "stats": {
+    "years": "Years",
+    "turnover": "Crore Turnover",
+    "facilities": "Facilities",
+    "employees": "Employees",
+    "countries": "Export Countries"
+  },
+  "divisions": {
+    "glass": "Glass Manufacturing",
+    "melamine": "Melamine Tableware",
+    "footwear": "Footwear (Jump Keds)",
+    "tobacco": "Tobacco Products",
+    "packaging": "Packaging Solutions",
+    "energy": "Energy Solutions",
+    "jute": "Jute Products",
+    "aluminium": "Aluminium Products",
+    "automotive": "Electric Vehicles"
+  },
+  "footer": {
+    "company": "Company",
+    "products": "Products",
+    "support": "Support",
+    "contact": "Contact Info",
+    "address": "House #16, Road #09, Baridhara, Dhaka-1212",
+    "phone": "+880-2-222281849",
+    "email": "admin@nasir-group.biz",
+    "copyright": "© 2025 Nasir Group of Industries. All rights reserved."
+  },
+  "buttons": {
+    "learn_more": "Learn More",
+    "request_quote": "Request Quote",
+    "apply_now": "Apply Now",
+    "read_more": "Read More",
+    "download": "Download",
+    "submit": "Submit",
+    "send": "Send Message"
+  },
+  "forms": {
+    "name": "Full Name",
+    "email": "Email Address",
+    "phone": "Phone Number",
+    "company": "Company Name",
+    "message": "Message",
+    "subject": "Subject",
+    "inquiry_type": "Inquiry Type",
+    "product_interest": "Product Interest"
+  },
+  "company": {
+    "name": "Nasir Group of Industries",
+    "tagline": "Manufacturing Excellence Since 1977",
+    "mission": "Continuous prosperity through strategic partnerships and excellence.",
+    "vision": "To revolutionize manufacturing in Bangladesh with quality and sustainability."
+  }
+}

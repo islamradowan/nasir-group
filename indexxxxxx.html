@@ -1,0 +1,414 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Nasir Group of Industries</title>
+
+  <!-- Inter font -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CSS (CDN for prototype/demo) -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <style>
+    :root{
+      --brand: #1e4f77;       /* deep steel blue */
+      --accent: #4682B4;      /* steel blue CTA */
+      --muted: #7B7B7A;       /* industrial gray */
+      --base-bg: #F8F8F8;     /* off-white canvas */
+    }
+    body { font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial; background: var(--base-bg); color: #111827; }
+    .hero-bg {
+      /* subtle industrial-looking diagonal overlay using linear-gradient over a neutral texture color */
+      background: linear-gradient(0deg, rgba(6,21,35,0.55), rgba(6,21,35,0.35)), linear-gradient(135deg, rgba(20,60,90,0.15) 0%, rgba(255,255,255,0.02) 100%);
+      background-blend-mode: overlay, normal;
+    }
+    .card-focus:focus { outline: 3px solid rgba(70,130,180,0.12); outline-offset: 6px; }
+    /* subtle rounded image placeholder */
+    .img-placeholder { border-radius: 8px; overflow: hidden; display: block; }
+    /* smooth reveal */
+    .reveal { opacity: 0; transform: translateY(8px); transition: all .5s ease; }
+    .reveal.show { opacity: 1; transform: translateY(0); }
+    /* small helper for hero height */
+    @media (min-width: 1024px) {
+      .hero-min-h { min-height: 56vh; }
+    }
+  </style>
+</head>
+<body class="antialiased">
+
+  <!-- Header -->
+  <header class="fixed inset-x-0 top-0 z-40 bg-white/95 backdrop-blur-sm border-b">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8">
+      <div class="flex items-center justify-between h-16">
+        <div class="flex items-center gap-3">
+          <!-- simple svg logo -->
+          <div class="flex items-center justify-center w-10 h-10 rounded-md bg-[var(--brand)]/10">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" aria-hidden>
+              <rect x="2" y="2" width="20" height="20" rx="4" fill="var(--brand)"></rect>
+              <path d="M6 12h12" stroke="#fff" stroke-width="1.4" stroke-linecap="round"></path>
+            </svg>
+          </div>
+          <div>
+            <div class="text-lg font-semibold" style="color:var(--brand)">Nasir Group</div>
+            <div class="text-xs text-slate-500">Diversified Industrial Group</div>
+          </div>
+        </div>
+
+        <!-- nav (desktop) -->
+        <nav class="hidden md:flex items-center gap-6 text-sm">
+          <a href="#home" class="text-slate-700 hover:text-[var(--brand)] nav-link">Home</a>
+          <a href="#vision" class="text-slate-700 hover:text-[var(--brand)] nav-link">Group Vision</a>
+          <a href="#divisions" class="text-slate-700 hover:text-[var(--brand)] nav-link">Divisions</a>
+          <a href="#contact" class="text-slate-700 hover:text-[var(--brand)] nav-link">Contact Us</a>
+        </nav>
+
+        <!-- mobile menu button -->
+        <div class="md:hidden">
+          <button id="mobileToggle" aria-label="Open menu" class="p-2 rounded-md bg-slate-100">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path stroke="#0f172a" stroke-width="1.6" stroke-linecap="round" d="M4 6h16M4 12h16M4 18h16"/></svg>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- mobile nav -->
+    <div id="mobileNav" class="md:hidden hidden border-t bg-white">
+      <div class="px-6 py-4 flex flex-col gap-3">
+        <a href="#home" class="text-slate-700 nav-link">Home</a>
+        <a href="#vision" class="text-slate-700 nav-link">Group Vision</a>
+        <a href="#divisions" class="text-slate-700 nav-link">Divisions</a>
+        <a href="#contact" class="text-slate-700 nav-link">Contact Us</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- MAIN -->
+  <main class="pt-16">
+
+    <!-- HERO -->
+    <section id="home" class="hero-bg hero-min-h relative flex items-center" aria-label="Nasir Group hero">
+      <div class="absolute inset-0" style="background-image: linear-gradient(180deg, rgba(6,21,35,0.35), rgba(6,21,35,0.35));"></div>
+      <div class="max-w-7xl mx-auto px-6 lg:px-8 relative z-10">
+        <div class="grid grid-cols-1 lg:grid-cols-2 items-center gap-12 py-20 lg:py-28">
+          <div class="text-white">
+            <h1 class="text-3xl sm:text-4xl md:text-5xl font-extrabold leading-tight" style="text-shadow:0 6px 18px rgba(3,7,18,0.45);">
+              Nasir Group of Industries: A Legacy of Excellence
+            </h1>
+            <p class="mt-4 max-w-xl text-lg opacity-90">Pioneering industrial growth and innovation. Global Standards, Local Impact — building products and solutions that create national value.</p>
+
+            <div class="mt-8 flex flex-col sm:flex-row gap-3">
+              <a href="#divisions" class="inline-flex items-center justify-center px-5 py-3 rounded-md bg-[var(--accent)] text-white font-medium shadow hover:bg-[#3b6f9b]">Explore Our Divisions</a>
+              <a href="#vision" class="inline-flex items-center justify-center px-5 py-3 rounded-md border border-white/30 text-white font-medium hover:bg-white/5">Group Vision</a>
+            </div>
+          </div>
+
+          <!-- hero visual placeholder (large) -->
+          <div class="hidden lg:block">
+            <div class="rounded-xl overflow-hidden shadow-lg">
+              <!-- geometric SVG placeholder to mimic photo -->
+              <svg width="100%" height="320" viewBox="0 0 1200 600" class="block">
+                <defs>
+                  <linearGradient id="g1" x1="0" x2="1">
+                    <stop offset="0" stop-color="#1e4f77" stop-opacity="0.8"/>
+                    <stop offset="1" stop-color="#7fb0d6" stop-opacity="0.2"/>
+                  </linearGradient>
+                </defs>
+                <rect width="1200" height="600" fill="url(#g1)"></rect>
+                <g fill="rgba(255,255,255,0.06)">
+                  <rect x="40" y="80" width="1120" height="120" rx="8"></rect>
+                  <rect x="160" y="240" width="880" height="220" rx="8"></rect>
+                </g>
+              </svg>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- diagonal accent -->
+      <div class="absolute bottom-0 left-0 right-0 h-12 bg-[var(--base-bg)] -translate-y-1"></div>
+    </section>
+
+    <!-- MD MESSAGE -->
+    <section id="vision" class="py-16 lg:py-20">
+      <div class="max-w-7xl mx-auto px-6 lg:px-8">
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 items-start">
+          <div class="lg:col-span-2 reveal" id="mdBlock">
+            <div class="bg-white rounded-xl p-6 shadow">
+              <div class="flex gap-6 items-start">
+                <!-- portrait placeholder -->
+                <div class="w-40 h-40 rounded-lg overflow-hidden bg-slate-100 flex items-center justify-center">
+                  <!-- placeholder headshot svg -->
+                  <svg width="120" height="120" viewBox="0 0 24 24" fill="none">
+                    <rect width="24" height="24" rx="4" fill="#e6eef6"/>
+                    <circle cx="12" cy="9" r="3" fill="#bfd9ee"></circle>
+                    <path d="M6 19c0-3 4.5-4 6-4s6 1 6 4" fill="#bfd9ee"></path>
+                  </svg>
+                </div>
+
+                <div>
+                  <h3 class="text-2xl font-semibold" style="color:var(--brand)">Message from the MD</h3>
+                  <p class="mt-3 text-slate-700 leading-relaxed">"Yesteryears’ dreamers are today’s doers." The group's vision emphasises quality, employment generation, and national benefit. We take pride in our history in plastics, melamine, footwear, float glass, and new ventures like high-grade glass tableware and glass tubing.</p>
+
+                  <p class="mt-4 text-sm text-slate-500">A. K. M. Nasir Uddin<br><span class="font-medium text-slate-700">Managing Director, Nasir Group</span></p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <aside class="bg-[var(--base-bg)] p-6 rounded-xl text-sm text-slate-700 reveal" id="visionAside">
+            <div class="font-semibold text-slate-900">Key Highlights</div>
+            <ul class="mt-4 space-y-2">
+              <li>Import substitution industries with national economic impact</li>
+              <li>Use of best global raw materials & machinery</li>
+              <li>Direct employment ~1,000 people; strong backward linkages</li>
+              <li>New ventures: high-grade glass tableware, glass tubing</li>
+            </ul>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <!-- DIVISIONS GRID -->
+    <section id="divisions" class="py-16 lg:py-20 bg-[var(--base-bg)]">
+      <div class="max-w-7xl mx-auto px-6 lg:px-8">
+        <div class="text-center">
+          <h2 class="text-2xl md:text-3xl font-bold" style="color:var(--brand)">Our Divisions</h2>
+          <p class="mt-3 text-slate-600 max-w-2xl mx-auto">We are a diversified conglomerate with a strong presence in various key sectors of the economy.</p>
+        </div>
+
+        <div class="mt-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <!-- Repeatable cards - 10 divisions; using placeholders -->
+          <!-- Card 1: Nasir Glass -->
+          <article tabindex="0" class="card-focus bg-white rounded-xl p-4 shadow hover:shadow-md transition reveal">
+            <div class="img-placeholder w-full h-40 bg-gradient-to-br from-slate-100 to-slate-200 rounded-md overflow-hidden">
+              <!-- small SVG glass-like visual -->
+              <svg width="100%" height="100%" viewBox="0 0 120 60" preserveAspectRatio="none">
+                <rect width="120" height="60" fill="url(#g1)"></rect>
+                <defs>
+                  <linearGradient id="g1" x1="0" x2="1"><stop offset="0" stop-color="#eaf5fb"/><stop offset="1" stop-color="#dfeef8"/></linearGradient>
+                </defs>
+              </svg>
+            </div>
+            <h4 class="mt-4 font-semibold">Nasir Glass Industries Ltd. (NGIL)</h4>
+            <p class="mt-1 text-sm text-slate-600">Manufacturing high-quality float glass products; clear, tinted, tempered sheets.</p>
+          </article>
+
+          <!-- Card 2: Melamine -->
+          <article tabindex="0" class="card-focus bg-white rounded-xl p-4 shadow hover:shadow-md transition reveal">
+            <div class="img-placeholder w-full h-40 bg-gradient-to-br from-amber-50 to-amber-100 rounded-md overflow-hidden"></div>
+            <h4 class="mt-4 font-semibold">Bangladesh Melamine Industries Ltd. (BMIL)</h4>
+            <p class="mt-1 text-sm text-slate-600">Pioneer in melamine tableware since 1985; export-quality dishes, bowls, mugs, and gift sets.</p>
+          </article>
+
+          <!-- Card 3: Printing & Packaging -->
+          <article tabindex="0" class="card-focus bg-white rounded-xl p-4 shadow hover:shadow-md transition reveal">
+            <div class="img-placeholder w-full h-40 bg-gradient-to-br from-slate-50 to-slate-100 rounded-md overflow-hidden"></div>
+            <h4 class="mt-4 font-semibold">Nasir Printing & Packaging Ind. Ltd. (NPPIL)</h4>
+            <p class="mt-1 text-sm text-slate-600">Corrugated boards and carton-making for glassware, garments, food, and more.</p>
+          </article>
+
+          <!-- Card 4: Footwear -->
+          <article tabindex="0" class="card-focus bg-white rounded-xl p-4 shadow hover:shadow-md transition reveal">
+            <div class="img-placeholder w-full h-40 bg-gradient-to-br from-emerald-50 to-emerald-100 rounded-md overflow-hidden"></div>
+            <h4 class="mt-4 font-semibold">Bangladesh Footwear Industries Ltd. (BFIL)</h4>
+            <p class="mt-1 text-sm text-slate-600">Quality EVA & PVC footwear for men, women and children. Brand: Jump Keds.</p>
+          </article>
+
+          <!-- Card 5: Energy Saving Lamps (NESLIL) -->
+          <article tabindex="0" class="card-focus bg-white rounded-xl p-4 shadow hover:shadow-md transition reveal">
+            <div class="img-placeholder w-full h-40 bg-gradient-to-br from-yellow-50 to-yellow-100 rounded-md overflow-hidden"></div>
+            <h4 class="mt-4 font-semibold">N. Energy Saving Lamp Ind. Ltd. (NESLIL)</h4>
+            <p class="mt-1 text-sm text-slate-600">Manufactures CFL & energy-saving lamps; capacity ~40,000 pcs/day.</p>
+          </article>
+
+          <!-- Card 6: Glassware & Tube (NGTIL) -->
+          <article tabindex="0" class="card-focus bg-white rounded-xl p-4 shadow hover:shadow-md transition reveal">
+            <div class="img-placeholder w-full h-40 bg-gradient-to-br from-slate-100 to-slate-200 rounded-md overflow-hidden"></div>
+            <h4 class="mt-4 font-semibold">N. Glassware & Tube Ind. Ltd. (NGTIL)</h4>
+            <p class="mt-1 text-sm text-slate-600">High-grade crystal white glass tableware and glass tubing for lamps.</p>
+          </article>
+
+          <!-- Card 7: Nasir Tobacco (NTIL) -->
+          <article tabindex="0" class="card-focus bg-white rounded-xl p-4 shadow hover:shadow-md transition reveal">
+            <div class="img-placeholder w-full h-40 bg-gradient-to-br from-slate-50 to-slate-100 rounded-md overflow-hidden"></div>
+            <h4 class="mt-4 font-semibold">Nasir Tobacco Industries Ltd. (NTIL)</h4>
+            <p class="mt-1 text-sm text-slate-600">Cigarette and tobacco production; notable export presence.</p>
+          </article>
+
+          <!-- Card 8: Leaf Tobacco (NLTIL) -->
+          <article tabindex="0" class="card-focus bg-white rounded-xl p-4 shadow hover:shadow-md transition reveal">
+            <div class="img-placeholder w-full h-40 bg-gradient-to-br from-yellow-50 to-amber-50 rounded-md overflow-hidden"></div>
+            <h4 class="mt-4 font-semibold">Nasir Leaf Tobacco Ind. Ltd. (NLTIL)</h4>
+            <p class="mt-1 text-sm text-slate-600">Grower, processor and exporter of Bangladeshi leaf tobacco varieties.</p>
+          </article>
+
+          <!-- Card 9: Nasir Biri (NBIL) -->
+          <article tabindex="0" class="card-focus bg-white rounded-xl p-4 shadow hover:shadow-md transition reveal">
+            <div class="img-placeholder w-full h-40 bg-gradient-to-br from-amber-50 to-amber-100 rounded-md overflow-hidden"></div>
+            <h4 class="mt-4 font-semibold">Nasir Biri Industries Ltd. (NBIL)</h4>
+            <p class="mt-1 text-sm text-slate-600">Established in 1977; manufactures handmade cigarettes with large domestic market.</p>
+          </article>
+
+          <!-- Card 10: Nasir Jute (NJIL) -->
+          <article tabindex="0" class="card-focus bg-white rounded-xl p-4 shadow hover:shadow-md transition reveal">
+            <div class="img-placeholder w-full h-40 bg-gradient-to-br from-green-50 to-green-100 rounded-md overflow-hidden"></div>
+            <h4 class="mt-4 font-semibold">Nasir Jute Industries Ltd. (NJIL)</h4>
+            <p class="mt-1 text-sm text-slate-600">Starting production of jute yarn/twine with large-scale capacity.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="py-16 lg:py-20">
+      <div class="max-w-7xl mx-auto px-6 lg:px-8">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+          <!-- Left: Form -->
+          <div class="bg-white rounded-xl p-6 shadow">
+            <h3 class="text-xl font-semibold" style="color:var(--brand)">Contact Us</h3>
+            <p class="mt-2 text-slate-600">We’re here to help. For export & partnership inquiries use the form below or email <span class="font-medium">export@nasir-group.biz</span>.</p>
+
+            <form id="contactForm" class="mt-6 space-y-4" novalidate>
+              <div>
+                <label for="name" class="sr-only">Name</label>
+                <input id="name" type="text" placeholder="Name" class="w-full border rounded-md px-3 py-2" required>
+              </div>
+              <div>
+                <label for="company" class="sr-only">Company</label>
+                <input id="company" type="text" placeholder="Company" class="w-full border rounded-md px-3 py-2">
+              </div>
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                <input id="email" type="email" placeholder="Email" class="w-full border rounded-md px-3 py-2" required>
+                <input id="country" type="text" placeholder="Country" class="w-full border rounded-md px-3 py-2">
+              </div>
+              <div>
+                <label for="type" class="sr-only">Inquiry Type</label>
+                <select id="type" class="w-full border rounded-md px-3 py-2">
+                  <option>General Inquiry</option>
+                  <option>Export & Partnerships</option>
+                  <option>Sales / Distribution</option>
+                  <option>Media / PR</option>
+                </select>
+              </div>
+              <div>
+                <label for="message" class="sr-only">Message</label>
+                <textarea id="message" rows="5" placeholder="Message" class="w-full border rounded-md px-3 py-2" required></textarea>
+              </div>
+
+              <div class="flex items-center gap-3">
+                <button type="submit" class="px-5 py-2 rounded-md bg-[var(--accent)] text-white font-medium">Send Message</button>
+                <button type="reset" class="px-5 py-2 rounded-md border">Reset</button>
+                <p id="formStatus" class="text-sm text-emerald-600 hidden">Message sent (demo)</p>
+              </div>
+            </form>
+          </div>
+
+          <!-- Right: Static details -->
+          <aside class="bg-[var(--base-bg)] rounded-xl p-6 flex flex-col gap-4">
+            <div>
+              <h4 class="font-semibold" style="color:var(--brand)">Head Office</h4>
+              <address class="not-italic mt-2 text-slate-700">House # 16, Road # 09, Baridhara, Dhaka-1212<br>Pragati Avenue area, Dhaka, Bangladesh</address>
+            </div>
+
+            <div>
+              <h4 class="font-semibold" style="color:var(--brand)">Global Export & Partnerships</h4>
+              <p class="mt-2 text-slate-700"><a href="mailto:export@nasir-group.biz" class="text-[var(--brand)]">export@nasir-group.biz</a></p>
+            </div>
+
+            <div>
+              <h4 class="font-semibold" style="color:var(--brand)">Telephone</h4>
+              <ul class="mt-2 text-slate-700 space-y-1 text-sm">
+                <li>+8802222281849</li>
+                <li>+8802222281859</li>
+                <li>+8802222281884</li>
+                <li>+88028832689</li>
+                <li>+88028832691</li>
+              </ul>
+            </div>
+
+            <div class="mt-4 text-sm text-slate-500">For international trade enquiries, please include company details, expected order volumes, and preferred logistics terms.</div>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-slate-900 text-white py-6">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8 text-center">
+      <div class="mb-2 font-medium">Nasir Group</div>
+      <div class="text-sm text-slate-300">© <span id="year"></span> Nasir Group of Industries. All rights reserved. | export@nasir-group.biz</div>
+    </div>
+  </footer>
+
+  <!-- Minimal JS for interactivity -->
+  <script>
+    (function(){
+      // mobile nav toggle
+      const mobileToggle = document.getElementById('mobileToggle');
+      const mobileNav = document.getElementById('mobileNav');
+      mobileToggle?.addEventListener('click', () => mobileNav.classList.toggle('hidden'));
+
+      // smooth scroll and nav behavior
+      document.querySelectorAll('.nav-link').forEach(a => {
+        a.addEventListener('click', (e) => {
+          const href = a.getAttribute('href');
+          if (href && href.startsWith('#')) {
+            e.preventDefault();
+            const target = document.querySelector(href);
+            if (target) {
+              target.scrollIntoView({behavior:'smooth', block:'start'});
+            }
+            // close mobile nav when link tapped
+            if (!mobileNav.classList.contains('hidden')) mobileNav.classList.add('hidden');
+          }
+        });
+      });
+
+      // contact form demo handling
+      const form = document.getElementById('contactForm');
+      const status = document.getElementById('formStatus');
+      form?.addEventListener('submit', function(e){
+        e.preventDefault();
+        const name = document.getElementById('name').value.trim();
+        const email = document.getElementById('email').value.trim();
+        const msg = document.getElementById('message').value.trim();
+        if (!name || !email || !msg) {
+          alert('Please fill the required fields (Name, Email, Message).');
+          return;
+        }
+        // simulate sending
+        setTimeout(() => {
+          form.reset();
+          status.classList.remove('hidden');
+          setTimeout(()=> status.classList.add('hidden'), 4000);
+          alert('Thank you — message submitted (demo).');
+        }, 400);
+      });
+
+      // reveal animations on scroll (basic)
+      const reveals = document.querySelectorAll('.reveal');
+      const revealOnScroll = () => {
+        const windowBottom = window.innerHeight;
+        reveals.forEach(el => {
+          const top = el.getBoundingClientRect().top;
+          if (top < windowBottom - 60) el.classList.add('show');
+        });
+      };
+      window.addEventListener('scroll', revealOnScroll);
+      window.addEventListener('load', () => {
+        revealOnScroll();
+        // set year
+        const y = new Date().getFullYear(); document.getElementById('year').textContent = y;
+      });
+
+      // keyboard accessibility: close mobile nav on ESC
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') mobileNav.classList.add('hidden');
+      });
+    })();
+  </script>
+</body>
+</html>

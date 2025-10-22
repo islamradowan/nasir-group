@@ -1,0 +1,600 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nasir Group - Industrial Excellence and National Contribution</title>
+    <!-- Load Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Load Inter Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+    <style>
+        /* Custom styles for the corporate aesthetic and Inter font */
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f9fafb; /* Light gray background */
+        }
+        .container-content {
+            min-height: calc(100vh - 80px - 120px); /* Screen height minus header and footer height */
+            padding-top: 80px; /* Offset for fixed header */
+        }
+        /* Custom colors based on instructions: Deep Blue and Emerald Green */
+        .bg-primary { background-color: #1a436a; } /* Deep Corporate Blue */
+        .text-primary { color: #1a436a; }
+        .bg-accent { background-color: #065f46; } /* Emerald Green */
+        .text-accent { color: #065f46; }
+        /* Simple SVG Placeholder Icon */
+        .placeholder-icon {
+            display: inline-block;
+            width: 48px;
+            height: 48px;
+            background-color: #d1d5db; /* Light gray base */
+            border-radius: 8px;
+        }
+    </style>
+</head>
+<body class="text-gray-800">
+
+    <!-- Sticky Navigation Header -->
+    <header class=" w-full bg-primary text-white shadow-lg z-50">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <h1 class="text-2xl font-bold tracking-tight">Nasir Group</h1>
+            
+            <!-- Desktop Navigation -->
+            <nav class="hidden md:flex space-x-6 font-medium">
+                <a href="#home" class="nav-link hover:text-accent transition duration-300">Home</a>
+                <a href="#about" class="nav-link hover:text-accent transition duration-300">About Us</a>
+                <a href="#industries" class="nav-link hover:text-accent transition duration-300">Industries</a>
+                <a href="#contact" class="nav-link hover:text-accent transition duration-300">Contact Us</a>
+            </nav>
+
+            <!-- Mobile Menu Button -->
+            <button id="mobile-menu-button" class="md:hidden text-white focus:outline-none">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+            </button>
+        </div>
+        
+        <!-- Mobile Navigation Drawer -->
+        <div id="mobile-menu" class="hidden md:hidden bg-primary px-6 pb-4">
+            <nav class="flex flex-col space-y-2 font-medium">
+                <a href="#home" class="nav-link py-2 hover:bg-indigo-700 rounded transition duration-300">Home</a>
+                <a href="#about" class="nav-link py-2 hover:bg-indigo-700 rounded transition duration-300">About Us</a>
+                <a href="#industries" class="nav-link py-2 hover:bg-indigo-700 rounded transition duration-300">Industries</a>
+                <a href="#contact" class="nav-link py-2 hover:bg-indigo-700 rounded transition duration-300">Contact Us</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content Sections -->
+    <main id="content-container" class="container mx-auto px-6 py-8 container-content">
+        <!-- Content will be injected here by JavaScript -->
+    </main>
+
+    <!-- Content Templates (Hidden from view, used by JS) -->
+    <div id="templates" class="hidden">
+
+        <!-- 1. Home (Landing Page) Template -->
+        <section id="home-template" class="space-y-12">
+            <div class="bg-primary text-white p-10 md:p-20 rounded-xl shadow-2xl text-center">
+                <h2 class="text-4xl md:text-6xl font-extrabold mb-4 tracking-tight">
+                    Engineering <span class="text-accent">National Progress</span>
+                </h2>
+                <p class="text-xl max-w-3xl mx-auto">
+                    Welcome to Nasir Group. A leader in diversified industry, we are committed to innovation, quality, and significant contribution to the national economy through excellence in manufacturing and consumer goods.
+                </p>
+                <a href="#industries" class="mt-8 inline-block bg-accent hover:bg-emerald-700 text-white font-semibold py-3 px-8 rounded-lg transition duration-300 shadow-md">
+                    Explore Our Industries
+                </a>
+            </div>
+
+            <!-- Key Features Snippets -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+                <div class="p-6 bg-white rounded-xl shadow-lg border-t-4 border-accent">
+                    <svg class="w-10 h-10 text-accent mx-auto mb-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"></path></svg>
+                    <h3 class="text-xl font-semibold text-primary">Float Glass</h3>
+                    <p class="text-gray-600 mt-2">Pioneering in clear and tinted float glass production, meeting global standards for construction and industrial use.</p>
+                </div>
+                <div class="p-6 bg-white rounded-xl shadow-lg border-t-4 border-accent">
+                    <svg class="w-10 h-10 text-accent mx-auto mb-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"></path></svg>
+                    <h3 class="text-xl font-semibold text-primary">Melamine & CPG</h3>
+                    <p class="text-gray-600 mt-2">Producing high-quality melamine tableware and essential consumer packaged goods for daily use.</p>
+                </div>
+                <div class="p-6 bg-white rounded-xl shadow-lg border-t-4 border-accent">
+                    <svg class="w-10 h-10 text-accent mx-auto mb-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                    <h3 class="text-xl font-semibold text-primary">Employment & Growth</h3>
+                    <p class="text-gray-600 mt-2">A major employer, driving growth across sectors including tobacco, jute, and modern lighting solutions.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 2. About Us (MD Message) Template -->
+        <section id="about-template" class="space-y-8">
+            <h2 class="text-4xl font-bold text-primary border-b-4 border-accent pb-2">Our Vision & Commitment</h2>
+            
+            <div class="bg-white p-8 rounded-xl shadow-lg">
+                <p class="text-2xl font-serif italic text-gray-700 mb-6">
+                    “Yesteryears’ dreamers are today’s doers. Our journey, rooted in plastics, melamine, footwear, and float glass, is a testament to unwavering belief in innovation.”
+                </p>
+                
+                <div class="space-y-4 text-lg">
+                    <p>
+                        From the early days, Nasir Group has consistently focused on building capacity across diverse, strategic industries. We are proud to be pioneers in the manufacturing of melamine tableware and industrial float glass in the region.
+                    </p>
+                    <p>
+                        Our expansion into high-grade glass tableware and glass tubing represents our continued commitment to adopting modern technology and delivering world-class quality products. Every venture is driven by a singular goal: to create maximum employment opportunities and deliver significant national benefit.
+                    </p>
+                    <p class="font-semibold text-primary">
+                        Nasir Uddin Biswas, <span class="font-normal text-gray-600">Chairman & Managing Director, Nasir Group</span>
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. Industries Overview Template -->
+        <section id="industries-template" class="space-y-10">
+            <h2 class="text-4xl font-bold text-primary border-b-4 border-accent pb-2">Our Diverse Industrial Portfolio</h2>
+            <p class="text-xl text-gray-600">
+                Explore the manufacturing powerhouses that form the backbone of the Nasir Group, ranging from heavy industrial components to essential consumer goods.
+            </p>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                
+                <!-- Subsidiary Card Template -->
+
+                <!-- NGIL -->
+                <a href="#nasir_glass" class="industry-card block bg-white rounded-xl shadow-lg hover:shadow-xl transition duration-300 border-t-4 border-indigo-500">
+                    <div class="p-6">
+                        <div class="flex items-center space-x-3 mb-3">
+                            <div class="placeholder-icon bg-indigo-200"></div>
+                            <h3 class="text-xl font-bold text-primary">NGIL (Nasir Glass Industries Ltd.)</h3>
+                        </div>
+                        <p class="text-gray-600 mb-2 font-medium">Manufacturing: Glass</p>
+                        <p class="text-sm text-gray-500">Multi-functional float glass complex spread over 23 acres in Gazipur, conforming to Chinese and Japanese National Standards.</p>
+                    </div>
+                </a>
+
+                <!-- BMIL -->
+                <a href="#bmil" class="industry-card block bg-white rounded-xl shadow-lg hover:shadow-xl transition duration-300 border-t-4 border-emerald-500">
+                    <div class="p-6">
+                        <div class="flex items-center space-x-3 mb-3">
+                            <div class="placeholder-icon bg-emerald-200"></div>
+                            <h3 class="text-xl font-bold text-primary">BMIL (Bangladesh Melamine Ind. Ltd.)</h3>
+                        </div>
+                        <p class="text-gray-600 mb-2 font-medium">Manufacturing: Melamine</p>
+                        <p class="text-sm text-gray-500">Pioneer in manufacturing melamine tableware since 1985, known for modern technology and global exports.</p>
+                    </div>
+                </a>
+
+                <!-- NESLIL -->
+                <a href="#neslil" class="industry-card block bg-white rounded-xl shadow-lg hover:shadow-xl transition duration-300 border-t-4 border-yellow-500">
+                    <div class="p-6">
+                        <div class="flex items-center space-x-3 mb-3">
+                            <div class="placeholder-icon bg-yellow-200"></div>
+                            <h3 class="text-xl font-bold text-primary">NESLIL (N. Energy Saving Lamp Ind. Ltd.)</h3>
+                        </div>
+                        <p class="text-gray-600 mb-2 font-medium">Manufacturing: Lighting</p>
+                        <p class="text-sm text-gray-500">First in Bangladesh to produce CFL products starting from basic components (glass tubes, phosphors, electronic components).</p>
+                    </div>
+                </a>
+
+                <!-- BFIL -->
+                <a href="#bfil" class="industry-card block bg-white rounded-xl shadow-lg hover:shadow-xl transition duration-300 border-t-4 border-red-500">
+                    <div class="p-6">
+                        <div class="flex items-center space-x-3 mb-3">
+                            <div class="placeholder-icon bg-red-200"></div>
+                            <h3 class="text-xl font-bold text-primary">BFIL (Bangladesh Footwear Ind. Ltd.)</h3>
+                        </div>
+                        <p class="text-gray-600 mb-2 font-medium">Manufacturing: Footwear</p>
+                        <p class="text-sm text-gray-500">One of the biggest footwear manufacturers since 1997, using high-quality EVA & PVC materials.</p>
+                    </div>
+                </a>
+
+                <!-- NGTIL -->
+                <a href="#ngtil" class="industry-card block bg-white rounded-xl shadow-lg hover:shadow-xl transition duration-300 border-t-4 border-pink-500">
+                    <div class="p-6">
+                        <div class="flex items-center space-x-3 mb-3">
+                            <div class="placeholder-icon bg-pink-200"></div>
+                            <h3 class="text-xl font-bold text-primary">NGTIL (N. Glassware & Tube Ind. Ltd.)</h3>
+                        </div>
+                        <p class="text-gray-600 mb-2 font-medium">Manufacturing: Glassware/Tubing</p>
+                        <p class="text-sm text-gray-500">Produces high-grade, crystal white glass tableware and glass tubing using a fully automated process.</p>
+                    </div>
+                </a>
+
+                <!-- NTIL -->
+                <a href="#ntil" class="industry-card block bg-white rounded-xl shadow-lg hover:shadow-xl transition duration-300 border-t-4 border-gray-500">
+                    <div class="p-6">
+                        <div class="flex items-center space-x-3 mb-3">
+                            <div class="placeholder-icon bg-gray-200"></div>
+                            <h3 class="text-xl font-bold text-primary">NTIL (Nasir Tobacco Industries Ltd)</h3>
+                        </div>
+                        <p class="text-gray-600 mb-2 font-medium">Manufacturing: Tobacco</p>
+                        <p class="text-sm text-gray-500">Ranks 4th in the country (as of 2013 data), exporting cigarettes and key tobacco components.</p>
+                    </div>
+                </a>
+
+                <!-- NLTIL -->
+                <a href="#nltl" class="industry-card block bg-white rounded-xl shadow-lg hover:shadow-xl transition duration-300 border-t-4 border-green-500">
+                    <div class="p-6">
+                        <div class="flex items-center space-x-3 mb-3">
+                            <div class="placeholder-icon bg-green-200"></div>
+                            <h3 class="text-xl font-bold text-primary">NLTIL (Nasir Leaf Tobacco Ind. Ltd.)</h3>
+                        </div>
+                        <p class="text-gray-600 mb-2 font-medium">Agro-Processing: Tobacco Leaf</p>
+                        <p class="text-sm text-gray-500">A grower, processor, packer, and exporter of different varieties of Bangladeshi Tobacco since 1998.</p>
+                    </div>
+                </a>
+
+                <!-- NPPIL -->
+                <a href="#nppil" class="industry-card block bg-white rounded-xl shadow-lg hover:shadow-xl transition duration-300 border-t-4 border-orange-500">
+                    <div class="p-6">
+                        <div class="flex items-center space-x-3 mb-3">
+                            <div class="placeholder-icon bg-orange-200"></div>
+                            <h3 class="text-xl font-bold text-primary">NPPIL (Nasir Printing & Packaging Ind. Ltd.)</h3>
+                        </div>
+                        <p class="text-gray-600 mb-2 font-medium">Manufacturing: Packaging</p>
+                        <p class="text-sm text-gray-500">Focuses on corrugated paper board making, multi-color printing, and specialized carton making.</p>
+                    </div>
+                </a>
+
+                <!-- BPPIL -->
+                <a href="#bppil" class="industry-card block bg-white rounded-xl shadow-lg hover:shadow-xl transition duration-300 border-t-4 border-teal-500">
+                    <div class="p-6">
+                        <div class="flex items-center space-x-3 mb-3">
+                            <div class="placeholder-icon bg-teal-200"></div>
+                            <h3 class="text-xl font-bold text-primary">BPPIL (Biswas Printing & Packaging Ind. Ltd.)</h3>
+                        </div>
+                        <p class="text-gray-600 mb-2 font-medium">Manufacturing: Packaging</p>
+                        <p class="text-sm text-gray-500">Leading printing industry specialized in export-quality corrugated paper board handling and multi-color printing since 1977.</p>
+                    </div>
+                </a>
+
+                <!-- NBIL -->
+                <a href="#nbil" class="industry-card block bg-white rounded-xl shadow-lg hover:shadow-xl transition duration-300 border-t-4 border-fuchsia-500">
+                    <div class="p-6">
+                        <div class="flex items-center space-x-3 mb-3">
+                            <div class="placeholder-icon bg-fuchsia-200"></div>
+                            <h3 class="text-xl font-bold text-primary">NBIL (Nasir Biri Industries Ltd.)</h3>
+                        </div>
+                        <p class="text-gray-600 mb-2 font-medium">Manufacturing: Biri Tobacco</p>
+                        <p class="text-sm text-gray-500">Established in 1977, manufactures handmade cigarettes, has a huge domestic market and employs over 10,000 workers.</p>
+                    </div>
+                </a>
+                
+                <!-- NJIL (Jute) - Added for completeness as per Home page reference -->
+                <a href="#njil" class="industry-card block bg-white rounded-xl shadow-lg hover:shadow-xl transition duration-300 border-t-4 border-lime-500">
+                    <div class="p-6">
+                        <div class="flex items-center space-x-3 mb-3">
+                            <div class="placeholder-icon bg-lime-200"></div>
+                            <h3 class="text-xl font-bold text-primary">NJIL (Nasir Jute Industries Ltd.)</h3>
+                        </div>
+                        <p class="text-gray-600 mb-2 font-medium">Manufacturing: Jute</p>
+                        <p class="text-sm text-gray-500">Starting production of Jute Yarn/Twine and other Jute products with a production capacity of 100 M.Tons per day.</p>
+                    </div>
+                </a>
+
+            </div>
+        </section>
+
+        <!-- 4. Contact Us Template -->
+        <section id="contact-template" class="space-y-8">
+            <h2 class="text-4xl font-bold text-primary border-b-4 border-accent pb-2">Get in Touch</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- Contact Details Card -->
+                <div class="bg-white p-8 rounded-xl shadow-lg space-y-4">
+                    <h3 class="text-2xl font-semibold text-primary">Corporate Headquarters</h3>
+                    
+                    <div class="flex items-start space-x-3">
+                        <svg class="w-6 h-6 text-accent flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h14a2 2 0 012 2v14a2 2 0 01-2 2H5a2 2 0 01-2-2V5z"></path></svg>
+                        <p>Address: [Insert Main Corporate Address Here - Placeholder]</p>
+                    </div>
+                    
+                    <div class="flex items-start space-x-3">
+                        <svg class="w-6 h-6 text-accent flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.5a1.5 1.5 0 010 3H5v2h2.5a1.5 1.5 0 010 3H5v2h2.5a1.5 1.5 0 010 3H5v2h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2z"></path></svg>
+                        <p>Phone: +880 1XXXXXXXXX (Placeholder)</p>
+                    </div>
+
+                    <h3 class="text-xl font-semibold text-primary pt-4">Inquiries</h3>
+                    <p class="text-gray-600">For general and sales inquiries, please use the contact form below or email us directly.</p>
+
+                    <div class="flex space-x-4 pt-2">
+                        <!-- Social Media Links (Placeholders) -->
+                        <a href="#" class="text-primary hover:text-accent transition duration-300">
+                            <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2C6.477 2 2 6.477 2 12c0 4.991 3.63 9.172 8.423 9.89l.07-.07v-7.143H8.05v-2.657h2.443V9.7c0-2.43 1.455-3.763 3.66-3.763 1.042 0 2.112.187 2.112.187v2.324h-1.18c-1.162 0-1.523.722-1.523 1.464v1.75H16.8l-.513 2.657h-2.25V21.89c4.793-.718 8.423-4.899 8.423-9.89 0-5.523-4.477-10-10-10z"/></svg>
+                        </a>
+                        <a href="#" class="text-primary hover:text-accent transition duration-300">
+                             <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M22 5.86c-.732.325-1.52.545-2.348.64a4.137 4.137 0 001.812-2.257 8.274 8.274 0 01-2.607 1 4.136 4.136 0 00-7.054 3.774 11.776 11.776 0 01-8.544-4.332 4.136 4.136 0 001.28 5.517 4.103 4.103 0 01-1.875-.518v.052c0 2.012 1.43 3.687 3.328 4.073a4.143 4.143 0 01-1.873.07 4.14 4.14 0 003.864 2.875 8.307 8.307 0 01-5.138 1.772c-.334 0-.664-.02-.99-.058A11.724 11.724 0 0012 21c7.2 0 11.13-5.968 11.13-11.13 0-.17-.003-.34-.01-.508a7.99 7.99 0 002.062-2.138z"/></svg>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Map Placeholder -->
+                <div class="bg-gray-200 p-8 rounded-xl shadow-lg flex items-center justify-center">
+                    <p class="text-gray-500 font-semibold">Map Location Placeholder</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 5. Subsidiary Detail Templates (Example for NGIL) -->
+
+        <!-- NGIL Detail -->
+        <section id="nasir_glass-template" class="space-y-8 subsidiary-detail">
+            <a href="#industries" class="text-primary hover:text-accent font-medium flex items-center mb-4">
+                <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path></svg>
+                Back to Industries
+            </a>
+            <h2 class="text-4xl font-bold text-primary border-b-4 border-indigo-500 pb-2">Nasir Glass Industries Ltd. (NGIL)</h2>
+            <div class="bg-white p-6 rounded-xl shadow-lg space-y-4">
+                <p class="text-lg">Multi-functional float glass complex spread over 23 acres in Gazipur. NGIL operates a fully automated process conforming to Chinese and Japanese National Standards (GB11614-1999, J/S R3202), ensuring world-class quality in every sheet.</p>
+                <h3 class="text-2xl font-semibold text-accent">Key Products & Specifications</h3>
+                <ul class="list-disc list-inside space-y-2 pl-4 text-gray-700">
+                    <li>**Float Glass:** Clear and Tinted varieties.</li>
+                    <li>**Specialized Sheets:** Tempered Sheets, Coated/Reflective Sheets, Mirrors.</li>
+                    <li>**Thickness Range:** 3mm to 12mm.</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- BMIL Detail -->
+        <section id="bmil-template" class="space-y-8 subsidiary-detail">
+            <a href="#industries" class="text-primary hover:text-accent font-medium flex items-center mb-4">
+                <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path></svg>
+                Back to Industries
+            </a>
+            <h2 class="text-4xl font-bold text-primary border-b-4 border-emerald-500 pb-2">Bangladesh Melamine Industries Ltd. (BMIL)</h2>
+            <div class="bg-white p-6 rounded-xl shadow-lg space-y-4">
+                <p class="text-lg">Pioneer in manufacturing melamine tableware since 1985. BMIL is known for using modern technology, skilled management, and strict quality control, enabling us to export globally.</p>
+                <h3 class="text-2xl font-semibold text-accent">Product Focus: Bangladesh Melamine</h3>
+                <ul class="list-disc list-inside space-y-2 pl-4 text-gray-700">
+                    <li>**Tableware:** Oval dishes, Bowls, Plates, Tumbles, Mugs, and complete Gift sets.</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- NGTIL Detail -->
+        <section id="ngtil-template" class="space-y-8 subsidiary-detail">
+            <a href="#industries" class="text-primary hover:text-accent font-medium flex items-center mb-4">
+                <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path></svg>
+                Back to Industries
+            </a>
+            <h2 class="text-4xl font-bold text-primary border-b-4 border-pink-500 pb-2">N. Glassware & Tube Ind. Ltd. (NGTIL)</h2>
+            <div class="bg-white p-6 rounded-xl shadow-lg space-y-4">
+                <p class="text-lg">Our specialized glass manufacturing unit uses a fully automated process to produce high-grade, crystal white glass and essential glass tubing components.</p>
+                <h3 class="text-2xl font-semibold text-accent">Key Products</h3>
+                <ul class="list-disc list-inside space-y-2 pl-4 text-gray-700">
+                    <li>**Glass Tableware:** Tumblers, cups, saucers, and bowls.</li>
+                    <li>**Glass Tubing:** Essential material for fluorescent and CFL lamps.</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- NTIL Detail -->
+        <section id="ntil-template" class="space-y-8 subsidiary-detail">
+            <a href="#industries" class="text-primary hover:text-accent font-medium flex items-center mb-4">
+                <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path></svg>
+                Back to Industries
+            </a>
+            <h2 class="text-4xl font-bold text-primary border-b-4 border-gray-500 pb-2">Nasir Tobacco Industries Ltd (NTIL)</h2>
+            <div class="bg-white p-6 rounded-xl shadow-lg space-y-4">
+                <p class="text-lg">Commercial production started in 1997. NTIL ranks 4th in the country (as of 2013 data) and is a major exporter of cigarettes and tobacco components.</p>
+                <h3 class="text-2xl font-semibold text-accent">Key Products & Brands</h3>
+                <ul class="list-disc list-inside space-y-2 pl-4 text-gray-700">
+                    <li>**Cigarettes:** Brands include Nasir Gold, Asia, and Top Ten.</li>
+                    <li>**Components:** Cut Tobacco, CRES, Cork Tipping Paper, and Filter Rods.</li>
+                </ul>
+            </div>
+        </section>
+        
+        <!-- NLTIL Detail -->
+        <section id="nltl-template" class="space-y-8 subsidiary-detail">
+            <a href="#industries" class="text-primary hover:text-accent font-medium flex items-center mb-4">
+                <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path></svg>
+                Back to Industries
+            </a>
+            <h2 class="text-4xl font-bold text-primary border-b-4 border-green-500 pb-2">Nasir Leaf Tobacco Ind. Ltd. (NLTIL)</h2>
+            <div class="bg-white p-6 rounded-xl shadow-lg space-y-4">
+                <p class="text-lg">A dedicated grower, processor, packer, and exporter of different varieties of Bangladeshi Tobacco since 1998. The factory is fully equipped with automated American machinery.</p>
+                <h3 class="text-2xl font-semibold text-accent">Leaf Tobacco Varieties</h3>
+                <ul class="list-disc list-inside space-y-2 pl-4 text-gray-700">
+                    <li>Flue cured, Burley, Dark Virginia, Jati, and Motihar, serving local and international markets.</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- NESLIL Detail -->
+        <section id="neslil-template" class="space-y-8 subsidiary-detail">
+            <a href="#industries" class="text-primary hover:text-accent font-medium flex items-center mb-4">
+                <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path></svg>
+                Back to Industries
+            </a>
+            <h2 class="text-4xl font-bold text-primary border-b-4 border-yellow-500 pb-2">N. Energy Saving Lamp Ind. Ltd. (NESLIL)</h2>
+            <div class="bg-white p-6 rounded-xl shadow-lg space-y-4">
+                <p class="text-lg">Manufactures high-quality energy-saving lamps. NESLIL was the first in Bangladesh to produce CFL products starting from basic components (glass tubes, phosphors, electronic components) via a partially automated process.</p>
+                <h3 class="text-2xl font-semibold text-accent">Products & Capacity</h3>
+                <ul class="list-disc list-inside space-y-2 pl-4 text-gray-700">
+                    <li>**Electric Lamps:** Spiral, Lotus, and U types.</li>
+                    <li>**Wattage:** 5W to 65W.</li>
+                    <li>**Capacity:** 40,000 pieces per day.</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- BFIL Detail -->
+        <section id="bfil-template" class="space-y-8 subsidiary-detail">
+            <a href="#industries" class="text-primary hover:text-accent font-medium flex items-center mb-4">
+                <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path></svg>
+                Back to Industries
+            </a>
+            <h2 class="text-4xl font-bold text-primary border-b-4 border-red-500 pb-2">Bangladesh Footwear Industries Ltd. (BFIL)</h2>
+            <div class="bg-white p-6 rounded-xl shadow-lg space-y-4">
+                <p class="text-lg">One of the biggest footwear manufacturers since 1997. We utilize professional, skilled production units and high-quality EVA & PVC materials to ensure durability and comfort.</p>
+                <h3 class="text-2xl font-semibold text-accent">Key Products & Brand</h3>
+                <ul class="list-disc list-inside space-y-2 pl-4 text-gray-700">
+                    <li>**Products:** Gents, Ladies, and Kids shoes, keds, and sandals.</li>
+                    <li>**Brand:** Jump Keds.</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- NPPIL Detail -->
+        <section id="nppil-template" class="space-y-8 subsidiary-detail">
+            <a href="#industries" class="text-primary hover:text-accent font-medium flex items-center mb-4">
+                <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path></svg>
+                Back to Industries
+            </a>
+            <h2 class="text-4xl font-bold text-primary border-b-4 border-orange-500 pb-2">Nasir Printing & Packaging Ind. Ltd. (NPPIL)</h2>
+            <div class="bg-white p-6 rounded-xl shadow-lg space-y-4">
+                <p class="text-lg">Specializing in high-quality corrugated paper board making, multi-color printing, and carton production using high-quality imported raw materials.</p>
+                <h3 class="text-2xl font-semibold text-accent">Products & Applications</h3>
+                <ul class="list-disc list-inside space-y-2 pl-4 text-gray-700">
+                    <li>**Paper Boards:** 2-ply, 3-ply, and 5-ply Corrugated Paper Boards.</li>
+                    <li>**Carton Boxes:** Packaging for glassware, garments, tobacco, food, and other industries.</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- BPPIL Detail -->
+        <section id="bppil-template" class="space-y-8 subsidiary-detail">
+            <a href="#industries" class="text-primary hover:text-accent font-medium flex items-center mb-4">
+                <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path></svg>
+                Back to Industries
+            </a>
+            <h2 class="text-4xl font-bold text-primary border-b-4 border-teal-500 pb-2">Biswas Printing & Packaging Ind. Ltd. (BPPIL)</h2>
+            <div class="bg-white p-6 rounded-xl shadow-lg space-y-4">
+                <p class="text-lg">A leading printing industry specialized in export-quality corrugated paper board handling, multi-color printing, and carton making since 1977.</p>
+                <h3 class="text-2xl font-semibold text-accent">Specialization</h3>
+                <ul class="list-disc list-inside space-y-2 pl-4 text-gray-700">
+                    <li>**Services:** Carton making and multi-color printing for packaging (medicines, food, cosmetics, etc.).</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- NBIL Detail -->
+        <section id="nbil-template" class="space-y-8 subsidiary-detail">
+            <a href="#industries" class="text-primary hover:text-accent font-medium flex items-center mb-4">
+                <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path></svg>
+                Back to Industries
+            </a>
+            <h2 class="text-4xl font-bold text-primary border-b-4 border-fuchsia-500 pb-2">Nasir Biri Industries Ltd. (NBIL)</h2>
+            <div class="bg-white p-6 rounded-xl shadow-lg space-y-4">
+                <p class="text-lg">Established in 1977, NBIL manufactures handmade cigarettes (Biri). It commands a huge domestic market presence and serves as a major employer with over 10,000 workers.</p>
+                <h3 class="text-2xl font-semibold text-accent">Product & Impact</h3>
+                <ul class="list-disc list-inside space-y-2 pl-4 text-gray-700">
+                    <li>**Product:** Handmade Cigarettes (Brand: Nasir Biri).</li>
+                    <li>**Employment:** Provides employment to over 10,000 workers.</li>
+                </ul>
+            </div>
+        </section>
+        
+        <!-- NJIL Detail (Jute) -->
+        <section id="njil-template" class="space-y-8 subsidiary-detail">
+            <a href="#industries" class="text-primary hover:text-accent font-medium flex items-center mb-4">
+                <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path></svg>
+                Back to Industries
+            </a>
+            <h2 class="text-4xl font-bold text-primary border-b-4 border-lime-500 pb-2">Nasir Jute Industries Ltd. (NJIL)</h2>
+            <div class="bg-white p-6 rounded-xl shadow-lg space-y-4">
+                <p class="text-lg">NJIL is entering the market for Jute production, aiming to contribute to the sustainable industrial segment of the national economy.</p>
+                <h3 class="text-2xl font-semibold text-accent">Products & Capacity</h3>
+                <ul class="list-disc list-inside space-y-2 pl-4 text-gray-700">
+                    <li>**Products:** Jute Yarn/Twine and various Jute products.</li>
+                    <li>**Capacity:** 100 M.Tons per day.</li>
+                </ul>
+            </div>
+        </section>
+
+    </div>
+    
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white mt-12 py-8">
+        <div class="container mx-auto px-6 text-center">
+            <h4 class="text-xl font-semibold mb-2">Nasir Group</h4>
+            <p class="text-sm text-gray-400">Engineering National Progress through Diversified Industry.</p>
+            <p class="text-sm mt-2 text-gray-400">Main Contact: +880 1XXXXXXXXX (Placeholder)</p>
+            <p class="text-sm mt-4 text-gray-500">&copy; 2024 Nasir Group. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript for Single-Page Navigation -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const contentContainer = document.getElementById('content-container');
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+            const navLinks = document.querySelectorAll('.nav-link');
+            const industryCards = document.querySelectorAll('.industry-card');
+            
+            // Helper function to show content
+            const showContent = (hash) => {
+                let sectionId = hash.substring(1) || 'home'; // Default to 'home'
+                const templateId = sectionId + '-template';
+                const template = document.getElementById(templateId);
+
+                if (template) {
+                    contentContainer.innerHTML = template.innerHTML;
+                    window.scrollTo(0, 0); // Scroll to top on navigation
+
+                    // Update URL hash without jumping
+                    history.replaceState(null, null, `#${sectionId}`);
+                } else {
+                    // Fallback for subsidiary links clicked from industries page
+                    const subsidiaryDetail = document.getElementById(sectionId + '-template');
+                    if (subsidiaryDetail) {
+                        contentContainer.innerHTML = subsidiaryDetail.innerHTML;
+                        window.scrollTo(0, 0);
+                        history.replaceState(null, null, `#${sectionId}`);
+                    } else {
+                         // Default to home page if hash is invalid
+                        contentContainer.innerHTML = document.getElementById('home-template').innerHTML;
+                        history.replaceState(null, null, '#home');
+                    }
+                }
+
+                // Close mobile menu after navigation
+                mobileMenu.classList.add('hidden');
+            };
+
+            // Event listener for desktop/mobile navigation links
+            navLinks.forEach(link => {
+                link.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    const hash = link.getAttribute('href');
+                    showContent(hash);
+                });
+            });
+
+            // Event listener for Industry Cards (for mobile/tablet where hover doesn't work)
+            const industryCardsContainer = document.querySelector('#industries-template');
+            if(industryCardsContainer) {
+                 industryCardsContainer.addEventListener('click', (e) => {
+                    let target = e.target;
+                    while (target && !target.classList.contains('industry-card')) {
+                        target = target.parentNode;
+                    }
+                    if (target && target.classList.contains('industry-card')) {
+                        e.preventDefault();
+                        const hash = target.getAttribute('href');
+                        showContent(hash);
+                    }
+                });
+            }
+
+
+            // Mobile Menu Toggle
+            mobileMenuButton.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+
+            // Handle initial page load based on URL hash
+            const initialHash = window.location.hash;
+            showContent(initialHash);
+            
+            // Handle back/forward browser navigation
+            window.addEventListener('hashchange', () => {
+                showContent(window.location.hash);
+            });
+        });
+    </script>
+</body>
+</html>

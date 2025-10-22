@@ -1,0 +1,605 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Learn about Nasir Group of Industries - 48 years of manufacturing excellence, founded by Late Nasir Uddin Biswas in 1977, now Bangladesh's leading industrial conglomerate.">
+    <meta name="keywords" content="Nasir Group history, Nasir Uddin Biswas, Bangladesh industrial conglomerate, manufacturing excellence, company timeline">
+    <title>About Us - Nasir Group of Industries</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .timeline {
+            position: relative;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .timeline::after {
+            content: '';
+            position: absolute;
+            width: 4px;
+            background-color: var(--primary-color);
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            margin-left: -2px;
+        }
+        
+        .timeline-item {
+            padding: 10px 40px;
+            position: relative;
+            background-color: inherit;
+            width: 50%;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+        
+        .timeline-item:hover {
+            transform: scale(1.02);
+        }
+        
+        .timeline-item::after {
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            right: -10px;
+            background-color: var(--accent-color);
+            border: 4px solid var(--primary-color);
+            top: 15px;
+            border-radius: 50%;
+            z-index: 1;
+        }
+        
+        .timeline-item:nth-child(even) {
+            left: 50%;
+        }
+        
+        .timeline-item:nth-child(even)::after {
+            left: -10px;
+        }
+        
+        .timeline-content {
+            padding: 20px 30px;
+            background-color: var(--white);
+            position: relative;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+        }
+        
+        .timeline-year {
+            color: var(--primary-color);
+            font-weight: 700;
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .timeline-title {
+            color: var(--secondary-color);
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+        
+        .timeline-description {
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+        
+        .founder-tribute {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: var(--white);
+            padding: 4rem 0;
+            text-align: center;
+        }
+        
+        .founder-image {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            background: var(--white);
+            margin: 0 auto 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+            color: var(--primary-color);
+        }
+        
+        .founder-quote {
+            font-style: italic;
+            font-size: 1.25rem;
+            max-width: 800px;
+            margin: 2rem auto;
+            opacity: 0.9;
+        }
+        
+        .leadership-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .leader-card {
+            background: var(--white);
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            padding: 2rem;
+            text-align: center;
+            transition: var(--transition);
+        }
+        
+        .leader-card:hover {
+            box-shadow: var(--shadow-hover);
+            transform: translateY(-5px);
+        }
+        
+        .leader-image {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            background: var(--light-gray);
+            margin: 0 auto 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+        }
+        
+        .leader-name {
+            color: var(--primary-color);
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+        
+        .leader-position {
+            color: var(--secondary-color);
+            font-weight: 500;
+            margin-bottom: 1rem;
+        }
+        
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+        
+        .value-card {
+            background: var(--white);
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            padding: 2rem;
+            text-align: center;
+            transition: var(--transition);
+        }
+        
+        .value-card:hover {
+            box-shadow: var(--shadow-hover);
+            transform: translateY(-5px);
+        }
+        
+        .value-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            display: block;
+        }
+        
+        .value-title {
+            color: var(--primary-color);
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+        
+        .achievements-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .achievement-stat {
+            background: var(--white);
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            padding: 2rem;
+            text-align: center;
+        }
+        
+        .achievement-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            display: block;
+        }
+        
+        .achievement-label {
+            color: var(--text-color);
+            font-weight: 500;
+            margin-top: 0.5rem;
+        }
+        
+        @media (max-width: 768px) {
+            .timeline::after {
+                left: 31px;
+            }
+            
+            .timeline-item {
+                width: 100%;
+                padding-left: 70px;
+                padding-right: 25px;
+            }
+            
+            .timeline-item::after {
+                left: 21px;
+            }
+            
+            .timeline-item:nth-child(even) {
+                left: 0%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Skip Links -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    
+    <!-- Header -->
+    <header class="header" role="banner">
+        <nav class="navbar container" role="navigation" aria-label="Main navigation">
+            <a href="index.html" class="logo" data-translate="company.name">Nasir Group of Industries</a>
+            
+            <ul class="nav-menu" role="menubar">
+                <li role="none"><a href="index.html" class="nav-link" role="menuitem" data-translate="nav.home">Home</a></li>
+                <li role="none"><a href="about.html" class="nav-link active" role="menuitem" data-translate="nav.about">About Us</a></li>
+                <li role="none"><a href="business-divisions.html" class="nav-link" role="menuitem" data-translate="nav.divisions">Business Divisions</a></li>
+                <li role="none"><a href="products.html" class="nav-link" role="menuitem" data-translate="nav.products">Products</a></li>
+                <li role="none" class="nav-dropdown">
+                    <a href="#" class="nav-link" role="menuitem">Corporate <span class="dropdown-arrow">▼</span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="export.html" class="nav-link" data-translate="nav.export">Export & International</a></li>
+                        <li><a href="csr.html" class="nav-link" data-translate="nav.csr">CSR & Sustainability</a></li>
+                        <li><a href="careers.html" class="nav-link" data-translate="nav.careers">Careers</a></li>
+                    </ul>
+                </li>
+                <li role="none"><a href="contact.html" class="nav-link" role="menuitem" data-translate="nav.contact">Contact Us</a></li>
+            </ul>
+            
+            <div class="nav-actions">
+                <button class="lang-toggle" aria-label="Switch language">বাংলা</button>
+                <a href="contact.html" class="btn btn-primary" data-translate="buttons.request_quote">Request Quote</a>
+            </div>
+            
+            <button class="mobile-menu-toggle" aria-label="Toggle mobile menu" aria-expanded="false">☰</button>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main id="main-content">
+        <!-- Page Header -->
+        <section class="hero" style="padding: 2rem 0;">
+            <div class="container">
+                <h1>About Nasir Group of Industries</h1>
+                <p class="hero-subtitle">48 Years of Manufacturing Excellence Since 1977</p>
+            </div>
+        </section>
+
+        <!-- Company Timeline -->
+        <section class="section">
+            <div class="container">
+                <h2 class="section-title">Our Journey Through Time</h2>
+                <div class="timeline">
+                    <div class="timeline-item animate-on-scroll">
+                        <div class="timeline-content">
+                            <div class="timeline-year">1977</div>
+                            <h3 class="timeline-title">Foundation</h3>
+                            <p class="timeline-description">
+                                Founded as Nasir Biri Industries in Kushtia by Late Nasir Uddin Biswas. 
+                                Started as a regional biri manufacturer with a vision for industrial excellence.
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-item animate-on-scroll">
+                        <div class="timeline-content">
+                            <div class="timeline-year">1985</div>
+                            <h3 class="timeline-title">Melamine Pioneer</h3>
+                            <p class="timeline-description">
+                                Launched Bangladesh Melamine Industries, becoming the pioneer melamine tableware 
+                                manufacturer in Bangladesh with innovative production techniques.
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-item animate-on-scroll">
+                        <div class="timeline-content">
+                            <div class="timeline-year">1997</div>
+                            <h3 class="timeline-title">Footwear Revolution</h3>
+                            <p class="timeline-description">
+                                Established Bangladesh Footwear Industries, launching the iconic Jump Keds brand 
+                                that became Bangladesh's #1 footwear choice.
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-item animate-on-scroll">
+                        <div class="timeline-content">
+                            <div class="timeline-year">2005</div>
+                            <h3 class="timeline-title">Glass Manufacturing</h3>
+                            <p class="timeline-description">
+                                Established first float glass factory (NGIL) in Gazipur, revolutionizing 
+                                Bangladesh's glass industry with 40-60% market share.
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-item animate-on-scroll">
+                        <div class="timeline-content">
+                            <div class="timeline-year">2015</div>
+                            <h3 class="timeline-title">Industrial Diversification</h3>
+                            <p class="timeline-description">
+                                Diversified into corn starch production and industrial products, 
+                                expanding the group's manufacturing capabilities.
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-item animate-on-scroll">
+                        <div class="timeline-content">
+                            <div class="timeline-year">2018</div>
+                            <h3 class="timeline-title">Expansion Phase</h3>
+                            <p class="timeline-description">
+                                Opened second float glass facility (NFGIL) in Tangail with 600 tonnes/day capacity, 
+                                strengthening market leadership.
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-item animate-on-scroll">
+                        <div class="timeline-content">
+                            <div class="timeline-year">2025</div>
+                            <h3 class="timeline-title">Future Technologies</h3>
+                            <p class="timeline-description">
+                                Launched Nasir Syntax Aluminium and Motors, entering advanced aluminium 
+                                manufacturing and electric vehicle production for sustainable future.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Founder's Legacy -->
+        <section class="founder-tribute">
+            <div class="container">
+                <div class="founder-image">👨‍💼</div>
+                <h2>Late Nasir Uddin Biswas</h2>
+                <p><strong>Founder & Visionary (1944-2022)</strong></p>
+                <div class="founder-quote">
+                    "Yesteryears' dreamers are today's doers and so are we. We think of new projects, 
+                    work out its cost-benefits, visualize its potentials and long term impact on the 
+                    national economy taking full cognizance of its effects on our environment. 
+                    Innovativeness is one of our key issues."
+                </div>
+                <div class="grid grid-3" style="margin-top: 3rem;">
+                    <div class="card">
+                        <h3>Business Person of the Year</h3>
+                        <p>Received prestigious award in 2013 for outstanding contribution to Bangladesh's industrial sector</p>
+                    </div>
+                    <div class="card">
+                        <h3>CIP Awards</h3>
+                        <p>Multiple Commercially Important Person awards recognizing export excellence</p>
+                    </div>
+                    <div class="card">
+                        <h3>Industrial Pioneer</h3>
+                        <p>Established several "first-in-Bangladesh" industries transforming the manufacturing landscape</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Leadership Team -->
+        <section class="section">
+            <div class="container">
+                <h2 class="section-title">Leadership Team</h2>
+                <div class="leadership-grid">
+                    <div class="leader-card animate-on-scroll">
+                        <div class="leader-image">👨‍💼</div>
+                        <h3 class="leader-name">Nasim Biswas</h3>
+                        <p class="leader-position">Managing Director</p>
+                        <p>Leading Nasir Float Glass Industries Ltd with focus on innovation and market expansion. Continuing the founder's vision of manufacturing excellence.</p>
+                    </div>
+                    
+                    <div class="leader-card animate-on-scroll">
+                        <div class="leader-image">👩‍💼</div>
+                        <h3 class="leader-name">Nasima Biswas</h3>
+                        <p class="leader-position">Managing Director</p>
+                        <p>Managing Director of Nasir Glass Industries Ltd, driving operational excellence and quality standards across glass manufacturing operations.</p>
+                    </div>
+                    
+                    <div class="leader-card animate-on-scroll">
+                        <div class="leader-image">👩‍💼</div>
+                        <h3 class="leader-name">Taslima Sultana</h3>
+                        <p class="leader-position">Managing Director</p>
+                        <p>Managing Director of eight companies within the group, overseeing diverse business operations and strategic development initiatives.</p>
+                    </div>
+                    
+                    <div class="leader-card animate-on-scroll">
+                        <div class="leader-image">👨‍💼</div>
+                        <h3 class="leader-name">Mamun Biswas</h3>
+                        <p class="leader-position">Chairman</p>
+                        <p>Chairman of multiple companies, providing strategic guidance and leadership across various business divisions of the group.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Vision, Mission, Values -->
+        <section class="section" style="background: var(--light-gray);">
+            <div class="container">
+                <div class="grid grid-2" style="margin-bottom: 4rem;">
+                    <div class="card">
+                        <h2 style="color: var(--primary-color);">Our Vision</h2>
+                        <p style="font-size: 1.1rem; line-height: 1.6;">
+                            To revolutionize manufacturing in Bangladesh with quality and sustainability, 
+                            becoming the most trusted and export-ready manufacturing brand while inspiring 
+                            modern architecture, industry, and daily life.
+                        </p>
+                    </div>
+                    
+                    <div class="card">
+                        <h2 style="color: var(--secondary-color);">Our Mission</h2>
+                        <p style="font-size: 1.1rem; line-height: 1.6;">
+                            Continuous prosperity through strategic partnerships and excellence, 
+                            guided by sustainable practices to satisfy clients with quality products 
+                            at competitive prices while contributing to national economic growth.
+                        </p>
+                    </div>
+                </div>
+                
+                <h2 class="section-title">Core Values</h2>
+                <div class="values-grid">
+                    <div class="value-card animate-on-scroll">
+                        <span class="value-icon">💡</span>
+                        <h3 class="value-title">Innovation</h3>
+                        <p>Constantly striving to improve through new ideas and technologies</p>
+                    </div>
+                    
+                    <div class="value-card animate-on-scroll">
+                        <span class="value-icon">🔍</span>
+                        <h3 class="value-title">Transparency</h3>
+                        <p>Acting ethically in all business dealings with complete honesty</p>
+                    </div>
+                    
+                    <div class="value-card animate-on-scroll">
+                        <span class="value-icon">⚖️</span>
+                        <h3 class="value-title">Integrity</h3>
+                        <p>Doing the right thing over personal gain in every situation</p>
+                    </div>
+                    
+                    <div class="value-card animate-on-scroll">
+                        <span class="value-icon">🌍</span>
+                        <h3 class="value-title">Diversity</h3>
+                        <p>Respecting and valuing different backgrounds, skills, and insights</p>
+                    </div>
+                    
+                    <div class="value-card animate-on-scroll">
+                        <span class="value-icon">🏆</span>
+                        <h3 class="value-title">Excellence</h3>
+                        <p>Relentless pursuit of extraordinary achievements in everything we do</p>
+                    </div>
+                    
+                    <div class="value-card animate-on-scroll">
+                        <span class="value-icon">🤝</span>
+                        <h3 class="value-title">Respect</h3>
+                        <p>Treating all stakeholders with dignity and professional courtesy</p>
+                    </div>
+                    
+                    <div class="value-card animate-on-scroll">
+                        <span class="value-icon">🌱</span>
+                        <h3 class="value-title">Sustainability</h3>
+                        <p>Managing business to protect environment and natural resources</p>
+                    </div>
+                    
+                    <div class="value-card animate-on-scroll">
+                        <span class="value-icon">👥</span>
+                        <h3 class="value-title">Teamwork</h3>
+                        <p>Working cohesively toward shared goals and collective success</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Key Achievements -->
+        <section class="section">
+            <div class="container">
+                <h2 class="section-title">Key Achievements</h2>
+                <div class="achievements-stats">
+                    <div class="achievement-stat animate-on-scroll">
+                        <span class="achievement-number counter" data-target="60">60</span>
+                        <div class="achievement-label">% Market Share in Float Glass</div>
+                    </div>
+                    
+                    <div class="achievement-stat animate-on-scroll">
+                        <span class="achievement-number">#2</span>
+                        <div class="achievement-label">Melamine Manufacturer in Bangladesh</div>
+                    </div>
+                    
+                    <div class="achievement-stat animate-on-scroll">
+                        <span class="achievement-number">#1</span>
+                        <div class="achievement-label">Jump Keds Footwear Brand</div>
+                    </div>
+                    
+                    <div class="achievement-stat animate-on-scroll">
+                        <span class="achievement-number counter" data-target="25">25</span>
+                        <div class="achievement-label">Export Countries Worldwide</div>
+                    </div>
+                    
+                    <div class="achievement-stat animate-on-scroll">
+                        <span class="achievement-number counter" data-target="5038">5,038</span>
+                        <div class="achievement-label">Export Shipments (2023-24)</div>
+                    </div>
+                    
+                    <div class="achievement-stat animate-on-scroll">
+                        <span class="achievement-number">First</span>
+                        <div class="achievement-label">CFL Lamp Manufacturer in Bangladesh</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer" role="contentinfo">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3 data-translate="footer.company">Company</h3>
+                    <ul>
+                        <li><a href="about.html" data-translate="nav.about">About Us</a></li>
+                        <li><a href="business-divisions.html" data-translate="nav.divisions">Business Divisions</a></li>
+                        <li><a href="csr.html" data-translate="nav.csr">CSR & Sustainability</a></li>
+                        <li><a href="careers.html" data-translate="nav.careers">Careers</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3 data-translate="footer.products">Products</h3>
+                    <ul>
+                        <li><a href="products.html#glass" data-translate="divisions.glass">Glass Products</a></li>
+                        <li><a href="products.html#melamine" data-translate="divisions.melamine">Melamine Tableware</a></li>
+                        <li><a href="products.html#footwear" data-translate="divisions.footwear">Footwear</a></li>
+                        <li><a href="products.html#energy" data-translate="divisions.energy">Energy Solutions</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3 data-translate="footer.support">Support</h3>
+                    <ul>
+                        <li><a href="contact.html" data-translate="nav.contact">Contact Us</a></li>
+                        <li><a href="export.html" data-translate="nav.export">Export Inquiry</a></li>
+                        <li><a href="dealer.html">Become a Dealer</a></li>
+                        <li><a href="news.html">News & Media</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3 data-translate="footer.contact">Contact Info</h3>
+                    <p data-translate="footer.address">House #16, Road #09, Baridhara, Dhaka-1212</p>
+                    <p>Phone: <a href="tel:+8802222281849" data-translate="footer.phone">+880-2-222281849</a></p>
+                    <p>Email: <a href="mailto:admin@nasir-group.biz" data-translate="footer.email">admin@nasir-group.biz</a></p>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p data-translate="footer.copyright">© 2025 Nasir Group of Industries. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button class="back-to-top" aria-label="Back to top">↑</button>
+
+    <!-- Scripts -->
+    <script src="js/main.js"></script>
+</body>
+</html>

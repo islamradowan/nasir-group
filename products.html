@@ -1,0 +1,786 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Explore Nasir Group's comprehensive product catalog including float glass, melamine tableware, footwear, tobacco products, and industrial solutions.">
+    <meta name="keywords" content="Nasir Group products, float glass Bangladesh, melamine tableware, Jump Keds shoes, CFL lamps, jute products">
+    <title>Products Catalog - Nasir Group of Industries</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .products-container {
+            display: grid;
+            grid-template-columns: 250px 1fr;
+            gap: 2rem;
+            align-items: start;
+        }
+        
+        .sidebar {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            position: sticky;
+            top: 100px;
+        }
+        
+        .sidebar h3 {
+            margin-bottom: 1rem;
+            color: var(--primary-color);
+        }
+        
+        .category-filters {
+            list-style: none;
+        }
+        
+        .category-filters li {
+            margin-bottom: 0.5rem;
+        }
+        
+        .category-filter {
+            display: block;
+            padding: 0.5rem 1rem;
+            text-decoration: none;
+            color: var(--text-color);
+            border-radius: var(--border-radius);
+            transition: var(--transition);
+            cursor: pointer;
+            border: none;
+            background: none;
+            width: 100%;
+            text-align: left;
+        }
+        
+        .category-filter:hover,
+        .category-filter.active {
+            background: var(--primary-color);
+            color: var(--white);
+        }
+        
+        .products-main {
+            min-height: 500px;
+        }
+        
+        .search-section {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            margin-bottom: 2rem;
+        }
+        
+        .search-box {
+            position: relative;
+            max-width: 500px;
+        }
+        
+        .search-input {
+            width: 100%;
+            padding: 1rem;
+            border: 2px solid var(--border-color);
+            border-radius: var(--border-radius);
+            font-size: 1rem;
+        }
+        
+        .search-input:focus {
+            border-color: var(--primary-color);
+            outline: none;
+        }
+        
+        .product-card {
+            background: var(--white);
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            padding: 1.5rem;
+            transition: var(--transition);
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .product-card:hover {
+            box-shadow: var(--shadow-hover);
+            transform: translateY(-3px);
+        }
+        
+        .product-image {
+            width: 100%;
+            height: 200px;
+            background: var(--light-gray);
+            border-radius: var(--border-radius);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+        
+        .product-title {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: var(--primary-color);
+        }
+        
+        .product-category {
+            background: var(--secondary-color);
+            color: var(--white);
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 500;
+            display: inline-block;
+            margin-bottom: 1rem;
+        }
+        
+        .product-specs {
+            margin-bottom: 1rem;
+            flex-grow: 1;
+        }
+        
+        .product-specs ul {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .product-specs li {
+            padding: 0.25rem 0;
+            border-bottom: 1px solid var(--border-color);
+        }
+        
+        .product-specs li:last-child {
+            border-bottom: none;
+        }
+        
+        .export-tag {
+            background: var(--accent-color);
+            color: var(--white);
+            padding: 0.25rem 0.5rem;
+            border-radius: 4px;
+            font-size: 0.75rem;
+            margin-bottom: 1rem;
+            display: inline-block;
+        }
+        
+        .product-actions {
+            display: flex;
+            gap: 0.5rem;
+            margin-top: auto;
+        }
+        
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.5);
+        }
+        
+        .modal-content {
+            background-color: var(--white);
+            margin: 5% auto;
+            padding: 2rem;
+            border-radius: var(--border-radius);
+            width: 90%;
+            max-width: 500px;
+            position: relative;
+        }
+        
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+            position: absolute;
+            right: 1rem;
+            top: 1rem;
+        }
+        
+        .close:hover {
+            color: var(--primary-color);
+        }
+        
+        .form-group {
+            margin-bottom: 1rem;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+        }
+        
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 0.75rem;
+            border: 2px solid var(--border-color);
+            border-radius: var(--border-radius);
+            font-size: 1rem;
+        }
+        
+        .form-group input:focus,
+        .form-group textarea:focus,
+        .form-group select:focus {
+            border-color: var(--primary-color);
+            outline: none;
+        }
+        
+        @media (max-width: 768px) {
+            .products-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .sidebar {
+                position: static;
+                order: 2;
+            }
+            
+            .products-main {
+                order: 1;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Skip Links -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    
+    <!-- Header -->
+    <header class="header" role="banner">
+        <nav class="navbar container" role="navigation" aria-label="Main navigation">
+            <a href="index.html" class="logo" data-translate="company.name">Nasir Group of Industries</a>
+            
+            <ul class="nav-menu" role="menubar">
+                <li role="none"><a href="index.html" class="nav-link" role="menuitem" data-translate="nav.home">Home</a></li>
+                <li role="none"><a href="about.html" class="nav-link" role="menuitem" data-translate="nav.about">About Us</a></li>
+                <li role="none"><a href="business-divisions.html" class="nav-link" role="menuitem" data-translate="nav.divisions">Business Divisions</a></li>
+                <li role="none"><a href="products.html" class="nav-link active" role="menuitem" data-translate="nav.products">Products</a></li>
+                <li role="none" class="nav-dropdown">
+                    <a href="#" class="nav-link" role="menuitem">Corporate <span class="dropdown-arrow">▼</span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="export.html" class="nav-link" data-translate="nav.export">Export & International</a></li>
+                        <li><a href="csr.html" class="nav-link" data-translate="nav.csr">CSR & Sustainability</a></li>
+                        <li><a href="careers.html" class="nav-link" data-translate="nav.careers">Careers</a></li>
+                    </ul>
+                </li>
+                <li role="none"><a href="contact.html" class="nav-link" role="menuitem" data-translate="nav.contact">Contact Us</a></li>
+            </ul>
+            
+            <div class="nav-actions">
+                <button class="lang-toggle" aria-label="Switch language">বাংলা</button>
+                <a href="contact.html" class="btn btn-primary" data-translate="buttons.request_quote">Request Quote</a>
+            </div>
+            
+            <button class="mobile-menu-toggle" aria-label="Toggle mobile menu" aria-expanded="false">☰</button>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main id="main-content">
+        <!-- Page Header -->
+        <section class="hero" style="padding: 2rem 0;">
+            <div class="container">
+                <h1>Products Catalog</h1>
+                <p class="hero-subtitle">Comprehensive Range of Quality Products</p>
+            </div>
+        </section>
+
+        <!-- Products Section -->
+        <section class="section">
+            <div class="container">
+                <div class="products-container">
+                    <!-- Sidebar -->
+                    <aside class="sidebar">
+                        <h3>Product Categories</h3>
+                        <ul class="category-filters">
+                            <li><button class="category-filter active" data-category="all">All Products</button></li>
+                            <li><button class="category-filter" data-category="glass">Glass Products</button></li>
+                            <li><button class="category-filter" data-category="melamine">Melamine Tableware</button></li>
+                            <li><button class="category-filter" data-category="footwear">Footwear</button></li>
+                            <li><button class="category-filter" data-category="tobacco">Tobacco Products</button></li>
+                            <li><button class="category-filter" data-category="packaging">Packaging</button></li>
+                            <li><button class="category-filter" data-category="lighting">Lighting Solutions</button></li>
+                            <li><button class="category-filter" data-category="jute">Jute Products</button></li>
+                            <li><button class="category-filter" data-category="industrial">Industrial Products</button></li>
+                            <li><button class="category-filter" data-category="aluminium">Aluminium</button></li>
+                            <li><button class="category-filter" data-category="automotive">Electric Vehicles</button></li>
+                        </ul>
+                    </aside>
+
+                    <!-- Main Products Area -->
+                    <div class="products-main">
+                        <!-- Search Section -->
+                        <div class="search-section">
+                            <div class="search-box">
+                                <input type="text" class="search-input" placeholder="Search products..." id="productSearch">
+                            </div>
+                        </div>
+
+                        <!-- Products Grid -->
+                        <div class="grid grid-3" id="productsGrid">
+                            
+                            <!-- Glass Products -->
+                            <div class="product-card" data-category="glass">
+                                <div class="product-image">🪟</div>
+                                <h3 class="product-title">Float Glass (Clear & Tinted)</h3>
+                                <span class="product-category">Glass Products</span>
+                                <div class="product-specs">
+                                    <ul>
+                                        <li><strong>Thickness:</strong> 2mm - 12mm</li>
+                                        <li><strong>Colors:</strong> Clear, Bronze, Gray, Blue, Green</li>
+                                        <li><strong>Standards:</strong> GB11614-1999, J/S R3202</li>
+                                        <li><strong>Applications:</strong> Construction, Automotive</li>
+                                    </ul>
+                                </div>
+                                <div class="export-tag">Export: India, Nepal, Bhutan</div>
+                                <div class="product-actions">
+                                    <button class="btn btn-primary btn-quote" data-product="Float Glass">Request Quote</button>
+                                </div>
+                            </div>
+
+                            <div class="product-card" data-category="glass">
+                                <div class="product-image">🔒</div>
+                                <h3 class="product-title">Tempered Glass</h3>
+                                <span class="product-category">Glass Products</span>
+                                <div class="product-specs">
+                                    <ul>
+                                        <li><strong>Type:</strong> Safety Glass</li>
+                                        <li><strong>Strength:</strong> 4-5x stronger than regular glass</li>
+                                        <li><strong>Applications:</strong> Buildings, Vehicles</li>
+                                        <li><strong>Certification:</strong> International Standards</li>
+                                    </ul>
+                                </div>
+                                <div class="export-tag">Export: Multiple Countries</div>
+                                <div class="product-actions">
+                                    <button class="btn btn-primary btn-quote" data-product="Tempered Glass">Request Quote</button>
+                                </div>
+                            </div>
+
+                            <div class="product-card" data-category="glass">
+                                <div class="product-image">🪞</div>
+                                <h3 class="product-title">Mirrors</h3>
+                                <span class="product-category">Glass Products</span>
+                                <div class="product-specs">
+                                    <ul>
+                                        <li><strong>Types:</strong> Silver, Aluminum backed</li>
+                                        <li><strong>Sizes:</strong> Various dimensions</li>
+                                        <li><strong>Quality:</strong> High reflectivity</li>
+                                        <li><strong>Applications:</strong> Furniture, Decoration</li>
+                                    </ul>
+                                </div>
+                                <div class="export-tag">Export: Regional Markets</div>
+                                <div class="product-actions">
+                                    <button class="btn btn-primary btn-quote" data-product="Mirrors">Request Quote</button>
+                                </div>
+                            </div>
+
+                            <!-- Melamine Products -->
+                            <div class="product-card" data-category="melamine">
+                                <div class="product-image">🍽️</div>
+                                <h3 class="product-title">Melamine Dinnerware Set</h3>
+                                <span class="product-category">Melamine Tableware</span>
+                                <div class="product-specs">
+                                    <ul>
+                                        <li><strong>Items:</strong> Plates, Bowls, Cups</li>
+                                        <li><strong>Material:</strong> Food-grade Melamine</li>
+                                        <li><strong>Features:</strong> Dishwasher safe, Durable</li>
+                                        <li><strong>Colors:</strong> Various designs</li>
+                                    </ul>
+                                </div>
+                                <div class="export-tag">Export: USA, Europe, Australia</div>
+                                <div class="product-actions">
+                                    <button class="btn btn-primary btn-quote" data-product="Melamine Dinnerware">Request Quote</button>
+                                </div>
+                            </div>
+
+                            <div class="product-card" data-category="melamine">
+                                <div class="product-image">🥤</div>
+                                <h3 class="product-title">Melamine Tumblers</h3>
+                                <span class="product-category">Melamine Tableware</span>
+                                <div class="product-specs">
+                                    <ul>
+                                        <li><strong>Sizes:</strong> 200ml, 300ml, 400ml</li>
+                                        <li><strong>Design:</strong> Colorful patterns</li>
+                                        <li><strong>Features:</strong> Unbreakable, Lightweight</li>
+                                        <li><strong>Usage:</strong> Home, Restaurant, Outdoor</li>
+                                    </ul>
+                                </div>
+                                <div class="export-tag">Export: 18+ Countries</div>
+                                <div class="product-actions">
+                                    <button class="btn btn-primary btn-quote" data-product="Melamine Tumblers">Request Quote</button>
+                                </div>
+                            </div>
+
+                            <!-- Footwear Products -->
+                            <div class="product-card" data-category="footwear">
+                                <div class="product-image">👟</div>
+                                <h3 class="product-title">Jump Keds Shoes</h3>
+                                <span class="product-category">Footwear</span>
+                                <div class="product-specs">
+                                    <ul>
+                                        <li><strong>Types:</strong> Gents, Ladies, Kids</li>
+                                        <li><strong>Material:</strong> Best quality EVA & PVC</li>
+                                        <li><strong>Technology:</strong> Injection molding</li>
+                                        <li><strong>Colors:</strong> Multiple options</li>
+                                    </ul>
+                                </div>
+                                <div class="export-tag">Export: Available</div>
+                                <div class="product-actions">
+                                    <button class="btn btn-primary btn-quote" data-product="Jump Keds Shoes">Request Quote</button>
+                                </div>
+                            </div>
+
+                            <div class="product-card" data-category="footwear">
+                                <div class="product-image">🩴</div>
+                                <h3 class="product-title">Canvas Sandals</h3>
+                                <span class="product-category">Footwear</span>
+                                <div class="product-specs">
+                                    <ul>
+                                        <li><strong>Style:</strong> Casual, Comfortable</li>
+                                        <li><strong>Material:</strong> Canvas upper, Rubber sole</li>
+                                        <li><strong>Sizes:</strong> All standard sizes</li>
+                                        <li><strong>Features:</strong> Breathable, Durable</li>
+                                    </ul>
+                                </div>
+                                <div class="export-tag">Export: Regional</div>
+                                <div class="product-actions">
+                                    <button class="btn btn-primary btn-quote" data-product="Canvas Sandals">Request Quote</button>
+                                </div>
+                            </div>
+
+                            <!-- Lighting Products -->
+                            <div class="product-card" data-category="lighting">
+                                <div class="product-image">💡</div>
+                                <h3 class="product-title">CFL Spiral Lamps</h3>
+                                <span class="product-category">Lighting Solutions</span>
+                                <div class="product-specs">
+                                    <ul>
+                                        <li><strong>Wattage:</strong> 5W - 65W</li>
+                                        <li><strong>Types:</strong> Spiral, Lotus, U-type</li>
+                                        <li><strong>Features:</strong> Energy saving, Long life</li>
+                                        <li><strong>Warranty:</strong> Included</li>
+                                    </ul>
+                                </div>
+                                <div class="export-tag">Export: Available</div>
+                                <div class="product-actions">
+                                    <button class="btn btn-primary btn-quote" data-product="CFL Lamps">Request Quote</button>
+                                </div>
+                            </div>
+
+                            <!-- Jute Products -->
+                            <div class="product-card" data-category="jute">
+                                <div class="product-image">🌾</div>
+                                <h3 class="product-title">Jute Yarn & Twine</h3>
+                                <span class="product-category">Jute Products</span>
+                                <div class="product-specs">
+                                    <ul>
+                                        <li><strong>Count:</strong> 6 LBS to 72 LBS</li>
+                                        <li><strong>Quality:</strong> Export grade</li>
+                                        <li><strong>Applications:</strong> Rope, Carpet backing</li>
+                                        <li><strong>Packaging:</strong> Standard bales</li>
+                                    </ul>
+                                </div>
+                                <div class="export-tag">Export: China, UAE, India</div>
+                                <div class="product-actions">
+                                    <button class="btn btn-primary btn-quote" data-product="Jute Yarn">Request Quote</button>
+                                </div>
+                            </div>
+
+                            <div class="product-card" data-category="jute">
+                                <div class="product-image">🛍️</div>
+                                <h3 class="product-title">Jute Bags & Sacks</h3>
+                                <span class="product-category">Jute Products</span>
+                                <div class="product-specs">
+                                    <ul>
+                                        <li><strong>Types:</strong> Hessian, Sacking bags</li>
+                                        <li><strong>Sizes:</strong> Various dimensions</li>
+                                        <li><strong>Features:</strong> Eco-friendly, Biodegradable</li>
+                                        <li><strong>Applications:</strong> Agriculture, Packaging</li>
+                                    </ul>
+                                </div>
+                                <div class="export-tag">Export: Worldwide</div>
+                                <div class="product-actions">
+                                    <button class="btn btn-primary btn-quote" data-product="Jute Bags">Request Quote</button>
+                                </div>
+                            </div>
+
+                            <!-- Industrial Products -->
+                            <div class="product-card" data-category="industrial">
+                                <div class="product-image">🌽</div>
+                                <h3 class="product-title">Corn Starch</h3>
+                                <span class="product-category">Industrial Products</span>
+                                <div class="product-specs">
+                                    <ul>
+                                        <li><strong>Grade:</strong> Industrial, Food grade</li>
+                                        <li><strong>Applications:</strong> Food, Textile, Paper</li>
+                                        <li><strong>Purity:</strong> High quality</li>
+                                        <li><strong>Packaging:</strong> 25kg, 50kg bags</li>
+                                    </ul>
+                                </div>
+                                <div class="export-tag">Export: Available</div>
+                                <div class="product-actions">
+                                    <button class="btn btn-primary btn-quote" data-product="Corn Starch">Request Quote</button>
+                                </div>
+                            </div>
+
+                            <!-- Aluminium Products -->
+                            <div class="product-card" data-category="aluminium">
+                                <div class="product-image">🔧</div>
+                                <h3 class="product-title">Aluminium Profiles</h3>
+                                <span class="product-category">Aluminium</span>
+                                <div class="product-specs">
+                                    <ul>
+                                        <li><strong>Standards:</strong> ASTM compliant</li>
+                                        <li><strong>Applications:</strong> Construction, Architecture</li>
+                                        <li><strong>Finish:</strong> Anodized, Powder coated</li>
+                                        <li><strong>Customization:</strong> Available</li>
+                                    </ul>
+                                </div>
+                                <div class="export-tag">Export: Ready</div>
+                                <div class="product-actions">
+                                    <button class="btn btn-primary btn-quote" data-product="Aluminium Profiles">Request Quote</button>
+                                </div>
+                            </div>
+
+                            <!-- Electric Vehicles -->
+                            <div class="product-card" data-category="automotive">
+                                <div class="product-image">🛵</div>
+                                <h3 class="product-title">Electric Two-Wheeler</h3>
+                                <span class="product-category">Electric Vehicles</span>
+                                <div class="product-specs">
+                                    <ul>
+                                        <li><strong>Type:</strong> Electric motorcycle/scooter</li>
+                                        <li><strong>Features:</strong> Zero emissions</li>
+                                        <li><strong>Battery:</strong> Lithium-ion</li>
+                                        <li><strong>Range:</strong> Competitive</li>
+                                    </ul>
+                                </div>
+                                <div class="export-tag">Launch: 2025-2026</div>
+                                <div class="product-actions">
+                                    <button class="btn btn-primary btn-quote" data-product="Electric Two-Wheeler">Request Quote</button>
+                                </div>
+                            </div>
+
+                            <div class="product-card" data-category="automotive">
+                                <div class="product-image">🛺</div>
+                                <h3 class="product-title">Electric Three-Wheeler</h3>
+                                <span class="product-category">Electric Vehicles</span>
+                                <div class="product-specs">
+                                    <ul>
+                                        <li><strong>Type:</strong> Electric rickshaw/auto</li>
+                                        <li><strong>Capacity:</strong> Passenger/Cargo</li>
+                                        <li><strong>Sustainability:</strong> Fully eco-friendly</li>
+                                        <li><strong>Technology:</strong> Advanced electric</li>
+                                    </ul>
+                                </div>
+                                <div class="export-tag">Launch: 2025-2026</div>
+                                <div class="product-actions">
+                                    <button class="btn btn-primary btn-quote" data-product="Electric Three-Wheeler">Request Quote</button>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Quote Request Modal -->
+    <div id="quoteModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Request Quote</h2>
+            <form id="quoteForm">
+                <div class="form-group">
+                    <label for="productName">Product</label>
+                    <input type="text" id="productName" name="product" readonly>
+                </div>
+                
+                <div class="form-group">
+                    <label for="customerName">Full Name *</label>
+                    <input type="text" id="customerName" name="name" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="customerEmail">Email Address *</label>
+                    <input type="email" id="customerEmail" name="email" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="customerPhone">Phone Number *</label>
+                    <input type="tel" id="customerPhone" name="phone" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="companyName">Company Name</label>
+                    <input type="text" id="companyName" name="company">
+                </div>
+                
+                <div class="form-group">
+                    <label for="quantity">Quantity Required</label>
+                    <input type="text" id="quantity" name="quantity" placeholder="e.g., 1000 sq ft, 500 pieces">
+                </div>
+                
+                <div class="form-group">
+                    <label for="message">Additional Requirements</label>
+                    <textarea id="message" name="message" rows="4" placeholder="Please specify your requirements, delivery location, etc."></textarea>
+                </div>
+                
+                <button type="submit" class="btn btn-primary">Send Quote Request</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer" role="contentinfo">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3 data-translate="footer.company">Company</h3>
+                    <ul>
+                        <li><a href="about.html" data-translate="nav.about">About Us</a></li>
+                        <li><a href="business-divisions.html" data-translate="nav.divisions">Business Divisions</a></li>
+                        <li><a href="csr.html" data-translate="nav.csr">CSR & Sustainability</a></li>
+                        <li><a href="careers.html" data-translate="nav.careers">Careers</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3 data-translate="footer.products">Products</h3>
+                    <ul>
+                        <li><a href="products.html#glass" data-translate="divisions.glass">Glass Products</a></li>
+                        <li><a href="products.html#melamine" data-translate="divisions.melamine">Melamine Tableware</a></li>
+                        <li><a href="products.html#footwear" data-translate="divisions.footwear">Footwear</a></li>
+                        <li><a href="products.html#energy" data-translate="divisions.energy">Energy Solutions</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3 data-translate="footer.support">Support</h3>
+                    <ul>
+                        <li><a href="contact.html" data-translate="nav.contact">Contact Us</a></li>
+                        <li><a href="export.html" data-translate="nav.export">Export Inquiry</a></li>
+                        <li><a href="dealer.html">Become a Dealer</a></li>
+                        <li><a href="news.html">News & Media</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3 data-translate="footer.contact">Contact Info</h3>
+                    <p data-translate="footer.address">House #16, Road #09, Baridhara, Dhaka-1212</p>
+                    <p>Phone: <a href="tel:+8802222281849" data-translate="footer.phone">+880-2-222281849</a></p>
+                    <p>Email: <a href="mailto:admin@nasir-group.biz" data-translate="footer.email">admin@nasir-group.biz</a></p>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p data-translate="footer.copyright">© 2025 Nasir Group of Industries. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button class="back-to-top" aria-label="Back to top">↑</button>
+
+    <!-- Scripts -->
+    <script src="js/main.js"></script>
+    <script>
+        // Products page functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const categoryFilters = document.querySelectorAll('.category-filter');
+            const searchInput = document.getElementById('productSearch');
+            const productCards = document.querySelectorAll('.product-card');
+            const quoteButtons = document.querySelectorAll('.btn-quote');
+            const modal = document.getElementById('quoteModal');
+            const closeModal = document.querySelector('.close');
+            const quoteForm = document.getElementById('quoteForm');
+
+            // Category filtering
+            categoryFilters.forEach(filter => {
+                filter.addEventListener('click', () => {
+                    categoryFilters.forEach(f => f.classList.remove('active'));
+                    filter.classList.add('active');
+                    
+                    const category = filter.getAttribute('data-category');
+                    filterProducts(category);
+                });
+            });
+
+            // Search functionality
+            searchInput.addEventListener('input', (e) => {
+                const searchTerm = e.target.value.toLowerCase();
+                searchProducts(searchTerm);
+            });
+
+            // Quote request modal
+            quoteButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    const productName = button.getAttribute('data-product');
+                    document.getElementById('productName').value = productName;
+                    modal.style.display = 'block';
+                });
+            });
+
+            closeModal.addEventListener('click', () => {
+                modal.style.display = 'none';
+            });
+
+            window.addEventListener('click', (e) => {
+                if (e.target === modal) {
+                    modal.style.display = 'none';
+                }
+            });
+
+            // Quote form submission
+            quoteForm.addEventListener('submit', (e) => {
+                e.preventDefault();
+                
+                // Simulate form submission
+                const formData = new FormData(quoteForm);
+                const data = Object.fromEntries(formData);
+                
+                console.log('Quote request:', data);
+                
+                // Show success message
+                if (window.NasirGroup && window.NasirGroup.showToast) {
+                    window.NasirGroup.showToast('Quote request sent successfully!', 'success');
+                }
+                
+                modal.style.display = 'none';
+                quoteForm.reset();
+            });
+
+            function filterProducts(category) {
+                productCards.forEach(card => {
+                    if (category === 'all' || card.getAttribute('data-category') === category) {
+                        card.style.display = 'block';
+                        card.classList.add('fade-in-up');
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+            }
+
+            function searchProducts(searchTerm) {
+                productCards.forEach(card => {
+                    const title = card.querySelector('.product-title').textContent.toLowerCase();
+                    const category = card.querySelector('.product-category').textContent.toLowerCase();
+                    const specs = card.querySelector('.product-specs').textContent.toLowerCase();
+                    
+                    if (title.includes(searchTerm) || category.includes(searchTerm) || specs.includes(searchTerm)) {
+                        card.style.display = 'block';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+            }
+        });
+    </script>
+</body>
+</html>
