@@ -319,11 +319,21 @@ h4 { font-size: 1.25rem; }
   box-shadow: var(--shadow);
   padding: 1.5rem;
   transition: var(--transition);
+  color: var(--text-color);
 }
 
 .card:hover {
   box-shadow: var(--shadow-hover);
   transform: translateY(-5px);
+}
+
+.card h3 {
+  color: var(--primary-color);
+  margin-bottom: 1rem;
+}
+
+.card p {
+  color: var(--text-color);
 }
 
 /* Grid Layouts */
